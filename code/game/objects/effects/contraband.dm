@@ -140,6 +140,8 @@
 	poster_item_name = initial(selected.poster_item_name)
 	poster_item_desc = initial(selected.poster_item_desc)
 	poster_item_icon_state = initial(selected.poster_item_icon_state)
+	poster_item_placing_animation = initial(selected.poster_item_placing_animation)
+	poster_ruined_icon_state = initial(selected.poster_ruined_icon_state)
 	ruined = initial(selected.ruined)
 
 /obj/structure/sign/poster/attackby(obj/item/I, mob/user, params)
@@ -163,7 +165,7 @@
 	playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
 	spring_trap(user)
 //hl13 code starts here
-	icon_state = initial(poster_ruined_icon_state)
+	icon_state = poster_ruined_icon_state
 	ruined = TRUE
 	add_fingerprint(user)
 //hl13 code ends here

@@ -18,6 +18,9 @@
 	never_random = TRUE
 	random_basetype = /obj/structure/sign/poster/hl13/combine
 
+/obj/structure/sign/poster/hl13/combine/directional //due to the mapping directional helper creating directions where not needed
+	never_random = TRUE
+
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/hl13/combine/random, 32)
 
 
@@ -39,12 +42,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/hl13/combine/random, 32)
 	name = "Combine Propaganda"
 	desc = "A collection of Combine propaganda posters."
 	icon_state = "poster_3"
+	poster_item_placing_animation = "poster_3_set"
 	poster_ruined_icon_state = "poster_3_ripped"
 
 /obj/structure/sign/poster/hl13/combine/propaganda_collection_dove
 	name = "Combine Propaganda"
 	desc = "A collection of Combine propaganda posters."
 	icon_state = "poster_4"
+	poster_item_placing_animation = "poster_4_set"
 	poster_ruined_icon_state = "poster_4_ripped"
 
 /obj/structure/sign/poster/hl13/combine/yellow_propaganda_admin
