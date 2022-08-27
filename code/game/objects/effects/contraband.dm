@@ -140,8 +140,10 @@
 	poster_item_name = initial(selected.poster_item_name)
 	poster_item_desc = initial(selected.poster_item_desc)
 	poster_item_icon_state = initial(selected.poster_item_icon_state)
+//HL13 CODE STARTS HERE
 	poster_item_placing_animation = initial(selected.poster_item_placing_animation)
 	poster_ruined_icon_state = initial(selected.poster_ruined_icon_state)
+//HL13 CODE ENDS HERE
 	ruined = initial(selected.ruined)
 
 /obj/structure/sign/poster/attackby(obj/item/I, mob/user, params)
@@ -222,7 +224,9 @@
 	var/obj/structure/sign/poster/D = P.poster_structure
 
 	var/temp_loc = get_turf(user)
+//Hl13 code starts here
 	flick(D.poster_item_placing_animation, D)
+//HL13 Code ends here
 	D.forceMove(src)
 	qdel(P) //delete it now to cut down on sanity checks afterwards. Agouri's code supports rerolling it anyway
 	playsound(D.loc, 'sound/items/poster_being_created.ogg', 100, TRUE)
