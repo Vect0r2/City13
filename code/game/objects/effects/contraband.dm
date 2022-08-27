@@ -89,7 +89,9 @@
 	var/poster_item_name = "hypothetical poster"
 	var/poster_item_desc = "This hypothetical poster item should not exist, let's be honest here."
 	var/poster_item_icon_state = "rolled_poster"
+	var/poster_item_placing_animation = "poster_being_set"
 	var/poster_item_type = /obj/item/poster
+	var/poster_ruined_icon_state = "poster_ripped"
 	///A sharp shard of material can be hidden inside of a poster, attempts to embed when it is torn down.
 	var/datum/weakref/trap
 
@@ -160,12 +162,11 @@
 	visible_message(span_notice("[user] rips [src] in a single, decisive motion!") )
 	playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
 	spring_trap(user)
-
-	var/obj/structure/sign/poster/ripped/R = new(loc)
-	R.pixel_y = pixel_y
-	R.pixel_x = pixel_x
-	R.add_fingerprint(user)
-	qdel(src)
+//hl13 code starts here
+	icon_state = initial(poster_ruined_icon_state)
+	ruined = TRUE
+	add_fingerprint(user)
+//hl13 code ends here
 
 /obj/structure/sign/poster/proc/spring_trap(mob/user)
 	var/obj/item/shard/payload = trap?.resolve()
@@ -219,7 +220,7 @@
 	var/obj/structure/sign/poster/D = P.poster_structure
 
 	var/temp_loc = get_turf(user)
-	flick("poster_being_set",D)
+	flick(D.poster_item_placing_animation, D)
 	D.forceMove(src)
 	qdel(P) //delete it now to cut down on sanity checks afterwards. Agouri's code supports rerolling it anyway
 	playsound(D.loc, 'sound/items/poster_being_created.ogg', 100, TRUE)
