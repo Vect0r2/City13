@@ -34,32 +34,50 @@
 	isSwitchingStates = FALSE
 
 /obj/structure/mineral_door/material_door/metal_door
-	icon = 'hl13/icons/obj/doors/metal_door.dmi'
+	name = "metal door"
+	icon = 'hl13/icons/obj/doors/metal_door_2.dmi'
 	openSound = null
 	closeSound = null
 
 /obj/structure/mineral_door/material_door/metal_door/north
 	icon_state = "metaldoor"
 
+/obj/structure/mineral_door/material_door/metal_door/north_2
+	icon_state = "metaldoor2"
+
 /obj/structure/mineral_door/material_door/metal_door/east
 	icon_state = "metaldoore"
 
+/obj/structure/mineral_door/material_door/metal_door/east_2
+	icon_state = "metaldoore2"
+
 /obj/structure/mineral_door/material_door/metal_door/west
 	icon_state = "metaldoorw"
+
+/obj/structure/mineral_door/material_door/metal_door/west_2
+	icon_state = "metaldoorw2"
+
 /obj/structure/mineral_door/material_door/wooden_door
-	icon = 'hl13/icons/obj/doors/wooden_door.dmi'
+	name = "wooden door"
+	icon = 'hl13/icons/obj/doors/wooden_door_2.dmi'
 	openSound = null
 	closeSound = null
 
 /obj/structure/mineral_door/material_door/wooden_door/north
 	icon_state = "woodendoor"
 
-/obj/structure/mineral_door/material_door/wooden_door/south
-	icon_state = "woodendoors"
+obj/structure/mineral_door/material_door/wooden_door/north_2
+	icon_state = "woodendoor2"
 
 /obj/structure/mineral_door/material_door/wooden_door/east
 	icon_state = "woodendoore"
 
+/obj/structure/mineral_door/material_door/wooden_door/east_2
+	icon_state = "woodendoore2"
+
+
 /obj/structure/mineral_door/material_door/wooden_door/west
 	icon_state = "woodendoorw"
 
+/obj/structure/mineral_door/material_door/wooden_door/west_2
+	icon_state = "woodendoorw2"
