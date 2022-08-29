@@ -217,3 +217,17 @@ GLOBAL_LIST_EMPTY(employmentCabinets)
 		virgin = FALSE
 	return ..()
 
+
+//City 13
+/obj/structure/filingcabinet/city13
+	icon = 'hl13/icons/obj/citydecorations.dmi'
+	icon_state = "filing_cabinet"
+	density = 1
+
+/obj/structure/filingcabinet/trash_can
+	name = "trash can"
+	desc = "A green city trash can. 'Pick up that can!' "
+	icon = 'hl13/icons/obj/citydecorations.dmi'
+	icon_state = "trash_can"
+	density = 1
+	anchored = TRUE

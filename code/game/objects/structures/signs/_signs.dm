@@ -223,3 +223,12 @@
 	desc = "The Nanotrasen corporate logo."
 	icon_state = "nanotrasen_sign1"
 	buildable_sign = FALSE
+
+
+/obj/structure/sign/wall_clock
+	name = "\improper Wall Clock"
+	desc = "An analog clock that has been ticking since before you were born."
+	icon = 'hl13/icons/obj/citydecorations.dmi'
+	icon_state = "clock"
+	is_editable = FALSE
+	buildable_sign = FALSE
