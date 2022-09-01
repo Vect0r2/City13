@@ -29,3 +29,8 @@
 	icon_state = "clock"
 	is_editable = FALSE
 	buildable_sign = FALSE
+
+
+/obj/structure/sign/wall_clock/examine(mob/user)
+	. = ..()
+	. += span_info("Worn hands tell you it is: [station_time_timestamp()]")
