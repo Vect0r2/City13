@@ -3,3 +3,4 @@
 	icon_state = "citizen"
 	inhand_icon_state = "psyche"
 	alt_covers_chest = TRUE
+    //reset flag
