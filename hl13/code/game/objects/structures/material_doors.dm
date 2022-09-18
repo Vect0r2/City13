@@ -66,7 +66,7 @@
 /obj/structure/mineral_door/material_door/wooden_door/north
 	icon_state = "woodendoor"
 
-obj/structure/mineral_door/material_door/wooden_door/north_2
+/obj/structure/mineral_door/material_door/wooden_door/north_2
 	icon_state = "woodendoor2"
 
 /obj/structure/mineral_door/material_door/wooden_door/east
