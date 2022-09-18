@@ -11,7 +11,10 @@
 /obj/item/clothing/suit/armor/hl13/combine/equipped(mob/living/user, slot)
 	. = ..()
 	if(ishuman(loc))
-		ToggleHelmet()
+		if(slot != ITEM_SLOT_OCLOTHING)
+			return
+		else
+			ToggleHelmet()
 
 /obj/item/clothing/suit/armor/hl13/combine/Destroy()
 	. = ..()
@@ -22,6 +25,7 @@
 		var/obj/item/clothing/head/helmet/hl13/combine/helmet/H = new helmettype(src)
 		H.suit = src
 		helmet = H
+		ADD_TRAIT(H, TRAIT_NODROP, TRAIT_GENERIC)
 
 /obj/item/clothing/suit/armor/hl13/combine/proc/ToggleHelmet()
 	if(!ishuman(loc))
