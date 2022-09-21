@@ -5,4 +5,4 @@
 /obj/item/clothing/head/helmet/hl13/combine/helmet/civil_protection
 	name = "civil protection backhead helmet"
 	icon_state = "cp_helmet"
-	flags_inv = HIDEEARS
+	flags_inv = HIDEEARS|HIDENECK
