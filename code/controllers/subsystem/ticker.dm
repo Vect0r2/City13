@@ -354,17 +354,12 @@ SUBSYSTEM_DEF(ticker)
 
 
 /datum/controller/subsystem/ticker/proc/equip_characters()
-	GLOB.security_officer_distribution = decide_security_officer_departments(
-		shuffle(GLOB.new_player_list),
-		shuffle(GLOB.available_depts),
-	)
 
 	var/captainless = TRUE
 
 	var/highest_rank = length(SSjob.chain_of_command) + 1
 	var/list/spare_id_candidates = list()
-	var/mob/dead/new_player/picked_spare_id_candidate
-
+	var/mob/dead/new_player/picked_spare_id_candidate //theres a warning about how this line is not used anyhere else but when i try to remove it it errors out
 	// Find a suitable player to hold captaincy.
 	for(var/mob/dead/new_player/new_player_mob as anything in GLOB.new_player_list)
 		if(is_banned_from(new_player_mob.ckey, list(JOB_CAPTAIN)))
@@ -403,11 +398,6 @@ SUBSYSTEM_DEF(ticker)
 		if(player_assigned_role.job_flags & JOB_EQUIP_RANK)
 			SSjob.EquipRank(new_player_living, player_assigned_role, new_player_mob.client)
 		player_assigned_role.after_roundstart_spawn(new_player_living, new_player_mob.client)
-		if(picked_spare_id_candidate == new_player_mob)
-			captainless = FALSE
-			var/acting_captain = !is_captain_job(player_assigned_role)
-			SSjob.promote_to_captain(new_player_living, acting_captain)
-			OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, player_assigned_role.get_captaincy_announcement(new_player_living)))
 		if((player_assigned_role.job_flags & JOB_ASSIGN_QUIRKS) && ishuman(new_player_living) && CONFIG_GET(flag/roundstart_traits))
 			if(new_player_mob.client?.prefs?.should_be_random_hardcore(player_assigned_role, new_player_living.mind))
 				new_player_mob.client.prefs.hardcore_random_setup(new_player_living)
@@ -422,30 +412,6 @@ SUBSYSTEM_DEF(ticker)
 			CHECK_TICK
 
 
-/datum/controller/subsystem/ticker/proc/decide_security_officer_departments(
-	list/new_players,
-	list/departments,
-)
-	var/list/officer_mobs = list()
-	var/list/officer_preferences = list()
-
-	for (var/mob/dead/new_player/new_player_mob as anything in new_players)
-		var/mob/living/carbon/human/character = new_player_mob.new_character
-		if (istype(character) && is_security_officer_job(character.mind?.assigned_role))
-			officer_mobs += character
-
-			var/datum/client_interface/client = GET_CLIENT(new_player_mob)
-			var/preference = client?.prefs?.read_preference(/datum/preference/choiced/security_department)
-			officer_preferences += preference
-
-	var/distribution = get_officer_departments(officer_preferences, departments)
-
-	var/list/output = list()
-
-	for (var/index in 1 to officer_mobs.len)
-		output[REF(officer_mobs[index])] = distribution[index]
-
-	return output
 
 /datum/controller/subsystem/ticker/proc/transfer_characters()
 	var/list/livings = list()
