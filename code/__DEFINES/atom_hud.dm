@@ -124,3 +124,13 @@
 #define SECHUD_RELIGIOUS_RESPONSE_OFFICER "hudreligiousresponseofficer"
 #define SECHUD_JANITORIAL_RESPONSE_OFFICER "hudjanitorialresponseofficer"
 #define SECHUD_ENTERTAINMENT_RESPONSE_OFFICER "hudentertainmentresponseofficer"
+
+//hl13 jobz ids icons define
+#define SECHUD_CITIZEN "hudcitizen"
+#define SECHUD_CIVIL_PROTECTION "hudcivilprotection"
+#define SECHUD_CIVIL_WORKERS_UNION_DIRECTOR "hudcwudirector"
+#define SECHUD_CIVIL_PROTECTION_COMMANDER "hudcivilprotectioncommander"
+#define SECHUD_CIVIL_PROTECTION_UNION "hudcivilprotectionunion"
+#define SECHUD_CITY_ADMINISTRATOR "hudcityadministrator"
+#define SECHUD_CIVIL_WORKERS_UNION_MEMBER "hudcwumember"
+#define SECHUD_CIVIL_WORKERS_UNION_MEDIC "hudcwumedic"
