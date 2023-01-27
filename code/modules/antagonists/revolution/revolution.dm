@@ -30,12 +30,7 @@
 
 /datum/antagonist/rev/apply_innate_effects(mob/living/mob_override)
 	var/mob/living/M = mob_override || owner.current
-	handle_clown_mutation(M, mob_override ? null : "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
 	add_team_hud(M, /datum/antagonist/rev)
-
-/datum/antagonist/rev/remove_innate_effects(mob/living/mob_override)
-	var/mob/living/M = mob_override || owner.current
-	handle_clown_mutation(M, removing = FALSE)
 
 /datum/antagonist/rev/on_mindshield(mob/implanter)
 	remove_revolutionary(FALSE, implanter)
@@ -208,12 +203,9 @@
 	assistant.hairstyle = hairstyle
 	assistant.update_body_parts()
 
-	var/icon/assistant_icon = render_preview_outfit(/datum/outfit/job/assistant/consistent, assistant)
-	assistant_icon.ChangeOpacity(0.5)
 
 	qdel(assistant)
 
-	return assistant_icon
 
 /datum/antagonist/rev/proc/can_be_converted(mob/living/candidate)
 	if(!candidate.mind)
