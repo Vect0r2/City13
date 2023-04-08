@@ -206,5 +206,4 @@
 #define DEPARTMENT_OVERWATCH "Overwatch Transhuman Arm"
 #define DEPARTMENT_BITFLAG_CITIZENS (1<<14)
 #define DEPARTMENT_CITIZENS "Citizens"
-#define DEPARTMENT_BITFLAG_RESISTANCE (1<<15)
-#define DEPARTMENT_RESISTANCE "The Resistance"
+
