@@ -194,3 +194,17 @@
 #define SUPERVISOR_HOS "the Head of Security"
 #define SUPERVISOR_QM "the Quartermaster"
 #define SUPERVISOR_RD "the Research Director"
+
+//hl13
+#define DEPARTMENT_BITFLAG_CIVIL_PROTECTION (1<<10)
+#define DEPARTMENT_CIVIL_PROTECTION "Civil Protection"
+#define DEPARTMENT_BITFLAG_ADMINISTRATION (1<<11)
+#define DEPARTMENT_ADMINISTRATION "The Administration"
+#define DEPARTMENT_BITFLAG_CIVIL_WORKERS_UNION (1<<12)
+#define DEPARTMENT_CIVIL_WORKERS_UNION "Civil Workers' Union"
+#define DEPARTMENT_BITFLAG_OVERWATCH (1<<13)
+#define DEPARTMENT_OVERWATCH "Overwatch Transhuman Arm"
+#define DEPARTMENT_BITFLAG_CITIZENS (1<<14)
+#define DEPARTMENT_CITIZENS "Citizens"
+#define DEPARTMENT_BITFLAG_RESISTANCE (1<<15)
+#define DEPARTMENT_RESISTANCE "The Resistance"
