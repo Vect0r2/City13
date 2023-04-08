@@ -166,6 +166,8 @@
 	poster_item_name = initial(selected.poster_item_name)
 	poster_item_desc = initial(selected.poster_item_desc)
 	poster_item_icon_state = initial(selected.poster_item_icon_state)
+	poster_item_placing_animation = initial(selected.poster_item_placing_animation)
+	poster_ruined_icon_state = initial(selected.poster_ruined_icon_state)
 	ruined = initial(selected.ruined)
 	if(length(GLOB.holidays) && prob(30)) // its the holidays! lets get festive
 		apply_holiday()
@@ -207,6 +209,8 @@
 
 	//HL13 CODE
 	icon_state = poster_ruined_icon_state
+	name = "Ripped Combine Poster"
+	desc = "It has been ripped. Probably some rebel scum did it."
 	ruined = TRUE
 	add_fingerprint(user)
 	//HL13 CODE

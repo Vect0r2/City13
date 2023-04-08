@@ -44,3 +44,7 @@ endmap
 
 map multiz_debug
 endmap
+
+map City13
+	#default
+endmap
