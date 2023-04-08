@@ -1,4 +1,3 @@
-//hl13
 /obj/structure/fluff/pedestrian_pole
 	name = "pedestrian pole"
 	desc = "A pole."

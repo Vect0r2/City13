@@ -6,5 +6,5 @@
 	name = "Civil Protection Gas Mask"
 	icon_state = "cp_mask"
 	worn_icon_state = "cp_mask"
-	hudtype = /obj/item/clothing/glasses/hud/hl13/combine/cp/night
+	/* hudtype = /obj/item/clothing/glasses/hud/hl13/combine/cp/night */
 	has_fov = FALSE

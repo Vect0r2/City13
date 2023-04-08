@@ -27,24 +27,24 @@
 #define DIAG_MECH_HUD "11"
 /// Bot HUDs
 #define DIAG_BOT_HUD "12"
-/// Circuit assembly health bar
-#define DIAG_CIRCUIT_HUD "13"
 /// Mech/Silicon tracking beacon, Circutry long range icon
-#define DIAG_TRACK_HUD "14"
+#define DIAG_TRACK_HUD "13"
 /// Airlock shock overlay
-#define DIAG_AIRLOCK_HUD "15"
+#define DIAG_AIRLOCK_HUD "14"
 /// Bot path indicators
-#define DIAG_PATH_HUD "16"
+#define DIAG_PATH_HUD "15"
 /// Gland indicators for abductors
-#define GLAND_HUD "17"
-#define SENTIENT_DISEASE_HUD "18"
-#define AI_DETECT_HUD "19"
+#define GLAND_HUD "16"
+#define SENTIENT_DISEASE_HUD "17"
+#define AI_DETECT_HUD "18"
 /// Displays launchpads' targeting reticle
-#define DIAG_LAUNCHPAD_HUD "22"
+#define DIAG_LAUNCHPAD_HUD "19"
 //for antag huds. these are used at the /mob level
-#define ANTAG_HUD "23"
+#define ANTAG_HUD "20"
 // for fans to identify pins
-#define FAN_HUD "24"
+#define FAN_HUD "21"
+/// Mech camera HUD
+#define DIAG_CAMERA_HUD "22"
 
 //by default everything in the hud_list of an atom is an image
 //a value in hud_list with one of these will change that behavior
@@ -124,13 +124,3 @@
 #define SECHUD_RELIGIOUS_RESPONSE_OFFICER "hudreligiousresponseofficer"
 #define SECHUD_JANITORIAL_RESPONSE_OFFICER "hudjanitorialresponseofficer"
 #define SECHUD_ENTERTAINMENT_RESPONSE_OFFICER "hudentertainmentresponseofficer"
-
-//hl13 jobz ids icons define
-#define SECHUD_CITIZEN "hudcitizen"
-#define SECHUD_CIVIL_PROTECTION "hudcivilprotection"
-#define SECHUD_CIVIL_WORKERS_UNION_DIRECTOR "hudcwudirector"
-#define SECHUD_CIVIL_PROTECTION_COMMANDER "hudcivilprotectioncommander"
-#define SECHUD_CIVIL_PROTECTION_UNION "hudcivilprotectionunion"
-#define SECHUD_CITY_ADMINISTRATOR "hudcityadministrator"
-#define SECHUD_CIVIL_WORKERS_UNION_MEMBER "hudcwumember"
-#define SECHUD_CIVIL_WORKERS_UNION_MEDIC "hudcwumedic"

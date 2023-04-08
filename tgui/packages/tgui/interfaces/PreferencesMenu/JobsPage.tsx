@@ -402,19 +402,6 @@ export const JobsPage = () => {
               <Department department="Security">
                 <Gap amount={6} />
               </Department>
-              //hl13
-              
-              <Department department="CivilProtection">
-                <Gap amount={6} />
-              </Department>
-
-              <Department department="CivilWorkersUnion">
-                <Gap amount={6} />
-              </Department>
-
-              <Department department="TheAdministration">
-                <Gap amount={6} />
-              </Department>
 
               <Department department="Medical" />
             </Stack.Item>

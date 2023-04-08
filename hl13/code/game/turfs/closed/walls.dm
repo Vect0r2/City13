@@ -61,8 +61,8 @@
 	icon = 'hl13/icons/turf/walls/train_wall.dmi'
 	base_icon_state = "train"
 	icon_state = "train-157"
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_TRAIN_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_TRAIN_WALLS)
+	smoothing_groups = SMOOTH_GROUP_CLOSED_TURFS + SMOOTH_GROUP_TRAIN_WALLS
+	canSmoothWith = SMOOTH_GROUP_TRAIN_WALLS
 
 
 

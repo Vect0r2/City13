@@ -42,6 +42,10 @@
 	item_generation_time = item_generation_wait
 	START_PROCESSING(SSobj, src)
 
+/datum/component/mob_harvest/Destroy(force, silent)
+	STOP_PROCESSING(SSobj, src)
+	return ..()
+
 /datum/component/mob_harvest/vv_edit_var(var_name, var_value)
 	var/amount_changed
 	if(var_name == NAMEOF(src, max_ready))
@@ -52,26 +56,41 @@
 	if(var_name == NAMEOF(src, amount_ready) && var_value != amount_ready)
 		amount_changed = TRUE
 	. = ..()
-	if(amount_changed)
-		SEND_SIGNAL(parent, COMSIG_LIVING_HARVEST_UPDATE, amount_ready)
+	if(amount_changed && !iscarbon(parent))
+		var/mob/living/living_parent = parent
+		living_parent.update_appearance(UPDATE_ICON_STATE)
 
 /datum/component/mob_harvest/process(delta_time)
 	///only track time if we aren't dead and have room for more items
 	var/mob/living/harvest_mob = parent
-	if(harvest_mob.stat != DEAD && amount_ready < max_ready)
-		item_generation_time -= delta_time
-		if(item_generation_time <= 0)
-			item_generation_time = item_generation_wait
-			amount_ready++
-			SEND_SIGNAL(parent, COMSIG_LIVING_HARVEST_UPDATE, amount_ready)
+	if(harvest_mob.stat == DEAD || amount_ready >= max_ready)
+		return
+
+	item_generation_time -= delta_time
+	if(item_generation_time > 0)
+		return
+
+	item_generation_time = item_generation_wait
+	amount_ready++
+	if(iscarbon(parent))
+		return
+
+	var/mob/living/living_parent = parent
+	living_parent.update_appearance(UPDATE_ICON_STATE)
 
 /datum/component/mob_harvest/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/on_examine)
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/on_attackby)
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(on_attackby))
+
+	// Only do update_icon_state business on non-carbon mobs
+	if(!iscarbon(parent))
+		RegisterSignal(parent, COMSIG_ATOM_UPDATE_ICON_STATE, PROC_REF(on_update_icon_state))
+
+		var/mob/living/living_parent = parent
+		living_parent.update_appearance(UPDATE_ICON_STATE)
 
 /datum/component/mob_harvest/UnregisterFromParent()
-	STOP_PROCESSING(SSobj, src)
-	UnregisterSignal(parent, list(COMSIG_PARENT_EXAMINE, COMSIG_PARENT_ATTACKBY))
+	UnregisterSignal(parent, list(COMSIG_PARENT_EXAMINE, COMSIG_PARENT_ATTACKBY, COMSIG_ATOM_UPDATE_ICON_STATE))
 
 ///signal called on parent being examined
 /datum/component/mob_harvest/proc/on_examine(datum/source, mob/user, list/examine_list)
@@ -89,11 +108,27 @@
 	SIGNAL_HANDLER
 
 	if(istype(used_item, harvest_tool))
-		INVOKE_ASYNC(src, .proc/harvest_item, user)
+		INVOKE_ASYNC(src, PROC_REF(harvest_item), user)
+		return COMPONENT_NO_AFTERATTACK
+
 	if(istype(used_item, fed_item))
 		remove_wait_time(user)
 		qdel(used_item)
-	return COMPONENT_NO_AFTERATTACK
+		return COMPONENT_NO_AFTERATTACK
+
+/// Signal proc for [COMSIG_ATOM_UPDATE_ICON_STATE]
+/datum/component/mob_harvest/proc/on_update_icon_state(datum/source)
+	SIGNAL_HANDLER
+
+	// If this is being used on a carbon or human, don't update any icon states, just leave it
+	if(iscarbon(parent))
+		return
+
+	var/mob/living/living_parent = parent
+	if(living_parent.stat == DEAD)
+		return
+
+	living_parent.icon_state = "[living_parent.base_icon_state || initial(living_parent.icon_state)][amount_ready < 1 ? "_harvested" : ""]"
 
 /**
  * Proc called from attacking the component parent with the correct item, reduces wait time between items
@@ -104,7 +139,7 @@
 /datum/component/mob_harvest/proc/remove_wait_time(mob/user)
 	if(amount_ready >= max_ready)
 		to_chat(user, span_warning("[parent] looks too full to keep feeding!"))
-		return		
+		return
 	item_generation_time -= item_reduction_time
 	to_chat(user, span_notice("You feed [parent]."))
 	return
@@ -124,7 +159,8 @@
 		playsound(parent, item_harvest_sound, 20, TRUE)
 		to_chat(user, span_notice("You harvest some [produced_item_desc] from [parent]."))
 		amount_ready--
-		SEND_SIGNAL(parent, COMSIG_LIVING_HARVEST_UPDATE, amount_ready)
+		if(!iscarbon(parent))
+			var/mob/living/living_parent = parent
+			living_parent.update_appearance(UPDATE_ICON_STATE)
 		new produced_item_typepath(get_turf(parent))
 		return
-		

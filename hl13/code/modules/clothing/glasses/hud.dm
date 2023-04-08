@@ -5,4 +5,4 @@
 	hud_type = DATA_HUD_SECURITY_ADVANCED
 	hud_trait = TRAIT_SECURITY_HUD
 	flash_protect = FLASH_PROTECTION_FLASH
-	glass_colour = /datum/client_colour/glass_colour/blue
+	glass_colour_type = /datum/client_colour/glass_colour/blue

@@ -74,7 +74,7 @@
 	uniform = /obj/item/clothing/under/rank/security/officer/spacepol
 	suit = /obj/item/clothing/suit/armor/vest/blueshirt
 	belt = /obj/item/gun/ballistic/automatic/pistol/m1911
-	head = /obj/item/clothing/head/helmet/police
+	head = /obj/item/clothing/head/hats/warden/police
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	shoes = /obj/item/clothing/shoes/jackboots
 	mask = /obj/item/clothing/mask/gas/sechailer/swat/spacepol
@@ -122,8 +122,8 @@
 		/obj/item/clothing/suit/armor/vest/russian_coat,
 	)
 	var/static/list/alt_helmets = list(
-		/obj/item/clothing/head/bearpelt,
-		/obj/item/clothing/head/ushanka,
+		/obj/item/clothing/head/costume/bearpelt,
+		/obj/item/clothing/head/costume/ushanka,
 		/obj/item/clothing/head/helmet/rus_helmet,
 	)
 
@@ -152,7 +152,7 @@
 
 /datum/outfit/russian_hunter/leader
 	name = "Russian Hunter Leader"
-	head = /obj/item/clothing/head/ushanka
+	head = /obj/item/clothing/head/costume/ushanka
 	shoes = /obj/item/clothing/shoes/combat
 
 /datum/outfit/russian_hunter/leader/pre_equip(mob/living/carbon/human/equip_to)
@@ -162,7 +162,7 @@
 	name = "Bounty Hunter - Armored"
 	uniform = /obj/item/clothing/under/rank/prisoner
 	back = /obj/item/storage/backpack
-	head = /obj/item/clothing/head/hunter
+	head = /obj/item/clothing/head/cowboy
 	suit = /obj/item/clothing/suit/space/hunter
 	belt = /obj/item/gun/ballistic/automatic/pistol/fire_mag
 	gloves = /obj/item/clothing/gloves/tackler/combat
@@ -192,7 +192,7 @@
 	name = "Bounty Hunter - Hook"
 	uniform = /obj/item/clothing/under/rank/prisoner
 	back = /obj/item/storage/backpack
-	head = /obj/item/clothing/head/scarecrow_hat
+	head = /obj/item/clothing/head/costume/scarecrow_hat
 	gloves = /obj/item/clothing/gloves/botanic_leather
 	ears = /obj/item/radio/headset
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -248,3 +248,22 @@
 
 /obj/item/card/id/advanced/bountyhunter/ert
 	trim = /datum/id_trim/centcom/bounty_hunter
+
+/datum/outfit/invisible_man
+	name = "Invisible Man"
+	uniform = /obj/item/clothing/under/suit/black_really
+	back = /obj/item/storage/backpack/satchel/leather
+	shoes = /obj/item/clothing/shoes/laceup
+	glasses = /obj/item/clothing/glasses/monocle
+	mask = /obj/item/clothing/mask/cigarette/pipe
+	ears = /obj/item/radio/headset
+
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/invisibility = 3,
+	)
+
+/datum/outfit/invisible_man/post_equip(mob/living/carbon/human/equipee, visualsOnly)
+	. = ..()
+
+	var/obj/item/implant/camouflage/invisibility_implant = new(equipee)
+	invisibility_implant.implant(equipee)

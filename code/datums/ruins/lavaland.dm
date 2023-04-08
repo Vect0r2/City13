@@ -150,6 +150,15 @@
 	name = "Blood-Drunk Miner (Hunter)"
 	suffix = "lavaland_surface_blooddrunk3.dmm"
 
+/datum/map_template/ruin/lavaland/blood_drunk_miner/random
+	name = "Blood-Drunk Miner (Random)"
+	suffix = null
+	always_place = TRUE
+
+/datum/map_template/ruin/lavaland/blood_drunk_miner/random/New()
+	suffix = pick("lavaland_surface_blooddrunk1.dmm", "lavaland_surface_blooddrunk2.dmm", "lavaland_surface_blooddrunk3.dmm")
+	return ..()
+
 /datum/map_template/ruin/lavaland/ufo_crash
 	name = "UFO Crash"
 	id = "ufo-crash"
@@ -167,7 +176,7 @@
 
 /datum/map_template/ruin/lavaland/fountain
 	name = "Fountain Hall"
-	id = "fountain"
+	id = "lava_fountain"
 	description = "The fountain has a warning on the side. DANGER: May have undeclared side effects that only become obvious when implemented."
 	prefix = "_maps/RandomRuins/AnywhereRuins/"
 	suffix = "fountain_hall.dmm"

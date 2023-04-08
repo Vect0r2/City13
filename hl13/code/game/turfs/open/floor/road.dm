@@ -5,5 +5,5 @@
 	icon_state = "road-0"
 	base_icon_state = "road"
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_TURF_COBBLESTONE_ROAD)
-	canSmoothWith = list(SMOOTH_GROUP_TURF_COBBLESTONE_ROAD)
+	smoothing_groups = SMOOTH_GROUP_TURF_OPEN + SMOOTH_GROUP_TURF_COBBLESTONE_ROAD
+	canSmoothWith = SMOOTH_GROUP_TURF_COBBLESTONE_ROAD
