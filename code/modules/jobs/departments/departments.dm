@@ -137,3 +137,32 @@
 /// Catch-all department for undefined jobs.
 /datum/job_department/undefined
 	display_order = 10
+
+//hl13
+/datum/job_department/administration
+	department_name = DEPARTMENT_ADMINISTRATION
+	department_bitflags = DEPARTMENT_BITFLAG_ADMINISTRATION
+	department_head = /datum/job/captain
+	department_experience_type = EXP_TYPE_COMMAND
+	display_order = 11
+	label_class = "administration"
+	ui_color = "#9A2617"
+
+
+/datum/job_department/civilprotection
+	department_name = DEPARTMENT_CIVIL_PROTECTION
+	department_bitflags = DEPARTMENT_BITFLAG_CIVIL_PROTECTION
+	department_head = /datum/job/captain
+	department_experience_type = EXP_TYPE_SECURITY
+	display_order = 12
+	label_class = "civilprotection"
+	ui_color = "#093145"
+
+/datum/job_department/civilworkersunion
+	department_name = DEPARTMENT_CIVIL_PROTECTION
+	department_bitflags = DEPARTMENT_BITFLAG_CIVIL_WORKERS_UNION
+	department_head = /datum/job/captain
+	department_experience_type = EXP_TYPE_SUPPLY
+	display_order = 13
+	label_class = "civilworkersunion"
+	ui_color = "#BCA136"
