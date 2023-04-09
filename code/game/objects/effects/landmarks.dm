@@ -212,6 +212,21 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	primary_ai = FALSE
 	latejoin_active = FALSE
 
+
+//hl13 job spawns
+/obj/effect/landmark/start/hl13/civil_protection
+	name = "Civil Protection"
+	icon_state = "Civil Protection"
+
+/obj/effect/landmark/start/hl13/citizen
+	name = "Citizen"
+	icon_state = "Citizen"
+
+/obj/effect/landmark/start/hl13/civil_protection_commander
+	name = "Civil Protection Commander"
+	icon_state = "Civil Protection Commander"
+//hl13 jobs spawns end
+
 //Department Security spawns
 
 /obj/effect/landmark/start/depsec
