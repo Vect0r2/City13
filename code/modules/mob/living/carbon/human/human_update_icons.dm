@@ -187,6 +187,10 @@ There are several things that need to be remembered:
 			return
 
 		var/icon_file = 'icons/mob/clothing/hands.dmi'
+		// HL13 CODE
+		if (worn_item.hl13_flag)
+			icon_file = worn_item.worn_icon
+		// HL13 CODE
 
 		var/mutable_appearance/gloves_overlay = gloves.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = icon_file)
 		if(OFFSET_GLOVES in dna.species.offset_features)
@@ -291,6 +295,10 @@ There are several things that need to be remembered:
 			return
 
 		var/icon_file = DEFAULT_SHOES_FILE
+		//HL13 code
+		if (worn_item.hl13_flag)
+			icon_file = worn_item.worn_icon
+		//HL13 CODE
 
 		var/mutable_appearance/shoes_overlay = shoes.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = icon_file)
 		if(!shoes_overlay)
