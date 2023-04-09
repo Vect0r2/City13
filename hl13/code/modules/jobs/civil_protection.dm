@@ -28,6 +28,8 @@
 
 /datum/outfit/job/civil_protection
 	name = JOB_CIVIL_PROTECTION
+	id = /obj/item/card/id/advanced/hl13
+	id_trim = /datum/id_trim/job/civil_protection
 	jobtype = /datum/job/civil_protection
 	mask = /obj/item/clothing/mask/gas/hl13/combine/civil_protection
 	suit = /obj/item/clothing/suit/armor/hl13/combine/civil_protection_vest

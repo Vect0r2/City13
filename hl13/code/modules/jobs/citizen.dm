@@ -29,6 +29,8 @@
 
 /datum/outfit/job/citizen
 	name = JOB_CITIZEN
+	id = /obj/item/card/id/advanced/hl13
+	id_trim = /datum/id_trim/job/citizen
 	jobtype = /datum/job/citizen
 	uniform = /obj/item/clothing/under/hl13/rank/citizen
 	shoes = /obj/item/clothing/shoes/sneakers/brown

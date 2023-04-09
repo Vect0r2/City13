@@ -45,6 +45,7 @@
 /datum/outfit/job/cpc
 	name = "Civil Protection Commander"
 	jobtype = /datum/job/civil_protection_commander
+	id = /obj/item/card/id/advanced/hl13
 	id_trim = /datum/id_trim/job/head_of_security
 	uniform = /obj/item/clothing/under/hl13/rank/combine/civil_protection
 	suit = /obj/item/clothing/suit/armor/hl13/combine/civil_protection_vest
