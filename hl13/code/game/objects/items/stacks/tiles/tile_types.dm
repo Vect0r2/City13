@@ -120,6 +120,8 @@
 	name = "cobblestone floor tiles"
 	singular_name = "cobblestone floor tile"
 	desc = "Stoney street, where may it lead...?"
+	icon = 'hl13/icons/obj/tiles.dmi'
+	base_icon_state = "cobblestone_obj"
 	icon_state = "cobblestone_obj"
 	turf_type = /turf/open/floor/city_floor/cobblestone_floor
 
@@ -132,6 +134,8 @@
 	name = "combine floor tiles"
 	singular_name = "combine floor tile"
 	desc = "A strange, blue-tinted otherworldly metal, cold to the touch"
+	icon = 'hl13/icons/obj/tiles.dmi'
+	base_icon_state = "combine_tile_obj"
 	icon_state = "combine_tile_obj"
 	turf_type = /turf/open/floor/city_floor/combine_floor
 
@@ -144,6 +148,8 @@
 	name = "wooden floor tiles"
 	singular_name = "wooden floor tile"
 	desc = "Creaky wooden floors, covered in a fine layer of dust and grime"
+	icon = 'hl13/icons/obj/tiles.dmi'
+	base_icon_state = "wooden_floor_obj"
 	icon_state = "wooden_floor_obj"
 	turf_type = /turf/open/floor/city_floor/wooden_floor
 
@@ -155,6 +161,8 @@
 /obj/item/stack/tile/white_tiles_tiles
 	name = "white tiles tiles"
 	singular_name = "white tiles tile"
+	icon = 'hl13/icons/obj/tiles.dmi'
+	base_icon_state = "white_tiles_obj"
 	icon_state = "white_tiles_obj"
 	turf_type = /turf/open/floor/city_floor/white_tiles
 
@@ -164,6 +172,8 @@
 /obj/item/stack/tile/black_tiles_tiles
 	name = "black tiles tiles"
 	singular_name = "black tiles tile"
+	icon = 'hl13/icons/obj/tiles.dmi'
+	base_icon_state = "black_tiles_obj"
 	icon_state = "black_tiles_obj"
 	turf_type = /turf/open/floor/city_floor/black_tiles
 

@@ -43,4 +43,6 @@
 
 		need to choose what buildstacktype to use
 		Standard in chair --> var/buildstacktype = /obj/item/stack/sheet/iron
+
+		-linkovervord
    */
