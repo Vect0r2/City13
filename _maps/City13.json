@@ -3,5 +3,17 @@
 	"map_name": "City 13",
 	"map_path": "map_files/City13Taky",
 	"map_file": "City13Takyon.dmm",
-	"shuttles": {}
+	"shuttles": {},
+	"planetary": 1,
+	"traits": [
+		{
+			"Up": 1,
+			"Down": -1,
+			"Mining": false,
+			"Linkage": "Self",
+			"Gravity": true,
+			"Baseturf": "/turf/open/misc/grass/jungle",
+			"No Parallax": true
+		}
+	]
 }
