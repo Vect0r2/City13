@@ -373,6 +373,10 @@ There are several things that need to be remembered:
 			return
 
 		var/icon_file = 'icons/mob/clothing/belt.dmi'
+		//HL13 code
+		if (worn_item.hl13_flag)
+			icon_file = worn_item.worn_icon
+		//HL13 CODE
 
 		var/mutable_appearance/belt_overlay = belt.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = icon_file)
 		if(OFFSET_BELT in dna.species.offset_features)
