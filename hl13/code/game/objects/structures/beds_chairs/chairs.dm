@@ -6,10 +6,21 @@
 	can_buckle = FALSE //TODO: FIND A WORKAROUND TO MAKE SO THAT EVEN IF WE'RE IT WILL SET THE DIRECTION OF THE SEAT SOUTH, I ALREADY HAVE SOME IDEAS THAT I WILL TACKLE IN THE FUTURE -Tatune
 	var/welded = TRUE
 
+
+
+/obj/structure/chair/hl13/woodenbench/AltClick(mob/user)
+	if (welded)
+		to_chat(user, span_notice("You can't rotate it. It's welded to the floor."))
+	return ..()
+
+/obj/structure/chair/hl13/woodenbench/alt_click_secondary(mob/user)
+	if (welded)
+		to_chat(user, span_notice("You can't rotate it. It's welded to the floor."))
+	return ..()
+
 /obj/structure/chair/hl13/woodenbench/setDir(newdir)
 	if (!welded)
-		..()
-
+		return ..()
 
 /obj/structure/chair/hl13/woodenbench/welder_act(mob/living/user, obj/item/tool)
 	if(!tool.tool_start_check(user, amount=0))
@@ -20,7 +31,7 @@
 	if(!tool.use_tool(src, user, 20, 1, 50))
 		return FALSE
 	welded = !welded
-	to_chat(user, span_notice("You [welded ? "unweld":"weld"] [src] [welded ? "free from":"to"] the floor."))
+	to_chat(user, span_notice("You [welded ? "weld":"unweld"] [src] [welded ? "to":"free from"] the floor."))
 	return TRUE
 
 
