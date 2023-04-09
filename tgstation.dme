@@ -5224,6 +5224,7 @@
 #include "hl13\code\modules\clothing\head\helmet.dm"
 #include "hl13\code\modules\clothing\masks\gasmask.dm"
 #include "hl13\code\modules\clothing\masks\toggles.dm"
+#include "hl13\code\modules\clothing\neck\neck.dm"
 #include "hl13\code\modules\clothing\shoes\shoes.dm"
 #include "hl13\code\modules\clothing\suits\armor.dm"
 #include "hl13\code\modules\clothing\suits\toggles.dm"
