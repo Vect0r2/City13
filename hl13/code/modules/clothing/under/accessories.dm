@@ -7,3 +7,9 @@
 	desc = ""
 	icon_state = "cp_armband"
 	attachment_slot = null
+
+/obj/item/clothing/accessory/hl13/cwu_armband
+	name = "civil worker union armband"
+	desc = ""
+	icon_state = "cwu_armband"
+	attachment_slot = null
