@@ -19,5 +19,9 @@
 /obj/item/clothing/under/hl13/rank/combine/civil_protection
 	name = "civil protection uniform"
 	icon_state = "civil_protection"
-	inhand_icon_state = "bl_suit"
+	inhand_icon_state = "bl_suit" //TODO create inhand icon
 
+/obj/item/clothing/under/hl13/rank/combine/civil_protection_commander
+	name = "civil protection commander uniform"
+	icon_state = "civil_protection_commander"
+	inhand_icon_state = "syndicate-black-red" //TODO create inhand icon

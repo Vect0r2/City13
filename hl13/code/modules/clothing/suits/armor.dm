@@ -5,6 +5,10 @@
 /obj/item/clothing/suit/armor/hl13/combine/civil_protection_vest
 	name = "civil protection vest"
 	icon_state = "cp_vest"
-	inhand_icon_state = "armoralt"
+	inhand_icon_state = "armoralt" //TODO create inhand icon
 	helmettype = /obj/item/clothing/head/helmet/hl13/combine/helmet/civil_protection
 
+/obj/item/clothing/suit/armor/hl13/combine/civil_protection_vest/commando
+	name = "civil protection commando vest"
+	icon_state = "cp_vest_cpc"
+	inhand_icon_state = "armoralt" //TODO create inhand icon
