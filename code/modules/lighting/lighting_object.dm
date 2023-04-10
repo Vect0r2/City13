@@ -8,6 +8,9 @@
 	///the turf that our light is applied to
 	var/turf/affected_turf
 
+	/// Area which gets linked to a lighting object to make it consider the luminosity from the day/night blending from the area. Yes this isn't ideal, but applying luminosity up to 2 (from both sources) on the turf is not ideal either
+	var/area/day_night_area
+
 // Global list of lighting underlays, indexed by z level
 GLOBAL_LIST_EMPTY(default_lighting_underlays_by_z)
 
