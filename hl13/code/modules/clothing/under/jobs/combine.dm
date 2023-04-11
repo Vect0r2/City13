@@ -18,6 +18,7 @@
 
 /obj/item/clothing/under/hl13/rank/combine/civil_protection
 	name = "civil protection uniform"
+	desc = "Standard issue Civil Protection uniform. It's quite comfortable, and protects against the cold weather. No use in a firefight though."
 	icon_state = "civil_protection"
 	inhand_icon_state = "bl_suit"
 

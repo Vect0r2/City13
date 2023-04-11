@@ -4,6 +4,7 @@
 
 /obj/item/clothing/suit/armor/hl13/combine/civil_protection_vest
 	name = "civil protection vest"
+	desc = "Standard issue Civil Protection vest. Good resistance to bullets and stabbings alike."
 	icon_state = "cp_vest"
 	inhand_icon_state = "armoralt"
 	helmettype = /obj/item/clothing/head/helmet/hl13/combine/helmet/civil_protection
