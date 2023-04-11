@@ -6,3 +6,6 @@
 	hud_trait = TRAIT_SECURITY_HUD
 	flash_protect = FLASH_PROTECTION_FLASH
 	glass_colour_type = /datum/client_colour/glass_colour/blue
+
+/obj/item/clothing/glasses/hud/hl13/combine/cp/night/commando
+	glass_colour_type = /datum/client_colour/glass_colour/lightorange
