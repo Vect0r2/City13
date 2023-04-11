@@ -369,6 +369,10 @@ export const JobsPage = () => {
                 <Gap amount={6} />
               </Department>
 
+              <Department department="CivilWorkersUnion">
+                <Gap amount={6} />
+              </Department>
+
               <Department department="Science">
                 <Gap amount={6} />
               </Department>
@@ -382,6 +386,10 @@ export const JobsPage = () => {
 
             <Stack.Item mr={1}>
               <PriorityHeaders />
+
+              <Department department="TheAdministration">
+                <Gap amount={6} />
+              </Department>
 
               <Department department="Captain">
                 <Gap amount={6} />
@@ -400,6 +408,10 @@ export const JobsPage = () => {
               <PriorityHeaders />
 
               <Department department="Security">
+                <Gap amount={6} />
+              </Department>
+
+              <Department department="CivilProtection">
                 <Gap amount={6} />
               </Department>
 
