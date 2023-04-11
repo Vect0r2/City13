@@ -6,6 +6,7 @@
 
 /obj/item/clothing/mask/gas/hl13/combine/civil_protection
 	name = "Civil Protection Gas Mask"
+	desc = "Standard issue Civil Protection mask. Features night vision visors, vocoder and total anonymity to the wearer. Offers decent protection and looks quite intimidating."
 	icon_state = "cp_mask"
 	worn_icon_state = "cp_mask"
 	inhand_icon_state = "cp_mask"

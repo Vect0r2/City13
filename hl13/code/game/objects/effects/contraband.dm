@@ -33,7 +33,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/hl13/combine/random, 32)
 
 /obj/structure/sign/poster/hl13/combine/yellow_propaganda_cmb
 	name = "Combine Propaganda"
-	desc = "The logo of the Combine, with 'CMB' written in the lower right corner."
+	desc = "The logo of the Combine, with 'CMB' written in black in the lower right corner."
 	icon_state = "poster_2"
 	poster_item_placing_animation = "poster_2_set"
 	poster_ruined_icon_state = "poster_2_ripped"
@@ -54,7 +54,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/hl13/combine/random, 32)
 
 /obj/structure/sign/poster/hl13/combine/yellow_propaganda_admin
 	name = "Combine Propaganda"
-	desc = "A portrait of our city administrator."
+	desc = "A portrait of our city administrator. They look proud."
 	icon_state = "poster_5"
 	poster_item_placing_animation = "poster_5_set"
 	poster_ruined_icon_state = "poster_5_ripped"
