@@ -10,7 +10,7 @@
 
 SUBSYSTEM_DEF(day_night)
 	name = "Day/Night Cycle"
-	wait = 6 SECONDS // Every 6 seconds, the clock moves forward 1 minutes
+	wait = 1.5 SECONDS // Every 6 seconds, the clock moves forward 1 minutes
 	init_order = INIT_ORDER_DAY_NIGHT
 	/// The current hour
 	var/current_hour = 0
@@ -22,7 +22,7 @@ SUBSYSTEM_DEF(day_night)
 	var/tick_time = DAY_NIGHT_SUBSYSTEM_FIRE_INCREMENT
 
 /datum/controller/subsystem/day_night/Initialize(start_timeofday)
-	current_hour = rand(0, 23) // We set the starting station time to something random.
+	current_hour = 8 //set to 8 so that we can always start at morning 8:00 AM
 	load_day_night_controller()
 	update_controllers(current_hour)
 	return SS_INIT_SUCCESS
