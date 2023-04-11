@@ -25,7 +25,7 @@ SUBSYSTEM_DEF(day_night)
 	current_hour = rand(0, 23) // We set the starting station time to something random.
 	load_day_night_controller()
 	update_controllers(current_hour)
-	return ..()
+	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/day_night/fire(resumed)
 	tick_tock(tick_time)

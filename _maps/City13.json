@@ -3,18 +3,16 @@
 	"map_name": "City 13",
 	"map_path": "map_files/City13Taky",
 	"map_file": "City13Takyon.dmm",
+	"day_night_controller": "/datum/day_night_controller/city13",
 	"shuttles": {},
 	"planetary": 1,
 	"traits": [
 		{
-			"Up": 1,
-			"Down": -1,
 			"Mining": false,
 			"Linkage": "Self",
 			"Gravity": true,
 			"Baseturf": "/turf/open/misc/grass/jungle",
 			"No Parallax": true
 		}
-	],
-	"day_night_controller": "/datum/day_night_controller/icebox"
+	]
 }

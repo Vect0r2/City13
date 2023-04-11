@@ -174,11 +174,12 @@
  */
 /datum/day_night_controller/proc/update_area_appearance(light_color, light_alpha)
 	var/mutable_appearance/updated_appearance = mutable_appearance(
-		'icons/effects/daynight_blend.dmi',
-		"white",
-		DAY_NIGHT_LIGHTING_LAYER,
-		LIGHTING_PLANE,
-		light_alpha
+		icon = 'icons/effects/daynight_blend.dmi',
+		icon_state = "white",
+		layer = DAY_NIGHT_LIGHTING_LAYER,
+		plane = LIGHTING_PLANE,
+		alpha = light_alpha,
+		offset_const = GET_Z_PLANE_OFFSET(affected_z_level)
 		)
 	updated_appearance.color = light_color
 	area_appearance = updated_appearance
@@ -241,6 +242,16 @@
 
 // PRESETS
 /datum/day_night_controller/icebox
+	lightzones = list(
+		/datum/lightzone/midnight,
+		/datum/lightzone/early_morning,
+		/datum/lightzone/morning,
+		/datum/lightzone/midday,
+		/datum/lightzone/early_evening,
+		/datum/lightzone/evening,
+	)
+
+/datum/day_night_controller/city13
 	lightzones = list(
 		/datum/lightzone/midnight,
 		/datum/lightzone/early_morning,

@@ -42,7 +42,7 @@
 	var/library_areas = list()
 
 	/// What day/night controller should we add when this map is loaded? if any.
-	var/day_night_controller
+	var/day_night_controller = /datum/day_night_controller/city13
 
 /**
  * Proc that simply loads the default map config, which should always be functional.
