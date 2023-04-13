@@ -10,7 +10,6 @@
 	icon_state = "cp_mask"
 	worn_icon_state = "cp_mask"
 	inhand_icon_state = "cp_mask"
-	/* hudtype = /obj/item/clothing/glasses/hud/hl13/combine/cp/night */
 	has_fov = FALSE
 
 /obj/item/clothing/mask/gas/hl13/combine/commando
@@ -18,5 +17,4 @@
 	icon_state = "cp_mask_cpc"
 	worn_icon_state = "cp_mask_cpc"
 	inhand_icon_state = "cp_mask_cpc"
-	/* hudtype = /obj/item/clothing/glasses/hud/hl13/combine/cp/night */
 	has_fov = FALSE
