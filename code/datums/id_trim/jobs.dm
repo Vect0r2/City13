@@ -1177,7 +1177,7 @@
 	job = /datum/job/citizen
 
 /datum/id_trim/job/civil_protection
-	assignment = "Civil Protection"
+	assignment = "Civil Protection officer"
 	trim_state = "trim_hl13civilprotection"
 	department_color = COLOR_CP_BLUE
 	sechud_icon_state = SECHUD_HL13_CIVIL_PROTECTION

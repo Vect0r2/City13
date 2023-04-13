@@ -200,7 +200,7 @@
 #define JOB_CIVIL_PROTECTION_COMMANDER "Civil Protection Commander"
 #define JOB_DISPLAY_ORDER_CIVIL_PROTECTION_COMMANDER 36
 
-#define JOB_CIVIL_PROTECTION "Civil Protection"
+#define JOB_CIVIL_PROTECTION "Civil Protection officer"
 #define JOB_DISPLAY_ORDER_CIVIL_PROTECTION 37
 
 #define JOB_CITIZEN "Citizen"
