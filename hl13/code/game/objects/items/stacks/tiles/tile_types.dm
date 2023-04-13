@@ -9,7 +9,6 @@
 	inhand_icon_state = "tile"
 	merge_type = /obj/item/stack/tile/concrete
 	mats_per_unit = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT * 0.25)
-	replace_plating = TRUE
 
 /obj/item/stack/tile/concrete/concrete_road
 	name = "concrete road"
@@ -72,7 +71,6 @@
 	inhand_icon_state = "tile"
 	merge_type = /obj/item/stack/tile/yellow_floor
 	mats_per_unit = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT * 0.25)
-	replace_plating = TRUE
 
 /obj/item/stack/tile/yellow_floor/yellow_floor_tiles
 	name = "yellow floor tiles"
@@ -123,6 +121,7 @@
 	icon = 'hl13/icons/obj/tiles.dmi'
 	base_icon_state = "cobblestone_obj"
 	icon_state = "cobblestone_obj"
+	inhand_icon_state = "tile"
 	turf_type = /turf/open/floor/city_floor/cobblestone_floor
 
 /obj/item/stack/tile/cobblestone_tiles/sixty
@@ -137,6 +136,7 @@
 	icon = 'hl13/icons/obj/tiles.dmi'
 	base_icon_state = "combine_tile_obj"
 	icon_state = "combine_tile_obj"
+	inhand_icon_state = "tile"
 	turf_type = /turf/open/floor/city_floor/combine_floor
 
 /obj/item/stack/tile/combine_tiles/sixty
@@ -151,6 +151,7 @@
 	icon = 'hl13/icons/obj/tiles.dmi'
 	base_icon_state = "wooden_floor_obj"
 	icon_state = "wooden_floor_obj"
+	inhand_icon_state = "tile"
 	turf_type = /turf/open/floor/city_floor/wooden_floor
 
 /obj/item/stack/tile/wooden_floor_tiles/sixty
@@ -164,6 +165,7 @@
 	icon = 'hl13/icons/obj/tiles.dmi'
 	base_icon_state = "white_tiles_obj"
 	icon_state = "white_tiles_obj"
+	inhand_icon_state = "tile"
 	turf_type = /turf/open/floor/city_floor/white_tiles
 
 /obj/item/stack/tile/white_tiles_tiles/sixty
@@ -175,6 +177,7 @@
 	icon = 'hl13/icons/obj/tiles.dmi'
 	base_icon_state = "black_tiles_obj"
 	icon_state = "black_tiles_obj"
+	inhand_icon_state = "tile"
 	turf_type = /turf/open/floor/city_floor/black_tiles
 
 /obj/item/stack/tile/black_tiles_tiles/sixty
