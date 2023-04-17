@@ -17,4 +17,5 @@
 	icon_state = "cp_mask_cpc"
 	worn_icon_state = "cp_mask_cpc"
 	inhand_icon_state = "cp_mask_cpc"
+	hud_type = /obj/item/clothing/glasses/hud/hl13/combine/cp/night/commando
 	has_fov = FALSE

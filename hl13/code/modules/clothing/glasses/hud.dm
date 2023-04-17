@@ -5,7 +5,9 @@
 	hud_type = DATA_HUD_SECURITY_ADVANCED
 	hud_trait = TRAIT_SECURITY_HUD
 	flash_protect = FLASH_PROTECTION_FLASH
-	glass_colour_type = /datum/client_colour/glass_colour/blue
+	color_cutoffs = null
+	color_cutoff_to_set = list(170,170,255)
+	glass_colour_type = /datum/client_colour/glass_colour/lightblue
 
 /obj/item/clothing/glasses/hud/hl13/combine/cp/night/commando
 	glass_colour_type = /datum/client_colour/glass_colour/lightorange
