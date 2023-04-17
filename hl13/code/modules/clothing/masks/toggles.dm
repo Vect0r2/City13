@@ -87,6 +87,6 @@
 			icon_state = "[icon_state]_nv"
 		else
 			icon_state = initial(icon_state)
-		actiontype.button_icon_state = icon_state //TODO fix this so that the button shows the same state of the item
-		SEND_SIGNAL(actiontype, COMSIG_ATOM_UPDATE_ICON_STATE)
+		actiontype.button_icon_state = icon_state
+		actiontype.build_all_button_icons()
 		SEND_SIGNAL(user.wear_mask, COMSIG_HANDLE_NIGHT_VISION, night_vision, user)
