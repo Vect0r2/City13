@@ -66,7 +66,6 @@
 	update_slot_icon()
 	user.update_glasses_color(user.glasses, TRUE)
 
-
 /obj/item/clothing/glasses/hud/hl13/combine/
 	actions_types = list(/datum/action/item_action/toggle_night_vision)
 	var/night_vision = FALSE
@@ -87,4 +86,3 @@
 	if(istype(actiontype, /datum/action/item_action/toggle_night_vision))
 		night_vision = !night_vision
 		SEND_SIGNAL(user.wear_mask, COMSIG_HANDLE_NIGHT_VISION, night_vision, user)
-
