@@ -6,8 +6,6 @@
 	has_fov = FALSE
 	///Setting the hud_type we want the mask to generate
 	var/hud_type = /obj/item/clothing/glasses/hud/hl13/combine/cp/night
-	///check if eye slot is empty or not when putting on the mask
-	var/eyes_slot_empty = TRUE
 
 /obj/item/clothing/mask/gas/hl13/combine/Initialize(mapload)
 	. = ..()
@@ -85,4 +83,10 @@
 /obj/item/clothing/glasses/hud/hl13/combine/ui_action_click(mob/living/carbon/human/user, datum/action/item_action/actiontype)
 	if(istype(actiontype, /datum/action/item_action/toggle_night_vision))
 		night_vision = !night_vision
+		if (night_vision)
+			icon_state = "[icon_state]_nv"
+		else
+			icon_state = initial(icon_state)
+		actiontype.button_icon_state = icon_state //TODO fix this so that the button shows the same state of the item
+		SEND_SIGNAL(actiontype, COMSIG_ATOM_UPDATE_ICON_STATE)
 		SEND_SIGNAL(user.wear_mask, COMSIG_HANDLE_NIGHT_VISION, night_vision, user)
