@@ -18,7 +18,7 @@
 
 /area/city13/inside
 	name = "City Street"
-	icon_state = "transit_tube"
+	icon_state = "sec_prison"
 	has_gravity = TRUE
 	always_unpowered = FALSE
 	power_environ = TRUE
