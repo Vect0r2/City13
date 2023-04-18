@@ -5200,6 +5200,7 @@
 #include "hl13\code\game\objects\effects\contraband.dm"
 #include "hl13\code\game\objects\items\stacks\tiles\tile_types.dm"
 #include "hl13\code\game\objects\items\storage\belt.dm"
+#include "hl13\code\game\objects\items\storage\briefcase.dm"
 #include "hl13\code\game\objects\structures\decorative.dm"
 #include "hl13\code\game\objects\structures\filing_cab.dm"
 #include "hl13\code\game\objects\structures\material_doors.dm"
