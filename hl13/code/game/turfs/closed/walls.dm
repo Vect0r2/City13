@@ -1,48 +1,48 @@
 /turf/closed/wall/concrete_wall
 	name = "concrete wall"
-	desc = "A huge chunk of concrete used to separate rooms."
+	desc = "A boring old yellow concrete wall. Remnants of a dead civilization, but protection against the weather."
 	icon = 'hl13/icons/turf/walls/concrete_wall.dmi'
 	base_icon_state = "concrete1"
 	icon_state = "concrete1-0"
 
 /turf/closed/wall/urban_concrete_wall
 	name = "urban concrete wall"
-	desc = "A huge chunk of concrete used to separate rooms."
+	desc = "A huge chunk of concrete. Wow!"
 	icon = 'hl13/icons/turf/walls/concrete2_wall.dmi'
 	base_icon_state = "concrete2"
 	icon_state = "concrete2-0"
 
 /turf/closed/wall/cp_concrete_wall
 	name = "security concrete wall"
-	desc = "A huge chunk of concrete used to separate rooms."
+	desc = "A concrete wall painted blue to signify a Civil Protection controlled area."
 	icon = 'hl13/icons/turf/walls/cp_wall.dmi'
 	base_icon_state = "cp"
 	icon_state = "cp-0"
 
 /turf/closed/wall/lobby_concrete_wall
 	name = "lobby concrete wall"
-	desc = "A huge chunk of concrete used to separate rooms."
+	desc = "A concrete wall painted orange."
 	icon = 'hl13/icons/turf/walls/lobby_wall.dmi'
 	base_icon_state = "lobby"
 	icon_state = "lobby-0"
 
 /turf/closed/wall/store_concrete_wall
 	name = "store concrete wall"
-	desc = "A huge chunk of concrete used to separate rooms."
+	desc = "The concrete exterior of a CWU store."
 	icon = 'hl13/icons/turf/walls/store_wall.dmi'
 	base_icon_state = "concrete1"
 	icon_state = "concrete1-0"
 
 /turf/closed/wall/brick_wall
 	name = "brick wall"
-	desc = "A huge lay of bricks used to separate rooms."
+	desc = "A huge lay of bricks."
 	icon = 'hl13/icons/turf/walls/brick_wall.dmi'
 	base_icon_state = "brick1"
 	icon_state = "brick1-0"
 
 /turf/closed/wall/combine_wall
 	name = "combine wall"
-	desc = "A strange, blue-tinted otherworldy metal wall, cold to the touch"
+	desc = "A strange, blue-tinted otherworldy metal wall. Cold to the touch."
 	icon = 'hl13/icons/turf/walls/combine_wall.dmi'
 	base_icon_state = "combine"
 	icon_state = "combine-0"

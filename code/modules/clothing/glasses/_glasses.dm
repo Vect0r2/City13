@@ -19,6 +19,9 @@
 	/// A percentage of how much rgb to "max" on the lighting plane
 	/// This lets us brighten darkness without washing out bright color
 	var/lighting_cutoff = null
+	/// HL13 CODE STARTS HERE
+	/// COLOR CUTOFF THAT NEEDS TO BE PUT IN
+	var/list/color_cutoff_to_set = null
 	/// Similar to lighting_cutoff, except it has individual r g and b components in the same 0-100 scale
 	var/list/color_cutoffs = null
 	/// The current hud icons
