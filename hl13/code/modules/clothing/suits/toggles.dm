@@ -8,13 +8,16 @@
 	if(helmet_up)
 		MakeHelmet()
 
-/obj/item/clothing/suit/armor/hl13/combine/equipped(mob/living/user, slot)
+/obj/item/clothing/suit/armor/hl13/combine/equipped(mob/living/carbon/user, slot)
 	. = ..()
 	if(ishuman(loc))
 		if(slot != ITEM_SLOT_OCLOTHING)
 			return
-		else
-			ToggleHelmet()
+		if(!isnull(user.head))
+			to_chat(user, span_notice("You removed your [user.head.name] to let the armor vest's helmet fit."))
+			user.equip_to_slot_if_possible(user.head, ITEM_SLOT_HANDS, 0, 0, 1)
+			user.head = null
+		ToggleHelmet()
 
 /obj/item/clothing/suit/armor/hl13/combine/Destroy()
 	. = ..()

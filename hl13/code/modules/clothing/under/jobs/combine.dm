@@ -4,6 +4,7 @@
 	has_sensor = HAS_SENSORS
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
+	can_adjust = FALSE
 
 /datum/armor/under_combine
 	melee = 10
@@ -20,5 +21,9 @@
 	name = "civil protection uniform"
 	desc = "Standard issue Civil Protection uniform. It's quite comfortable, and protects against the cold weather. No use in a firefight though."
 	icon_state = "civil_protection"
-	inhand_icon_state = "bl_suit"
+	inhand_icon_state = "civil_protection"
 
+/obj/item/clothing/under/hl13/rank/combine/civil_protection_commander
+	name = "civil protection commander uniform"
+	icon_state = "civil_protection_commander"
+	inhand_icon_state = "civil_protection_commander"
