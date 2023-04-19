@@ -652,6 +652,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 			'icons/effects/daynight_blend.dmi',
 			"[adjacent_day_night_turf_cache[iterating_turf][DAY_NIGHT_TURF_INDEX_BITFIELD]]",
 			DAY_NIGHT_LIGHTING_LAYER,
+			src,
 			LIGHTING_PLANE,
 			incoming_controller.current_light_alpha,
 			RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
