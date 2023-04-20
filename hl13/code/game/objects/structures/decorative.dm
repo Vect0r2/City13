@@ -1,6 +1,6 @@
 /obj/structure/fluff/pedestrian_pole
 	name = "pedestrian pole"
-	desc = "A pole."
+	desc = "A black and white pedestrian pole."
 	icon = 'hl13/icons/obj/citydecorations.dmi'
 	icon_state = "pedestrian_pole"
 	layer = ABOVE_OPEN_TURF_LAYER
@@ -23,7 +23,7 @@
 
 /obj/structure/sign/wall_clock
 	name = "\improper Wall Clock"
-	desc = "An analog clock that has been ticking since before you were born."
+	desc = "An analog clock. What does the time tell?"
 	icon = 'hl13/icons/obj/citydecorations.dmi'
 	icon_state = "clock"
 	is_editable = FALSE

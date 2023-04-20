@@ -23,6 +23,9 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	///Icon file for right inhand overlays
 	var/righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 
+	///All hl13 items will have this at some point, it is a workaround to avoid default files inconvenience
+	var/hl13_flag = FALSE
+
 	///Icon file for mob worn overlays.
 	var/icon/worn_icon
 	///Icon state for mob worn overlays, if null the normal icon_state will be used.
