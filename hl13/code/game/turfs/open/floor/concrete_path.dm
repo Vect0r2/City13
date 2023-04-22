@@ -1,5 +1,5 @@
 /turf/open/floor/city_floor/concrete_path
-	icon = 'hl13/icons/turf/floors/road.dmi'
+	icon = 'hl13/icons/turf/floors/concretepath.dmi'
 	name = "concrete path"
 	desc = "Withered by time"
 	icon_state = "path-0"
@@ -7,4 +7,4 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_TURF_OPEN + SMOOTH_GROUP_TURF_CONCRETE_PATH
 	canSmoothWith = SMOOTH_GROUP_TURF_CONCRETE_PATH
-	floor_tile = ""
+	floor_tile = /obj/item/stack/tile/concrete/concrete_path

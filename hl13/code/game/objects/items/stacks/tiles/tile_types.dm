@@ -40,24 +40,14 @@
 /obj/item/stack/tile/concrete/concrete_tiles/sixty
 	amount = 60
 
-/obj/item/stack/tile/concrete/concrete_path_vertical
+/obj/item/stack/tile/concrete/concrete_path
 	name = "concrete path"
 	singular_name = "concrete path tile"
 	desc = "Withered by time"
 	icon_state = "concretepath1_obj"
-	turf_type = /turf/open/floor/city_floor/concrete_path_vertical
+	turf_type = /turf/open/floor/city_floor/concrete_path
 
-/obj/item/stack/tile/concrete/concrete_path_vertical/sixty
-	amount = 60
-
-/obj/item/stack/tile/concrete/concrete_path_horizontal
-	name = "concrete path"
-	singular_name = "concrete path tile"
-	desc = "Withered by time"
-	icon_state = "concretepath2_obj"
-	turf_type = /turf/open/floor/city_floor/concrete_path_horizontal
-
-/obj/item/stack/tile/concrete/concrete_path_orizzontal
+/obj/item/stack/tile/concrete/concrete_path/sixty
 	amount = 60
 
 //Yellow Floor
