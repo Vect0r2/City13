@@ -124,6 +124,16 @@
 	inhand_icon_state = "tile"
 	turf_type = /turf/open/floor/city_floor/cobblestone_floor
 
+/obj/item/stack/tile/cobblestone_road_tiles
+	name = "cobblestone road tiles"
+	singular_name = "cobblestone road tile"
+	desc = "Stoney street, where may it lead...?"
+	icon = 'hl13/icons/obj/tiles.dmi'
+	base_icon_state = "road_obj"
+	icon_state = "road_obj"
+	inhand_icon_state = "tile"
+	turf_type = /turf/open/floor/city_floor/cobblestone_road
+
 /obj/item/stack/tile/cobblestone_tiles/sixty
 	amount = 60
 

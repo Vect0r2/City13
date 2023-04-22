@@ -16,6 +16,7 @@
 	icon_state = "concrete_3"
 	floor_tile = /obj/item/stack/tile/concrete/concrete_tiles
 
+//DELETE THIS THIS BELOW
 /turf/open/floor/city_floor/concrete_path_vertical
 	name = "concrete path"
 	desc = "Withered by time"
