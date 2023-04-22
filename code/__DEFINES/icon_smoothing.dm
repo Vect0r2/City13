@@ -173,6 +173,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 
 //HL13 CODE STARTS HERE (unfortunatly you cant change definers in other files so you must stick to this)
 #define SMOOTH_GROUP_TRAIN_WALLS S_OBJ(73)
+#define SMOOTH_GROUP_PLASTIC_TABLES S_OBJ(74)
 
 //HL13 CODE ENDS HERE
 
