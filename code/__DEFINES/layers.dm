@@ -45,6 +45,10 @@
 ///Normal 1 per turf dynamic lighting underlays
 #define LIGHTING_PLANE 10
 
+///Area appearances for the day night lighting effect
+#define DAY_NIGHT_LIGHTING_LAYER 10
+
+
 ///Lighting objects that are "free floating"
 #define O_LIGHTING_VISUAL_PLANE 11
 #define O_LIGHTING_VISUAL_RENDER_TARGET "O_LIGHT_VISUAL_PLANE"

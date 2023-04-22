@@ -41,6 +41,9 @@
 	/// List of additional areas that count as a part of the library
 	var/library_areas = list()
 
+	/// What day/night controller should we add when this map is loaded? if any.
+	var/day_night_controller = /datum/day_night_controller/city13
+
 /**
  * Proc that simply loads the default map config, which should always be functional.
  */
@@ -198,6 +201,13 @@
 				stack_trace("Invalid path in mapping config for additional library areas: \[[path_as_text]\]")
 				continue
 			library_areas += path
+
+	if("day_night_controller" in json)
+		var/path = text2path(json["day_night_controller"])
+		if(!ispath(path, /datum/day_night_controller))
+			stack_trace("Invalid path in mapping config for day_night_controller!")
+		else
+			day_night_controller = path
 
 	defaulted = FALSE
 	return TRUE
