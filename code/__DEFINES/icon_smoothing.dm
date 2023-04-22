@@ -107,9 +107,10 @@ DEFINE_BITFIELD(smoothing_flags, list(
 
 //HL13 CODE STARTS HERE (unfortunatly you cant change definers in other files so you must stick to this)
 #define SMOOTH_GROUP_TURF_COBBLESTONE_ROAD S_TURF(60)
+#define SMOOTH_GROUP_TURF_CONCRETE_PATH S_TURF(61)
 
 #undef MAX_S_TURF //Undefining vanilla MAX_S_TURF
-#define MAX_S_TURF 60 //Always set this as the last one of this list
+#define MAX_S_TURF 61 //Always set this as the last one of this list
 //HL13 CODE ENDS HERE
 
 
@@ -173,6 +174,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 
 //HL13 CODE STARTS HERE (unfortunatly you cant change definers in other files so you must stick to this)
 #define SMOOTH_GROUP_TRAIN_WALLS S_OBJ(73)
+#define SMOOTH_GROUP_PLASTIC_TABLES S_OBJ(74)
 
 //HL13 CODE ENDS HERE
 
