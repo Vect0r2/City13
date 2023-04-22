@@ -5211,6 +5211,8 @@
 #include "hl13\code\game\objects\structures\filing_cab.dm"
 #include "hl13\code\game\objects\structures\material_doors.dm"
 #include "hl13\code\game\objects\structures\stairs.dm"
+#include "hl13\code\game\objects\structures\table_frames.dm"
+#include "hl13\code\game\objects\structures\table_racks.dm"
 #include "hl13\code\game\objects\structures\trash_can.dm"
 #include "hl13\code\game\objects\structures\windows.dm"
 #include "hl13\code\game\objects\structures\beds_chairs\chairs.dm"
