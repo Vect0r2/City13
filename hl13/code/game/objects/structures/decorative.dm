@@ -42,7 +42,7 @@
 	density = TRUE
 	anchored = TRUE
 	layer = ABOVE_MOB_LAYER
-	plane = -15
+	plane = GAME_PLANE_UPPER
 
 /obj/structure/station_clock/examine(mob/user)
 	. = ..()
