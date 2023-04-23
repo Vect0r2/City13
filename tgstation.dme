@@ -5204,6 +5204,7 @@
 #include "hl13\code\datums\toggles.dm"
 #include "hl13\code\game\area\areas.dm"
 #include "hl13\code\game\objects\effects\contraband.dm"
+#include "hl13\code\game\objects\items\melee\baton.dm"
 #include "hl13\code\game\objects\items\stacks\tiles\tile_types.dm"
 #include "hl13\code\game\objects\items\storage\belt.dm"
 #include "hl13\code\game\objects\items\storage\briefcase.dm"
