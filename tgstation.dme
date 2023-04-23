@@ -5247,6 +5247,8 @@
 #include "hl13\code\modules\clothing\under\jobs\civilian.dm"
 #include "hl13\code\modules\clothing\under\jobs\combine.dm"
 #include "hl13\code\modules\clothing\under\jobs\cwu.dm"
+#include "hl13\code\modules\projectiles\boxes_magazines\pistol.dm"
+#include "hl13\code\modules\projectiles\guns\ballistic\pistol.dm"
 #include "interface\fonts.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"
