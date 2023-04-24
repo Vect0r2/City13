@@ -1631,12 +1631,9 @@
 	name = "Green Team identification card"
 	desc = "A card used to identify members of the green team for CTF"
 	icon_state = "ctf_green"
-/*
 
-█──█ █── ▄█─ █▀▀█ 　 █▀▀ █▀▀█ █▀▀█ █▀▀▄ █▀▀
-█▀▀█ █── ─█─ ──▀▄ 　 █── █▄▄█ █▄▄▀ █──█ ▀▀█
-▀──▀ ▀▀▀ ▄█▄ █▄▄█ 　 ▀▀▀ ▀──▀ ▀─▀▀ ▀▀▀─ ▀▀▀
-*/
+//hl13 code
+
 /obj/item/card/id/advanced/hl13
 	name = "Combine identification card"
 	desc = "A testament to how far humanity has fallen."
