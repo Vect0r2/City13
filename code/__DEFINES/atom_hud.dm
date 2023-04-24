@@ -129,5 +129,6 @@
 
 #define SECHUD_HL13_CITIZEN "hudhl13citizen"
 #define SECHUD_HL13_CIVIL_PROTECTION "hudhl13civilprotection"
+#define SECHUD_HL13_CIVIL_PROTECTION_COMMANDER "hudhl13civilprotectioncommander"
 
 //hl13 hud defines end
