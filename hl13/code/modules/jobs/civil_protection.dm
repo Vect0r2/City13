@@ -33,7 +33,8 @@
 	jobtype = /datum/job/civil_protection
 	mask = /obj/item/clothing/mask/gas/hl13/combine/civil_protection
 	suit = /obj/item/clothing/suit/armor/hl13/combine/civil_protection_vest
+	belt = /obj/item/storage/belt/hl13/cp_belt
 	uniform = /obj/item/clothing/under/hl13/rank/combine/civil_protection
-	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/hl13/cp_boots
+	gloves = /obj/item/clothing/gloves/hl13/cp_gloves
 	head = /obj/item/clothing/head/helmet/hl13/combine/helmet/civil_protection

@@ -33,7 +33,8 @@
 	id_trim = /datum/id_trim/job/citizen
 	jobtype = /datum/job/citizen
 	uniform = /obj/item/clothing/under/hl13/rank/citizen
-	shoes = /obj/item/clothing/shoes/sneakers/brown
+	shoes = /obj/item/clothing/shoes/hl13/brown_shoes
+	l_hand = /obj/item/storage/briefcase/hl13/citizen
 
 
 

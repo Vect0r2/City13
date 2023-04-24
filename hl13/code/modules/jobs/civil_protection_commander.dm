@@ -32,7 +32,7 @@
 	bounty_types = CIV_JOB_SEC
 
 	family_heirlooms = list(/obj/item/book/manual/wiki/security_space_law)
-	rpg_title = "Guard Leader"
+	rpg_title = "Throngler Captian"
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_BOLD_SELECT_TEXT | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 
 	voice_of_god_power = 1.4 //Command staff has authority
@@ -44,18 +44,19 @@
 
 /datum/outfit/job/cpc
 	name = "Civil Protection Commander"
-	jobtype = /datum/job/civil_protection_commander
+	jobtype = /datum/id_trim/job/civil_protection_commander
 	id = /obj/item/card/id/advanced/hl13
-	id_trim = /datum/id_trim/job/head_of_security
-	uniform = /obj/item/clothing/under/hl13/rank/combine/civil_protection
-	suit = /obj/item/clothing/suit/armor/hl13/combine/civil_protection_vest
+	id_trim = /datum/id_trim/job/civil_protection_commander
+	uniform = /obj/item/clothing/under/hl13/rank/combine/civil_protection_commander
+	suit = /obj/item/clothing/suit/armor/hl13/combine/civil_protection_vest/commando
 	head = /obj/item/clothing/head/helmet/hl13/combine/helmet/civil_protection
 	ears = /obj/item/radio/headset/heads/hos/alt
-	gloves = /obj/item/clothing/gloves/color/black
-	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/hl13/cp_gloves
+	shoes = /obj/item/clothing/shoes/hl13/cp_boots
 	l_pocket = /obj/item/restraints/handcuffs
-	mask = /obj/item/clothing/mask/gas/hl13/combine/civil_protection
+	mask = /obj/item/clothing/mask/gas/hl13/combine/commando
 
+	belt = /obj/item/storage/belt/hl13/cp_belt
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
