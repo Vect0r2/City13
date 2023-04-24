@@ -40,24 +40,14 @@
 /obj/item/stack/tile/concrete/concrete_tiles/sixty
 	amount = 60
 
-/obj/item/stack/tile/concrete/concrete_path_vertical
+/obj/item/stack/tile/concrete/concrete_path
 	name = "concrete path"
 	singular_name = "concrete path tile"
 	desc = "Withered by time"
 	icon_state = "concretepath1_obj"
-	turf_type = /turf/open/floor/city_floor/concrete_path_vertical
+	turf_type = /turf/open/floor/city_floor/concrete_path
 
-/obj/item/stack/tile/concrete/concrete_path_vertical/sixty
-	amount = 60
-
-/obj/item/stack/tile/concrete/concrete_path_horizontal
-	name = "concrete path"
-	singular_name = "concrete path tile"
-	desc = "Withered by time"
-	icon_state = "concretepath2_obj"
-	turf_type = /turf/open/floor/city_floor/concrete_path_horizontal
-
-/obj/item/stack/tile/concrete/concrete_path_orizzontal
+/obj/item/stack/tile/concrete/concrete_path/sixty
 	amount = 60
 
 //Yellow Floor
@@ -123,6 +113,16 @@
 	icon_state = "cobblestone_obj"
 	inhand_icon_state = "tile"
 	turf_type = /turf/open/floor/city_floor/cobblestone_floor
+
+/obj/item/stack/tile/cobblestone_road_tiles
+	name = "cobblestone road tiles"
+	singular_name = "cobblestone road tile"
+	desc = "Stoney street, where may it lead...?"
+	icon = 'hl13/icons/obj/tiles.dmi'
+	base_icon_state = "road_obj"
+	icon_state = "road_obj"
+	inhand_icon_state = "tile"
+	turf_type = /turf/open/floor/city_floor/cobblestone_road
 
 /obj/item/stack/tile/cobblestone_tiles/sixty
 	amount = 60

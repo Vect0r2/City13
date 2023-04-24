@@ -53,6 +53,9 @@
 	/// For space, the asteroid, lavaland, etc. Used with blueprints or with weather to determine if we are adding a new area (vs editing a station room)
 	var/outdoors = FALSE
 
+	/// Is this area considered underground? As in, is it not the top most Z level of a map? Used for determining if the day/night system should touch this area.
+	var/underground = FALSE
+
 	/// Size of the area in open turfs, only calculated for indoors areas.
 	var/areasize = 0
 
@@ -115,6 +118,11 @@
 
 	/// List of all air scrubbers in the area
 	var/list/obj/machinery/atmospherics/components/unary/vent_scrubber/air_scrubbers = list()
+
+
+	/// A normally empty cache used to store turf adjacencies for day/night lighting effects.
+	var/list/adjacent_day_night_turf_cache
+
 
 /**
  * A list of teleport locations
@@ -271,6 +279,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	//machinery cleanup
 	STOP_PROCESSING(SSobj, src)
 	QDEL_NULL(alarm_manager)
+	clear_adjacent_turfs()
 	firedoors = null
 	//atmos cleanup
 	firealarms = null
@@ -548,3 +557,133 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	if(name == initial(name))
 		return name
 	return "[name] ([initial(name)])"
+
+
+// Day night stuff
+/**
+ * This will calculate all adjacent turfs in this area and add them to a cache for lighting effects.
+ *
+ * WARNING: This proc is VERY expensive and should be used sparingly.
+ */
+/area/proc/initialize_day_night_adjacent_turfs()
+	LAZYCLEARLIST(adjacent_day_night_turf_cache)
+	LAZYINITLIST(adjacent_day_night_turf_cache)
+
+	for(var/turf/iterating_turf in contents)
+		var/bitfield = NONE
+		for(var/bit_step in ALL_JUNCTION_DIRECTIONS)
+			var/turf/target_turf
+			switch(bit_step)
+				if(NORTH_JUNCTION)
+					target_turf = locate(iterating_turf.x, iterating_turf.y + 1, iterating_turf.z)
+				if(SOUTH_JUNCTION)
+					target_turf = locate(iterating_turf.x, iterating_turf.y - 1, iterating_turf.z)
+				if(EAST_JUNCTION)
+					target_turf = locate(iterating_turf.x + 1, iterating_turf.y, iterating_turf.z)
+				if(WEST_JUNCTION)
+					target_turf = locate(iterating_turf.x - 1, iterating_turf.y, iterating_turf.z)
+				if(NORTHEAST_JUNCTION)
+					if(bitfield & NORTH_JUNCTION || bitfield & EAST_JUNCTION)
+						continue
+					target_turf = locate(iterating_turf.x + 1, iterating_turf.y + 1, iterating_turf.z)
+				if(SOUTHEAST_JUNCTION)
+					if(bitfield & SOUTH_JUNCTION || bitfield & EAST_JUNCTION)
+						continue
+					target_turf = locate(iterating_turf.x + 1, iterating_turf.y - 1, iterating_turf.z)
+				if(SOUTHWEST_JUNCTION)
+					if(bitfield & SOUTH_JUNCTION || bitfield & WEST_JUNCTION)
+						continue
+					target_turf = locate(iterating_turf.x - 1, iterating_turf.y - 1, iterating_turf.z)
+				if(NORTHWEST_JUNCTION)
+					if(bitfield & NORTH_JUNCTION || bitfield & WEST_JUNCTION)
+						continue
+					target_turf = locate(iterating_turf.x - 1, iterating_turf.y + 1, iterating_turf.z)
+			if(!target_turf)
+				continue
+			var/area/target_area = target_turf.loc
+			if(target_area == src)
+				continue
+			if(!target_area.outdoors || target_area.underground)
+				continue
+			bitfield ^= bit_step
+
+		if(!bitfield)
+			continue
+		adjacent_day_night_turf_cache[iterating_turf] = list(DAY_NIGHT_TURF_INDEX_BITFIELD, DAY_NIGHT_TURF_INDEX_APPEARANCE)
+		adjacent_day_night_turf_cache[iterating_turf][DAY_NIGHT_TURF_INDEX_BITFIELD] = bitfield
+		RegisterSignal(iterating_turf, COMSIG_PARENT_QDELETING, .proc/clear_adjacent_turf)
+		if(iterating_turf.lighting_object)
+			iterating_turf.lighting_object.day_night_area = src
+
+	UNSETEMPTY(adjacent_day_night_turf_cache)
+
+/**
+ * Completely clears any adjacent turfs from the area while removing the effect.
+ */
+/area/proc/clear_adjacent_turfs()
+	for(var/turf/iterating_turf as anything in adjacent_day_night_turf_cache)
+		clear_adjacent_turf(iterating_turf)
+	adjacent_day_night_turf_cache = null
+
+/**
+ * Clears a signle turf from the adjacency turf cache.
+ * Arguments:
+ * * turf_to_clear - The turf we will unregister with and clear of any effects.
+ */
+/area/proc/clear_adjacent_turf(turf/turf_to_clear)
+	SIGNAL_HANDLER
+
+	turf_to_clear.underlays -= adjacent_day_night_turf_cache[turf_to_clear][DAY_NIGHT_TURF_INDEX_APPEARANCE]
+	adjacent_day_night_turf_cache -= turf_to_clear
+	UnregisterSignal(turf_to_clear, COMSIG_PARENT_QDELETING)
+
+/**
+ * A handler to set all adjacent turfs to the correct lighting.
+ */
+/area/proc/apply_day_night_turfs(datum/day_night_controller/incoming_controller)
+	SIGNAL_HANDLER
+
+	if(!incoming_controller)
+		return
+
+	for(var/turf/iterating_turf as anything in adjacent_day_night_turf_cache)
+		iterating_turf.underlays -= adjacent_day_night_turf_cache[iterating_turf][DAY_NIGHT_TURF_INDEX_APPEARANCE]
+		var/mutable_appearance/appearance_to_add = mutable_appearance(
+			'icons/effects/daynight_blend.dmi',
+			"[adjacent_day_night_turf_cache[iterating_turf][DAY_NIGHT_TURF_INDEX_BITFIELD]]",
+			DAY_NIGHT_LIGHTING_LAYER,
+			src,
+			LIGHTING_PLANE,
+			incoming_controller.current_light_alpha,
+			RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
+			)
+		appearance_to_add.color = incoming_controller.current_light_color
+		if(incoming_controller.current_luminosity)
+			iterating_turf.luminosity = incoming_controller.current_luminosity
+		iterating_turf.underlays += appearance_to_add
+		adjacent_day_night_turf_cache[iterating_turf][DAY_NIGHT_TURF_INDEX_APPEARANCE] = appearance_to_add
+
+/**
+ * Used to update the area regarding day and night adjacency turfs.
+ *
+ * Use this to update the area if changes need to be made.
+ * Arguments:
+ * * initialize_turfs - This will call the expensive proc initialize_day_night_adjacent_turfs, recalculating all of the turfs after clearing them.
+ * * search_for_controller - This will make us look for a controller in our new z-level, and set us up to it if needed.
+ * * incoming_controller - The controller that is updating this areas lighting.
+ */
+/area/proc/update_day_night_turfs(initialize_turfs = FALSE, search_for_controller = FALSE, datum/day_night_controller/incoming_controller)
+	if(search_for_controller)
+		for(var/datum/day_night_controller/iterating_controller in SSday_night.cached_controllers)
+			if(iterating_controller.affected_z_level == z)
+				if(outdoors)
+					iterating_controller.register_affected_area(src)
+				else
+					iterating_controller.register_unaffected_area(src)
+	if(initialize_turfs)
+		if(adjacent_day_night_turf_cache)
+			clear_adjacent_turfs()
+		initialize_day_night_adjacent_turfs()
+	if(incoming_controller)
+		apply_day_night_turfs(incoming_controller)
+

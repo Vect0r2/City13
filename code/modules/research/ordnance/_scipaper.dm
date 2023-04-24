@@ -185,7 +185,7 @@
 		author = "Unknown"
 		et_alia = FALSE
 	if(!abstract)
-		abstract = "Published on [station_time_timestamp()]"
+		abstract = "Published on [SSday_night.get_twentyfourhour_timestamp()]"
 
 /datum/scientific_paper/explosive
 	/**

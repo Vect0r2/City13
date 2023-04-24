@@ -4,7 +4,7 @@
 	icon = 'hl13/icons/obj/citydecorations.dmi'
 	icon_state = "pedestrian_pole"
 	layer = ABOVE_OPEN_TURF_LAYER
-	plane = FLOOR_PLANE
+	plane = GAME_PLANE_UPPER
 	deconstructible = FALSE
 	density = 0
 	anchored = 1
@@ -32,4 +32,18 @@
 
 /obj/structure/sign/wall_clock/examine(mob/user)
 	. = ..()
-	. += span_info("Worn hands tell you it is: [station_time_timestamp()]")
+	. += span_info("Worn hands tell you it is: [SSday_night.get_twentyfourhour_timestamp()]")
+
+/obj/structure/station_clock
+	name = "train station clock"
+	desc = "An analog clock. What does the time tell?"
+	icon = 'hl13/icons/obj/station_clock.dmi'
+	icon_state = "station_clock"
+	density = TRUE
+	anchored = TRUE
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
+
+/obj/structure/station_clock/examine(mob/user)
+	. = ..()
+	. += span_info("Worn hands tell you it is: [SSday_night.get_twentyfourhour_timestamp()]")
