@@ -119,7 +119,6 @@
 	/// List of all air scrubbers in the area
 	var/list/obj/machinery/atmospherics/components/unary/vent_scrubber/air_scrubbers = list()
 
-
 	/// A normally empty cache used to store turf adjacencies for day/night lighting effects.
 	var/list/adjacent_day_night_turf_cache
 
@@ -288,6 +287,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	//turf cleanup
 	contained_turfs = null
 	turfs_to_uncontain = null
+	clear_adjacent_turf()
 	//parent cleanup
 	return ..()
 
@@ -569,7 +569,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	LAZYCLEARLIST(adjacent_day_night_turf_cache)
 	LAZYINITLIST(adjacent_day_night_turf_cache)
 
-	for(var/turf/iterating_turf in contents)
+	for(var/turf/iterating_turf as anything in get_contained_turfs())
 		var/bitfield = NONE
 		for(var/bit_step in ALL_JUNCTION_DIRECTIONS)
 			var/turf/target_turf
@@ -609,6 +609,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 
 		if(!bitfield)
 			continue
+
 		adjacent_day_night_turf_cache[iterating_turf] = list(DAY_NIGHT_TURF_INDEX_BITFIELD, DAY_NIGHT_TURF_INDEX_APPEARANCE)
 		adjacent_day_night_turf_cache[iterating_turf][DAY_NIGHT_TURF_INDEX_BITFIELD] = bitfield
 		RegisterSignal(iterating_turf, COMSIG_PARENT_QDELETING, .proc/clear_adjacent_turf)
@@ -649,13 +650,13 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	for(var/turf/iterating_turf as anything in adjacent_day_night_turf_cache)
 		iterating_turf.underlays -= adjacent_day_night_turf_cache[iterating_turf][DAY_NIGHT_TURF_INDEX_APPEARANCE]
 		var/mutable_appearance/appearance_to_add = mutable_appearance(
-			'icons/effects/daynight_blend.dmi',
-			"[adjacent_day_night_turf_cache[iterating_turf][DAY_NIGHT_TURF_INDEX_BITFIELD]]",
-			DAY_NIGHT_LIGHTING_LAYER,
-			src,
-			LIGHTING_PLANE,
-			incoming_controller.current_light_alpha,
-			RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
+			icon = 'icons/effects/daynight_blend.dmi',
+			icon_state = "[adjacent_day_night_turf_cache[iterating_turf][DAY_NIGHT_TURF_INDEX_BITFIELD]]",
+			layer = DAY_NIGHT_LIGHTING_LAYER,
+			offset_spokesman = iterating_turf,
+			plane = LIGHTING_PLANE,
+			alpha = incoming_controller.current_light_alpha,
+			appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
 			)
 		appearance_to_add.color = incoming_controller.current_light_color
 		if(incoming_controller.current_luminosity)

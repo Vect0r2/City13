@@ -46,7 +46,7 @@
 #define LIGHTING_PLANE 10
 
 ///Area appearances for the day night lighting effect
-#define DAY_NIGHT_LIGHTING_LAYER 10
+#define DAY_NIGHT_LIGHTING_LAYER 100
 
 
 ///Lighting objects that are "free floating"
