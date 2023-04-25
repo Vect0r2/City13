@@ -4,7 +4,7 @@
 	icon = 'hl13/icons/obj/citydecorations.dmi'
 	icon_state = "pedestrian_pole"
 	layer = ABOVE_OPEN_TURF_LAYER
-	plane = FLOOR_PLANE
+	plane = GAME_PLANE_UPPER
 	deconstructible = FALSE
 	density = 0
 	anchored = 1

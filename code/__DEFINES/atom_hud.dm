@@ -124,3 +124,11 @@
 #define SECHUD_RELIGIOUS_RESPONSE_OFFICER "hudreligiousresponseofficer"
 #define SECHUD_JANITORIAL_RESPONSE_OFFICER "hudjanitorialresponseofficer"
 #define SECHUD_ENTERTAINMENT_RESPONSE_OFFICER "hudentertainmentresponseofficer"
+
+// hl13 hud defines
+
+#define SECHUD_HL13_CITIZEN "hudhl13citizen"
+#define SECHUD_HL13_CIVIL_PROTECTION "hudhl13civilprotection"
+#define SECHUD_HL13_CIVIL_PROTECTION_COMMANDER "hudhl13civilprotectioncommander"
+
+//hl13 hud defines end

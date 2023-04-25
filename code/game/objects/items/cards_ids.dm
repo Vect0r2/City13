@@ -1632,6 +1632,15 @@
 	desc = "A card used to identify members of the green team for CTF"
 	icon_state = "ctf_green"
 
+//hl13 code
+
+/obj/item/card/id/advanced/hl13
+	name = "Combine identification card"
+	desc = "A testament to how far humanity has fallen."
+	icon_state = "card_hl13"
+	assigned_icon_state = "assigned_hl13"
+
+//hl13 cards end
 #undef INTERN_THRESHOLD_FALLBACK_HOURS
 #undef ID_ICON_BORDERS
 #undef HOLOPAY_PROJECTION_INTERVAL
