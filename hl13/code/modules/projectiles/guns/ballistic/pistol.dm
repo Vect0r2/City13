@@ -10,16 +10,15 @@
 	fire_delay = 0
 	actions_types = list()
 	bolt_type = BOLT_TYPE_LOCKING
-	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
-	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
-	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
-	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
-	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
-	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
+	fire_sound = 'hl13/sound/weapons/gun/USP/shot.ogg'
+	dry_fire_sound = 'hl13/sound/weapons/gun/USP/dry_fire.ogg'
+	load_sound = 'hl13/sound/weapons/gun/USP/mag_insert.ogg'
+	load_empty_sound = 'hl13/sound/weapons/gun/USP/mag_insert.ogg'
+	eject_sound = 'hl13/sound/weapons/gun/USP/mag_release.ogg'
+	eject_empty_sound = 'hl13/sound/weapons/gun/USP/mag_release.ogg'
+	rack_sound = 'hl13/sound/weapons/gun/USP/rack_small.ogg'
+	lock_back_sound = 'hl13/sound/weapons/gun/USP/lock_small.ogg'
+	bolt_drop_sound = 'hl13/sound/weapons/gun/USP/drop_small.ogg'
 	fire_sound_volume = 90
 	bolt_wording = "slide"
 
