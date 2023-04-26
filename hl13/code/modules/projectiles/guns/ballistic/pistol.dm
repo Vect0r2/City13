@@ -5,6 +5,7 @@
 	icon_state = "usp"
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/hl13/hl9mm/
+	vary_fire_sound = FALSE
 	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 0
