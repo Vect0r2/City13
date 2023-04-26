@@ -46,7 +46,10 @@
 
 /obj/item/melee/baton/security/hl13/proc/randomize_sound(soundin)
 	if(istext(soundin))
-		soundin = pick('hl13/sound/weapons/melee/stun_baton/stunstick_fleshhit2.ogg', 'hl13/sound/weapons/melee/stun_baton/stunstick_impact2.ogg')
+		if(soundin == "flesh")
+			soundin = pick('hl13/sound/weapons/melee/stun_baton/stunstick_fleshhit2.ogg', 'hl13/sound/weapons/melee/stun_baton/stunstick_fleshhit1.ogg')
+		if(soundin == "shield")
+			soundin = pick('hl13/sound/weapons/melee/stun_baton/stunstick_impact2.ogg', 'hl13/sound/weapons/melee/stun_baton/stunstick_impact1.ogg')
 	return soundin
 
 /obj/item/melee/baton/security/hl13/deductcharge(deducted_charge)
