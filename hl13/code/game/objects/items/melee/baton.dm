@@ -65,7 +65,7 @@
 		update_inhand_icon_state()
 		playsound(src, HL13_SFX_STUNBATON_SPARK, 75, FALSE, -1)
 
-/obj/item/melee/baton/proc/check_parried(mob/living/carbon/human/human_target, mob/living/user)
+/obj/item/melee/baton/security/hl13/check_parried(mob/living/carbon/human/human_target, mob/living/user)
 	if(!ishuman(human_target))
 		return
 	if (human_target.check_shields(src, 0, "[user]'s [name]", MELEE_ATTACK))
