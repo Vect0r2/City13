@@ -1,22 +1,22 @@
-
-/datum/job/cwu_member
-	title = JOB_CWU_MEMBER
+/datum/job/cwu_director
+	title = JOB_CWU_DIRECTOR
 	description = "Pay the workforce, handle imports and exports, offer loans with interest and manage the stores."
 	faction = FACTION_STATION
-	total_positions = 5
-	spawn_positions = 5
-	supervisors = JOB_CWU_DIRECTOR
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "place holder text"
 	exp_granted_type = EXP_TYPE_CREW
-	outfit = /datum/outfit/job/cwu_member
+	outfit = /datum/outfit/job/cwu_director
 	plasmaman_outfit = /datum/outfit/plasmaman
 	paycheck = PAYCHECK_LOWER
 
 	paycheck_department = ACCOUNT_CIV
-	display_order = JOB_DISPLAY_CWU_MEMBER
+	display_order = JOB_DISPLAY_CWU_DIRECTOR
 
 	department_for_prefs = /datum/job_department/civilworkersunion
 	departments_list = list(
 		/datum/job_department/civilworkersunion,
+		/datum/job_department/administration,
 		)
 
 
@@ -29,16 +29,20 @@
 	)
 
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
-	rpg_title = "Trades Man"
+	rpg_title = "The Merchent King"
 
-/datum/outfit/job/cwu_member
-	name = JOB_CWU_MEMBER
+/datum/outfit/job/cwu_director
+	name = JOB_CWU_DIRECTOR
 	id = /obj/item/card/id/advanced/hl13
-	id_trim = /datum/id_trim/job/cwu_member
-	jobtype = /datum/job/cwu_member
-	uniform = /obj/item/clothing/under/hl13/rank/cwu
+	id_trim = /datum/id_trim/job/cwu_director
+	jobtype = /datum/job/cwu_director
+
+	suit = /obj/item/clothing/suit/toggle/labcoat/hl13/jacket/cwu_director_jacket
+	uniform = /obj/item/clothing/under/hl13/rank/cwu/director
 	shoes = /obj/item/clothing/shoes/hl13/brown_shoes
 	l_hand = /obj/item/storage/briefcase/hl13/citizen
+
+	neck = /obj/item/clothing/neck/tie/hl13/cwu_director_tie
 	accessory = /obj/item/clothing/accessory/hl13/cwu_armband
 
 

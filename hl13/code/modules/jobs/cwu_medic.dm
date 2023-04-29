@@ -5,7 +5,7 @@
 	faction = FACTION_STATION
 	total_positions = 5
 	spawn_positions = 5
-	supervisors = "place holder text"
+	supervisors = JOB_CWU_DIRECTOR
 	exp_granted_type = EXP_TYPE_CREW
 	outfit = /datum/outfit/job/cwu_medic
 	plasmaman_outfit = /datum/outfit/plasmaman

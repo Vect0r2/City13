@@ -5252,6 +5252,7 @@
 #include "hl13\code\modules\jobs\civil_protection_commander.dm"
 #include "hl13\code\modules\jobs\cwu_member.dm"
 #include "hl13\code\modules\jobs\cwu_medic.dm"
+#include "hl13\code\modules\jobs\cwu_director.dm"
 #include "interface\fonts.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"

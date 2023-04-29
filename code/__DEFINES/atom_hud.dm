@@ -132,5 +132,6 @@
 #define SECHUD_HL13_CIVIL_PROTECTION_COMMANDER "hudhl13civilprotectioncommander"
 #define SECHUD_HL13_CWU_MEMBER "hudhl13cwumember"
 #define SECHUD_HL13_CWU_MEDIC "hudhl13medic"
+#define SECHUD_HL13_CWU_DIRECTOR "hudhl13cwudirector"
 
 //hl13 hud defines end

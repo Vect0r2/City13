@@ -76,3 +76,19 @@
 		ACCESS_HOP,
 		)
 	job = /datum/job/cwu_medic
+
+/datum/id_trim/job/cwu_director
+	assignment = "CWU Director"
+	trim_state = "trim_hl13cwudirector"
+	department_color = COLOR_ADMINISTRATION_RED
+	sechud_icon_state = SECHUD_HL13_CWU_DIRECTOR
+	minimal_access = list()
+	extra_access = list(
+		ACCESS_MAINT_TUNNELS,
+		)
+	template_access = list(
+		ACCESS_CAPTAIN,
+		ACCESS_CHANGE_IDS,
+		ACCESS_HOP,
+		)
+	job = /datum/job/cwu_director

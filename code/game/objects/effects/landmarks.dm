@@ -234,6 +234,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "CWU Medic"
 	icon_state = "CWU Medic"
 
+/obj/effect/landmark/start/hl13/cwu_director
+	name = "CWU Director"
+	icon_state = "CWU Director"
+
 //hl13 jobs spawns end
 
 //Department Security spawns
