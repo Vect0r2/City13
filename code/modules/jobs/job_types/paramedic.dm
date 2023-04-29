@@ -1,41 +1,6 @@
 /datum/job/paramedic
 	title = JOB_PARAMEDIC
-	description = "Run around the station looking for patients, respond to \
-		emergencies, give patients a roller bed ride to medbay."
-	department_head = list(JOB_CHIEF_MEDICAL_OFFICER)
-	faction = FACTION_STATION
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = SUPERVISOR_CMO
-	exp_granted_type = EXP_TYPE_CREW
 	config_tag = "PARAMEDIC"
-
-	outfit = /datum/outfit/job/paramedic
-	plasmaman_outfit = /datum/outfit/plasmaman/paramedic
-
-	paycheck = PAYCHECK_CREW
-	paycheck_department = ACCOUNT_MED
-
-	liver_traits = list(TRAIT_MEDICAL_METABOLISM)
-
-	display_order = JOB_DISPLAY_ORDER_PARAMEDIC
-	bounty_types = CIV_JOB_MED
-	departments_list = list(
-		/datum/job_department/medical,
-		)
-
-	family_heirlooms = list(/obj/item/storage/medkit/ancient/heirloom)
-
-	mail_goodies = list(
-		/obj/item/reagent_containers/hypospray/medipen = 20,
-		/obj/item/reagent_containers/hypospray/medipen/oxandrolone = 10,
-		/obj/item/reagent_containers/hypospray/medipen/salacid = 10,
-		/obj/item/reagent_containers/hypospray/medipen/salbutamol = 10,
-		/obj/item/reagent_containers/hypospray/medipen/penacid = 10,
-		/obj/item/reagent_containers/hypospray/medipen/survival/luxury = 5
-	)
-	rpg_title = "Corpse Runner"
-	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 
 
 /datum/outfit/job/paramedic

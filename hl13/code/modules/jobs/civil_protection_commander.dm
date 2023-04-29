@@ -55,6 +55,7 @@
 	shoes = /obj/item/clothing/shoes/hl13/cp_boots
 	l_pocket = /obj/item/restraints/handcuffs
 	mask = /obj/item/clothing/mask/gas/hl13/combine/commando
+	accessory = /obj/item/clothing/accessory/hl13/cp_armband
 
 	belt = /obj/item/storage/belt/hl13/cp_belt
 	backpack = /obj/item/storage/backpack/security

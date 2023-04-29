@@ -1,32 +1,6 @@
 /datum/job/shaft_miner
 	title = JOB_SHAFT_MINER
-	description = "Travel to strange lands. Mine ores. \
-		Meet strange creatures. Kill them for their gold."
-	department_head = list(JOB_QUARTERMASTER)
-	faction = FACTION_STATION
-	total_positions = 3
-	spawn_positions = 3
-	supervisors = SUPERVISOR_QM
-	exp_granted_type = EXP_TYPE_CREW
 	config_tag = "SHAFT_MINER"
-
-	outfit = /datum/outfit/job/miner
-	plasmaman_outfit = /datum/outfit/plasmaman/mining
-
-	paycheck = PAYCHECK_CREW
-	paycheck_department = ACCOUNT_CAR
-
-	mind_traits = list(TRAIT_DETECT_STORM)
-
-	display_order = JOB_DISPLAY_ORDER_SHAFT_MINER
-	bounty_types = CIV_JOB_MINE
-	departments_list = list(
-		/datum/job_department/cargo,
-		)
-
-	family_heirlooms = list(/obj/item/pickaxe/mini, /obj/item/shovel)
-	rpg_title = "Adventurer"
-	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 
 
 /datum/outfit/job/miner

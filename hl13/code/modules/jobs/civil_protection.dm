@@ -38,3 +38,4 @@
 	shoes = /obj/item/clothing/shoes/hl13/cp_boots
 	gloves = /obj/item/clothing/gloves/hl13/cp_gloves
 	head = /obj/item/clothing/head/helmet/hl13/combine/helmet/civil_protection
+	accessory = /obj/item/clothing/accessory/hl13/cp_armband

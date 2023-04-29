@@ -45,3 +45,34 @@
 		ACCESS_HOP,
 		)
 	job = /datum/job/civil_protection_commander
+
+/datum/id_trim/job/cwu_member
+	assignment = "CWU Member"
+	trim_state = "trim_hl13cwumember"
+	department_color = COLOR_CWU_YELLOW
+	sechud_icon_state = SECHUD_HL13_CWU_MEMBER
+	minimal_access = list()
+	extra_access = list(
+		ACCESS_MAINT_TUNNELS,
+		)
+	template_access = list(
+		ACCESS_CAPTAIN,
+		ACCESS_CHANGE_IDS,
+		ACCESS_HOP,
+		)
+	job = /datum/job/cwu_member
+/datum/id_trim/job/cwu_medic
+	assignment = "CWU Member"
+	trim_state = "trim_hl13cwumedic"
+	department_color = COLOR_CWU_YELLOW
+	sechud_icon_state = SECHUD_HL13_CWU_MEDIC
+	minimal_access = list()
+	extra_access = list(
+		ACCESS_MAINT_TUNNELS,
+		)
+	template_access = list(
+		ACCESS_CAPTAIN,
+		ACCESS_CHANGE_IDS,
+		ACCESS_HOP,
+		)
+	job = /datum/job/cwu_medic
