@@ -10,7 +10,7 @@
 	paycheck = PAYCHECK_CREW
 
 	paycheck_department = ACCOUNT_CIV
-	display_order = JOB_DISPLAY_ORDER_ASSISTANT
+	display_order = JOB_DISPLAY_ORDER_CIVIL_PROTECTION
 
 	departments_list = list(
 		/datum/job_department/civilprotection,

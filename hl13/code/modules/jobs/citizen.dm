@@ -3,8 +3,8 @@
 	title = JOB_CITIZEN
 	description = "Get your apartment and survive as long as possible"
 	faction = FACTION_STATION
-	total_positions = 50
-	spawn_positions = 50
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "absolutely everyone"
 	exp_granted_type = EXP_TYPE_CREW
 	outfit = /datum/outfit/job/citizen
@@ -12,7 +12,7 @@
 	paycheck = PAYCHECK_LOWER
 
 	paycheck_department = ACCOUNT_CIV
-	display_order = JOB_DISPLAY_ORDER_ASSISTANT
+	display_order = JOB_DISPLAY_ORDER_CITIZEN
 
 	department_for_prefs = /datum/job_department/assistant
 
@@ -26,6 +26,7 @@
 
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 	rpg_title = "Lout"
+	config_tag = "CITIZEN"
 
 /datum/outfit/job/citizen
 	name = JOB_CITIZEN
