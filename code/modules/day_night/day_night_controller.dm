@@ -10,12 +10,10 @@
 	var/list/lightzones = list()
 	/// The lightzones that this preset has loaded
 	var/list/lightzone_cache = list()
-	/// A list of loaded areas
+	/// A list of loaded areas, this is an assosicative list witht he area appearance attached.
 	var/list/area_cache = list()
 	/// A list of areas that are not affected directly, but still have turf adjacency
 	var/list/unaffected_area_cache = list()
-	/// The mutable appearance that we apply to our areas
-	var/mutable_appearance/area_appearance
 	/// The affected Z level - Ideally, we will eventually be using a more robust system for loaded planets and such.
 	var/affected_z_level
 	/// Our current luminosity
@@ -62,7 +60,7 @@
 	if(area_to_register in area_cache)
 		return FALSE
 	area_cache += area_to_register
-	RegisterSignal(area_to_register, COMSIG_PARENT_QDELETING, .proc/unregister_affected_area)
+	RegisterSignal(area_to_register, COMSIG_PARENT_QDELETING, PROC_REF(unregister_affected_area))
 	return TRUE
 
 /**
@@ -87,9 +85,9 @@
 		return FALSE
 	unaffected_area_cache += area_to_register
 	area_to_register.update_day_night_turfs(TRUE, FALSE, src)
-	area_to_register.RegisterSignal(src, COMSIG_DAY_NIGHT_CONTROLLER_LIGHT_UPDATE, /area.proc/apply_day_night_turfs)
-	RegisterSignal(area_to_register, COMSIG_PARENT_QDELETING, .proc/unregister_unaffected_area)
-	RegisterSignal(area_to_register, COMSIG_AREA_AFTER_SHUTTLE_MOVE, .proc/after_shuttle_move)
+	area_to_register.RegisterSignal(src, COMSIG_DAY_NIGHT_CONTROLLER_LIGHT_UPDATE, TYPE_PROC_REF(/area, apply_day_night_turfs))
+	RegisterSignal(area_to_register, COMSIG_PARENT_QDELETING, PROC_REF(unregister_unaffected_area))
+	RegisterSignal(area_to_register, COMSIG_AREA_AFTER_SHUTTLE_MOVE, PROC_REF(after_shuttle_move))
 	return TRUE
 
 /**
@@ -134,7 +132,7 @@
  */
 /datum/day_night_controller/proc/get_lightzone(hour)
 	var/lightzone_to_return
-	if(hour == 24)
+	if(hour == MIDNIGHT_RESET)
 		hour = 0
 	for(var/datum/lightzone/iterating_lightzone as anything in lightzone_cache)
 		if((hour >= iterating_lightzone.start_hour) && (hour < (!iterating_lightzone.end_hour ? 24 : iterating_lightzone.end_hour)))
@@ -149,6 +147,8 @@
  * * hour - The index to use in our lookup tables.
  */
 /datum/day_night_controller/proc/update_time(hour)
+	if(color_lookup_table["[hour ? hour - 1 : 24]"] == color_lookup_table["[hour]"] && alpha_lookup_table["[hour ? hour - 1 : 24]"] == alpha_lookup_table["[hour]"]) // Why change the color of the light when it's the same as the last?????
+		return
 	update_lighting(color_lookup_table["[hour]"], alpha_lookup_table["[hour]"])
 
 /**
@@ -173,30 +173,31 @@
  * is just not fast enough.
  */
 /datum/day_night_controller/proc/update_area_appearance(light_color, light_alpha)
-	var/mutable_appearance/updated_appearance = mutable_appearance(
-		icon = 'icons/effects/daynight_blend.dmi',
-		icon_state = "white",
-		layer = DAY_NIGHT_LIGHTING_LAYER,
-		plane = LIGHTING_PLANE,
-		alpha = light_alpha,
-		offset_const = GET_Z_PLANE_OFFSET(affected_z_level)
+	for(var/area/iterating_area as anything in area_cache)
+		var/mutable_appearance/updated_appearance = mutable_appearance(
+			icon = 'icons/effects/daynight_blend.dmi',
+			icon_state = "white",
+			layer = DAY_NIGHT_LIGHTING_LAYER,
+			offset_spokesman = iterating_area,
+			plane = LIGHTING_PLANE,
+			alpha = light_alpha,
 		)
-	updated_appearance.color = light_color
-	area_appearance = updated_appearance
+		area_cache[iterating_area] = updated_appearance
+		updated_appearance.color = light_color
 
 /**
  * Removes the current mutable appearance from all of the affected areas underlays.
  */
 /datum/day_night_controller/proc/remove_effect_from_areas()
 	for(var/area/iterating_area as anything in area_cache)
-		iterating_area.underlays -= area_appearance
+		iterating_area.underlays -= area_cache[iterating_area]
 
 /**
  * Applies the current mutable appearance to all of the affected areas underlays.
  */
 /datum/day_night_controller/proc/apply_effect_to_areas()
 	for(var/area/iterating_area as anything in area_cache)
-		iterating_area.underlays += area_appearance
+		iterating_area.underlays += area_cache[iterating_area]
 
 /**
  * Intelligently sets the luminosity of our areas providing the light alpha is above the minimum amount of light.
@@ -204,7 +205,7 @@
  * * light_alpha - The new alpha that we are going to be setting.
  */
 /datum/day_night_controller/proc/set_area_luminosity(light_alpha)
-	var/luminosity = (light_alpha >= MINIMUM_ALPHA_FOR_LUMINOSITY) ? TRUE : FALSE
+	var/luminosity = light_alpha >= MINIMUM_ALPHA_FOR_LUMINOSITY
 	current_luminosity = luminosity
 	for(var/area/iterating_area as anything in area_cache)
 		iterating_area.luminosity = luminosity
@@ -216,7 +217,7 @@
 	var/hour_index = 0 // We start at 1 as this is 24hr time
 	var/datum/lightzone/current_iterating_lightzone
 	var/transition_value = 0
-	for(var/i in 1 to 24)
+	for(var/i in 1 to MIDNIGHT_RESET)
 		var/datum/lightzone/check_lightzone = get_lightzone(hour_index)
 		if(current_iterating_lightzone != check_lightzone)
 			current_iterating_lightzone = check_lightzone

@@ -50,6 +50,7 @@ GLOBAL_LIST_EMPTY(default_lighting_underlays_by_z)
 		affected_turf.luminosity = 1
 		affected_turf.underlays -= current_underlay
 	affected_turf = null
+	day_night_area = null
 	return ..()
 
 /datum/lighting_object/proc/update()
@@ -86,6 +87,10 @@ GLOBAL_LIST_EMPTY(default_lighting_underlays_by_z)
 	// This number is mostly arbitrary.
 	var/set_luminosity = max > 1e-6
 	#endif
+
+	// Respect daynight blending from an area for luminosity here, this is required as the luminosity can sometimes be overriden to 0 when it's day outside, and day trumps whatever is trying to set it to 0.
+	if(day_night_area?.luminosity)
+		set_luminosity = 1
 
 	var/mutable_appearance/current_underlay = src.current_underlay
 	affected_turf.underlays -= current_underlay
