@@ -85,10 +85,11 @@
 
 @include meta.load-css('highlight.js/scss/github-dark.scss');
 
-// NT Theme
+// Combine theme
 .Layout__content {
-  background-image: url('../assets/bg-nanotrasen.svg');
-  background-size: 70%;
+  background-image: url('../assets/bg-combine.svg');
+  background-size: 60%;
+  opacity: 0.4;
   background-position: center;
   background-repeat: no-repeat;
 }
