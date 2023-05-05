@@ -42,7 +42,7 @@ export const settingsMiddleware = (store) => {
       // Set client theme
       const theme = payload?.theme;
       if (theme) {
-        setClientTheme(theme);
+        setClientTheme('dark');
       }
       // Pass action to get an updated state
       next(action);
