@@ -95,6 +95,6 @@
 
 /obj/item/card/old_hl13
 	name = "card"
-	desc = "Seems to be some kind of prototype ID card. It seems to have a some pencil\
+	desc = "Seems to be some kind of prototype ID card. It seems to have some pencil\
 	markings on the back of the card that seems to just be the ramblings of someone named Revel."
 	icon_state = "old_citizen_id"
