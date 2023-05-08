@@ -152,16 +152,16 @@
 /datum/job_department/civilprotection
 	department_name = DEPARTMENT_CIVIL_PROTECTION
 	department_bitflags = DEPARTMENT_BITFLAG_CIVIL_PROTECTION
-	department_head = /datum/job/captain
+	department_head = /datum/job/civil_protection_commander
 	department_experience_type = EXP_TYPE_SECURITY
 	display_order = 12
 	label_class = "civilprotection"
 	ui_color = "#093145"
 
 /datum/job_department/civilworkersunion
-	department_name = DEPARTMENT_CIVIL_PROTECTION
+	department_name = DEPARTMENT_CIVIL_WORKERS_UNION
 	department_bitflags = DEPARTMENT_BITFLAG_CIVIL_WORKERS_UNION
-	department_head = /datum/job/captain
+	department_head = /datum/job/cwu_director
 	department_experience_type = EXP_TYPE_SUPPLY
 	display_order = 13
 	label_class = "civilworkersunion"

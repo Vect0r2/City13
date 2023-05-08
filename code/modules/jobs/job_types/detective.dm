@@ -1,48 +1,6 @@
 /datum/job/detective
 	title = JOB_DETECTIVE
-	description = "Investigate crimes, gather evidence, perform interrogations, \
-		look badass, smoke cigarettes."
-	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
-	department_head = list(JOB_HEAD_OF_SECURITY)
-	faction = FACTION_STATION
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = SUPERVISOR_HOS
-	minimal_player_age = 7
-	exp_requirements = 300
-	exp_required_type = EXP_TYPE_CREW
-	exp_granted_type = EXP_TYPE_CREW
 	config_tag = "DETECTIVE"
-
-	outfit = /datum/outfit/job/detective
-	plasmaman_outfit = /datum/outfit/plasmaman/detective
-	departments_list = list(
-		/datum/job_department/security,
-		)
-
-	paycheck = PAYCHECK_CREW
-	paycheck_department = ACCOUNT_SEC
-
-	liver_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
-
-	display_order = JOB_DISPLAY_ORDER_DETECTIVE
-
-	mail_goodies = list(
-		/obj/item/storage/fancy/cigarettes = 25,
-		/obj/item/ammo_box/c38 = 25,
-		/obj/item/ammo_box/c38/dumdum = 5,
-		/obj/item/ammo_box/c38/hotshot = 5,
-		/obj/item/ammo_box/c38/iceblox = 5,
-		/obj/item/ammo_box/c38/match = 5,
-		/obj/item/ammo_box/c38/trac = 5,
-		/obj/item/storage/belt/holster/detective/full = 1
-	)
-
-	family_heirlooms = list(/obj/item/reagent_containers/cup/glass/bottle/whiskey)
-	rpg_title = "Thiefcatcher" //I guess they caught them all rip thief...
-	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
-
-	job_tone = "objection"
 
 
 /datum/outfit/job/detective

@@ -10,7 +10,7 @@
 	paycheck = PAYCHECK_CREW
 
 	paycheck_department = ACCOUNT_CIV
-	display_order = JOB_DISPLAY_ORDER_ASSISTANT
+	display_order = JOB_DISPLAY_ORDER_CIVIL_PROTECTION
 
 	departments_list = list(
 		/datum/job_department/civilprotection,
@@ -38,3 +38,4 @@
 	shoes = /obj/item/clothing/shoes/hl13/cp_boots
 	gloves = /obj/item/clothing/gloves/hl13/cp_gloves
 	head = /obj/item/clothing/head/helmet/hl13/combine/helmet/civil_protection
+	accessory = /obj/item/clothing/accessory/hl13/cp_armband

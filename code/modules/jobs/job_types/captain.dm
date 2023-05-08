@@ -1,51 +1,7 @@
 /datum/job/captain
 	title = JOB_CAPTAIN
-	description = "Be responsible for the station, manage your Heads of Staff, \
-		keep the crew alive, be prepared to do anything and everything or die \
-		horribly trying."
-	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
-	department_head = list("CentCom")
-	faction = FACTION_STATION
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "Nanotrasen officials and Space Law"
-	req_admin_notify = 1
-	minimal_player_age = 14
-	exp_requirements = 180
-	exp_required_type = EXP_TYPE_CREW
-	exp_required_type_department = EXP_TYPE_COMMAND
-	exp_granted_type = EXP_TYPE_CREW
 	config_tag = "CAPTAIN"
 
-	outfit = /datum/outfit/job/captain
-	plasmaman_outfit = /datum/outfit/plasmaman/captain
-
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_SEC
-
-	liver_traits = list(TRAIT_ROYAL_METABOLISM)
-
-	display_order = JOB_DISPLAY_ORDER_CAPTAIN
-	department_for_prefs = /datum/job_department/captain
-	departments_list = list(
-		/datum/job_department/command,
-	)
-
-	family_heirlooms = list(/obj/item/reagent_containers/cup/glass/flask/gold, /obj/item/toy/captainsaid/collector)
-
-	mail_goodies = list(
-		/obj/item/clothing/mask/cigarette/cigar/havana = 20,
-		/obj/item/storage/fancy/cigarettes/cigars/havana = 15,
-		/obj/item/reagent_containers/cup/glass/bottle/champagne = 5,
-		/obj/item/reagent_containers/cup/glass/bottle/champagne/cursed = 5,
-		/obj/item/toy/captainsaid/collector = 20,
-		/obj/item/skillchip/sabrage = 5,
-	)
-
-	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_BOLD_SELECT_TEXT | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
-	rpg_title = "Star Duke"
-
-	voice_of_god_power = 1.4 //Command staff has authority
 
 
 /datum/job/captain/get_captaincy_announcement(mob/living/captain)
