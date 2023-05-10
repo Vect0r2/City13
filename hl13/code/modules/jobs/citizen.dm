@@ -16,7 +16,7 @@
 
 	department_for_prefs = /datum/job_department/assistant
 
-	family_heirlooms = list(/obj/item/storage/toolbox/mechanical/old/heirloom, /obj/item/clothing/gloves/cut/heirloom)
+	family_heirlooms = list(/obj/item/storage/toolbox/mechanical/old/heirloom, /obj/item/card/old_hl13)
 
 	mail_goodies = list(,
 		/obj/item/choice_beacon/music = 5,
