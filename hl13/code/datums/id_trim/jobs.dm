@@ -98,3 +98,19 @@
 	desc = "Seems to be some kind of prototype ID card. It seems to have some pencil\
 	markings on the back of the card that seems to just be the ramblings of someone named Revel."
 	icon_state = "old_citizen_id"
+
+/datum/id_trim/job/city_administrator
+	assignment = "City Administrator"
+	trim_state = "assigned"
+	department_color = COLOR_ADMINISTRATION_RED
+	sechud_icon_state = SECHUD_HL13_CITY_ADMINISTRATOR
+	minimal_access = list()
+	extra_access = list(
+		ACCESS_MAINT_TUNNELS,
+		)
+	template_access = list(
+		ACCESS_CAPTAIN,
+		ACCESS_CHANGE_IDS,
+		ACCESS_HOP,
+		)
+	job = /datum/job/city_administrator

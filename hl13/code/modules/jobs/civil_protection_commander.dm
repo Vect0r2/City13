@@ -7,7 +7,7 @@
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "City Administrator"
+	supervisors = JOB_ADMINISTRATOR
 	req_admin_notify = 1
 	minimal_player_age = 14
 	exp_requirements = 300

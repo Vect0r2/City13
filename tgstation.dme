@@ -5248,6 +5248,7 @@
 #include "hl13\code\modules\clothing\under\jobs\combine.dm"
 #include "hl13\code\modules\clothing\under\jobs\cwu.dm"
 #include "hl13\code\modules\jobs\citizen.dm"
+#include "hl13\code\modules\jobs\city_administrator.dm"
 #include "hl13\code\modules\jobs\civil_protection.dm"
 #include "hl13\code\modules\jobs\civil_protection_commander.dm"
 #include "hl13\code\modules\jobs\cwu_director.dm"

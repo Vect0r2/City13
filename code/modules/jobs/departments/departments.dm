@@ -142,7 +142,7 @@
 /datum/job_department/administration
 	department_name = DEPARTMENT_ADMINISTRATION
 	department_bitflags = DEPARTMENT_BITFLAG_ADMINISTRATION
-	department_head = /datum/job/captain
+	department_head = /datum/job/city_administrator
 	department_experience_type = EXP_TYPE_COMMAND
 	display_order = 11
 	label_class = "administration"
