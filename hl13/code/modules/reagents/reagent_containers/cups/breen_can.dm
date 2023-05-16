@@ -17,3 +17,14 @@
 	icon_state = "breen_can"
 	list_reagents = list(/datum/reagent/consumable/hl13/breenblue = 50)
 
+/obj/item/reagent_containers/cup/soda_cans/hl13/breen_red
+	name = "dr>breen's private reserve"
+	icon_open = "breen_can_red_open"
+	icon_state = "breen_can_red"
+	list_reagents = list(/datum/reagent/consumable/hl13/breenred = 50)
+
+/obj/item/reagent_containers/cup/soda_cans/hl13/breen_yellow
+	name = "dr>breen's private reserve"
+	icon_open = "breen_can_yellow_open"
+	icon_state = "breen_can_yellow"
+	list_reagents = list(/datum/reagent/consumable/hl13/breenyellow = 50)
