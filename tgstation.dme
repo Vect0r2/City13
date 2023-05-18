@@ -5259,6 +5259,7 @@
 #include "hl13\code\modules\reagents\chemistry\reagents\toxin_reagents.dm"
 #include "hl13\code\modules\reagents\reagent_containers\cups\breen_can.dm"
 #include "hl13\code\datums\mood_events\generic_positive_events.dm"
+#include "hl13\code\modules\rations\ration_pack.dm"
 #include "interface\fonts.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"
