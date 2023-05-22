@@ -48,5 +48,6 @@
 	PopulateContents()
 		var/static/items_inside = list(
 			/obj/item/reagent_containers/cup/soda_cans/hl13/breen_yellow=1,
+			/obj/item/hl13/nutrient_bar_wrapping/beef=1,
 			)
 		generate_items_inside(items_inside,src)

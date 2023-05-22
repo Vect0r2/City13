@@ -28,6 +28,19 @@
 		/datum/reagent/consumable/nutriment = 6,
 		/datum/reagent/consumable/hl13/breenred = 2,
 	)
+	tastes = list("Pork"=1)
+
+/obj/item/food/hl13/nutrient_bar/beef
+	name = "Beef patty"
+	desc = "a combine Beef patty found in priority rations. this one is pork flavored"
+	icon_state = "beef_patty"
+	foodtypes = MEAT
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/nutriment/protein = 2,
+		/datum/reagent/consumable/hl13/breenyellow = 2,
+	)
+	tastes = list("Beef"=1)
 //trash
 /obj/item/trash/hl13/nutrient_bar_waste
 	name = "Debug Trash"
@@ -44,6 +57,10 @@
 	name = "Pork flavored nutrient bar wrapper"
 	icon_state = "bar_package_2_crumpled"
 	desc = "The discarded wrapping of a Pork flavored nutrient bar."
+/obj/item/trash/hl13/nutrient_bar_waste/beef
+	name = "Beef wrapper"
+	icon_state = "bar_package_3_crumpled"
+	desc = "The discarded wrapping of a Beef patty."
 //Package Wrapping
 
 /obj/item/hl13/nutrient_bar_wrapping
@@ -79,3 +96,10 @@
 	icon_state = "bar_package_2"
 	bar_type = /obj/item/food/hl13/nutrient_bar/pork
 	bar_waste = /obj/item/trash/hl13/nutrient_bar_waste/pork
+
+/obj/item/hl13/nutrient_bar_wrapping/beef
+	name = "beef patty"
+	desc = "A beef patty with it's wrapping on."
+	icon_state = "bar_package_3"
+	bar_type = /obj/item/food/hl13/nutrient_bar/beef
+	bar_waste = /obj/item/trash/hl13/nutrient_bar_waste/beef

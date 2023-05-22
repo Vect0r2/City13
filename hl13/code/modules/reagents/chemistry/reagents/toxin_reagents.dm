@@ -6,5 +6,5 @@
 	color = "#1e024bce"
 	taste_description = "overpowering sour tag"
 	harmful = TRUE
-	toxpwr = 0.5
+	toxpwr = 0.1
 	addiction_types = list(/datum/addiction/lithisyn = 10)
