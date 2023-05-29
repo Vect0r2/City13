@@ -5257,6 +5257,7 @@
 #include "hl13\code\modules\jobs\cwu_medic.dm"
 #include "hl13\code\modules\jobs\cwu_member.dm"
 #include "hl13\code\modules\rations\nutrient_bars.dm"
+#include "hl13\code\modules\rations\paste_box.dm"
 #include "hl13\code\modules\rations\ration_pack.dm"
 #include "hl13\code\modules\reagents\chemistry\reagents\food_reagents.dm"
 #include "hl13\code\modules\reagents\chemistry\reagents\toxin_reagents.dm"

@@ -27,6 +27,7 @@
 		var/static/items_inside = list(
 			/obj/item/reagent_containers/cup/soda_cans/hl13/breen_blue=1,
 			/obj/item/hl13/nutrient_bar_wrapping/water=1,
+			/obj/item/storage/hl13/hand_box/egg=1,
 			)
 		generate_items_inside(items_inside,src)
 
@@ -38,6 +39,7 @@
 		var/static/items_inside = list(
 			/obj/item/reagent_containers/cup/soda_cans/hl13/breen_red=1,
 			/obj/item/hl13/nutrient_bar_wrapping/pork=1,
+			/obj/item/storage/hl13/hand_box/chicken=1,
 			)
 		generate_items_inside(items_inside,src)
 
@@ -49,5 +51,6 @@
 		var/static/items_inside = list(
 			/obj/item/reagent_containers/cup/soda_cans/hl13/breen_yellow=1,
 			/obj/item/hl13/nutrient_bar_wrapping/beef=1,
+			/obj/item/storage/hl13/hand_box/cookie=1,
 			)
 		generate_items_inside(items_inside,src)

@@ -1,9 +1,9 @@
 //Food bars
-
-/obj/item/food/hl13/nutrient_bar
-	name = "Debug bar"
+/obj/item/food/hl13
+	name = "debug food"
 	desc = "you forgot to download CS:sorce. Make sure to tell a dev that your seeing this."
 	icon = 'hl13/icons/obj/food/food.dmi'
+/obj/item/food/hl13/nutrient_bar
 	icon_state = "Debug_bar"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
