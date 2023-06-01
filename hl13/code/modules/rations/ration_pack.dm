@@ -54,5 +54,6 @@
 			/obj/item/hl13/nutrient_bar_wrapping/beef=1,
 			/obj/item/storage/hl13/hand_box/cookie=1,
 			/obj/item/reagent_containers/cup/soda_cans/hl13/coffee=1,
+			/obj/item/storage/hl13/pill_bottle=1,
 			)
 		generate_items_inside(items_inside,src)
