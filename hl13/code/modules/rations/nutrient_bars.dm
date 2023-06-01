@@ -103,3 +103,5 @@
 	icon_state = "bar_package_3"
 	bar_type = /obj/item/food/hl13/nutrient_bar/beef
 	bar_waste = /obj/item/trash/hl13/nutrient_bar_waste/beef
+
+

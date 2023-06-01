@@ -16,6 +16,7 @@
 	PopulateContents()
 		var/static/items_inside = list(
 			/obj/item/reagent_containers/cup/soda_cans/hl13/breen_blue=1,
+			/obj/item/reagent_containers/cup/hl13/sustenance_dust=1,
 			)
 		generate_items_inside(items_inside,src)
 
@@ -52,5 +53,6 @@
 			/obj/item/reagent_containers/cup/soda_cans/hl13/breen_yellow=1,
 			/obj/item/hl13/nutrient_bar_wrapping/beef=1,
 			/obj/item/storage/hl13/hand_box/cookie=1,
+			/obj/item/reagent_containers/cup/soda_cans/hl13/coffee=1,
 			)
 		generate_items_inside(items_inside,src)
