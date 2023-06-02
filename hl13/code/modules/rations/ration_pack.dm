@@ -3,11 +3,20 @@
 	icon = 'hl13/icons/obj/food/food.dmi'
 	desc = "you forgot to download CS:sorce. Make sure to tell a dev that your seeing this"
 	icon_state = "debug_ration"
+	var/open = FALSE
 	PopulateContents()
 		var/static/items_inside = list(
 			/obj/item/reagent_containers/cup/soda_cans/hl13/breen_blue=1,
 			)
 		generate_items_inside(items_inside,src)
+
+/obj/item/storage/hl13/ration_pack/Exited(atom/movable/gone, direction)
+	. = ..()
+	if(open == FALSE)
+		icon_state = "[icon_state]_open"
+		open = TRUE
+	else
+		return
 
 /obj/item/storage/hl13/ration_pack/biotic
 	name = "Biotic ration"

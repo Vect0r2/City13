@@ -48,7 +48,7 @@
 /obj/item/food/hl13/egg_paste
 	name = "egg paste"
 	desc = "Cube of egg paste, Despite the name it does not really seem like a paste"
-	icon_state = "egg paste"
+	icon_state = "egg_paste"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
 		/datum/reagent/consumable/eggyolk = 2,
