@@ -5,5 +5,6 @@
 	device_theme = PDA_THEME_TERMINAL
 	var/static/list/datum/computer_file/programs = list(
 		/datum/computer_file/program/filemanager,
+		/datum/computer_file/program/messenger,
 	)
 
