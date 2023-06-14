@@ -3,8 +3,11 @@
 	icon = 'hl13/icons/obj/radios.dmi'
 	icon_state = "CP_RADIO"
 	device_theme = PDA_THEME_TERMINAL
-	var/static/list/datum/computer_file/programs = list(
+	hardware_flag = PROGRAM_LAPTOP
+	starting_programs = list(
 		/datum/computer_file/program/filemanager,
 		/datum/computer_file/program/messenger,
+		/datum/computer_file/program/records/civilian_data,
+		/datum/computer_file/program/socio_stability_monitor,
 	)
 
