@@ -16,7 +16,7 @@
 	density = TRUE
 	anchored = TRUE
 
-	icon = 'icons/obj/fence.dmi'
+	icon = 'hl13/icons/obj/fence.dmi'
 	icon_state = "straight"
 
 	var/cuttable = TRUE

@@ -92,3 +92,13 @@
 	anchored = TRUE
 	layer = TURF_LAYER
 	plane = GAME_PLANE
+
+/obj/structure/trash
+	name = "trash"
+	desc = "The various rubbish of City 13."
+	icon = 'hl13/icons/obj/citydecorations.dmi'
+	icon_state = "trash"
+	density = FALSE
+	anchored = TRUE
+	layer = TURF_LAYER
+	plane = GAME_PLANE
