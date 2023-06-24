@@ -7,7 +7,7 @@
 	starting_programs = list(
 		/datum/computer_file/program/filemanager,
 		/datum/computer_file/program/messenger,
-		/datum/computer_file/program/records/civilian_data,
+		/datum/computer_file/program/civilian_data,
 		/datum/computer_file/program/socio_stability_monitor,
 	)
 
