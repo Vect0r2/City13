@@ -102,3 +102,15 @@
 	anchored = TRUE
 	layer = TURF_LAYER
 	plane = GAME_PLANE
+
+/obj/structure/crosswalk
+	name = "Crosswalk"
+	desc = "a marked part of a road where pedestrians have right of way to cross."
+	icon = 'hl13/icons/turf/floors/crosswalk.dmi'
+	icon_state = "crosswalk1"
+	density = FALSE
+	anchored = TRUE
+	layer = TURF_LAYER
+	plane = GAME_PLANE
+/obj/structure/crosswalk/sideways
+	icon_state = "crosswalk2"
