@@ -83,6 +83,12 @@
 	layer = TURF_LAYER
 	plane = GAME_PLANE
 
+/obj/structure/ambient_nondense
+	density = FALSE
+	anchored = TRUE
+	layer = TURF_LAYER
+	plane = GAME_PLANE
+
 /obj/structure/leaves
 	name = "leaves"
 	desc = "Autumn makes me melancholic."
@@ -114,3 +120,8 @@
 	plane = GAME_PLANE
 /obj/structure/crosswalk/sideways
 	icon_state = "crosswalk2"
+
+/obj/structure/ambient_nondense/persian_rug
+	name = "persian rug"
+	icon = 'hl13/icons/obj/carpets.dmi'
+	icon_state = "persian_rug"
