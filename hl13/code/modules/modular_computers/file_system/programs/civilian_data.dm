@@ -31,11 +31,18 @@
 	if(.)
 		return
 	switch(action)
-		if("set_wanted")
+		if("anti-citizen")
 			for(target in GLOB.manifest.general)
-				playsound(computer.loc, 'sound/arcade/hit.ogg', 50, TRUE)
+				set_anticitizen(target, params)
 				target.wanted_status = WANTED_ARREST
 				. = TRUE
+
+/datum/computer_file/program/civilian_data/proc/set_anticitizen(mob/user, datum/record/crew/target, list/params)
+	for(target in GLOB.manifest.general)
+		var/datum/crime/new_crime = new(name = "anti-citizen", details = "Citizen has been set as a anti-citizen by [usr]", author = usr)
+		target.crimes += new_crime
+		return TRUE
+
 /datum/computer_file/program/civilian_data/ui_data(mob/user)
 	var/list/data = list()
 	data["records"] = GetRecordsReadable()
