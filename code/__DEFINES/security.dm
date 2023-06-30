@@ -62,6 +62,10 @@
 #define WANTED_PAROLE "Parole"
 #define WANTED_PRISONER "Incarcerated"
 #define WANTED_SUSPECT "Suspected"
+//hl13 wanted statuses
+#define WANTED_ANTICITIZEN "Anti-Citizen"
+#define WANTED_AMPUTATE "Amputate"
+#define WANTED_COLLABORATOR "Collaborator"
 
 /// List of available wanted statuses
 #define WANTED_STATUSES(...) list(\
@@ -71,4 +75,7 @@
 	WANTED_PRISONER, \
 	WANTED_PAROLE, \
 	WANTED_DISCHARGED, \
+	WANTED_ANTICITIZEN, \
+	WANTED_COLLABORATOR, \
+	WANTED_AMPUTATE, \
 )

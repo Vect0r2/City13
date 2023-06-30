@@ -64,9 +64,24 @@ export const CivilianData = (props, context) => {
           <br />
           Criminal Status: {record.wanted || 'DELETED'}
           <Button
-            content="anti-citizen"
+            content="Anti-Citizen"
             tooltip="Sets Citizen to a anti-citizen"
             onClick={() => act('anti-citizen')}
+          />
+          <Button
+            content="Amputate"
+            tooltip="Sets Citizen to be amputated"
+            onClick={() => act('amputate')}
+          />
+          <Button
+            content="Collaborator"
+            tooltip="Sets Citizen to be a collaborator"
+            onClick={() => act('collaborator')}
+          />
+          <Button
+            content="Reset"
+            tooltip="Resets citizens status"
+            onClick={() => act('reset')}
           />
         </Section>
       ))}

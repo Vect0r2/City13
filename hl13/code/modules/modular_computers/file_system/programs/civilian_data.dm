@@ -33,15 +33,49 @@
 	switch(action)
 		if("anti-citizen")
 			for(target in GLOB.manifest.general)
+				target.wanted_status = WANTED_ANTICITIZEN
 				set_anticitizen(target, params)
-				target.wanted_status = WANTED_ARREST
 				. = TRUE
-
+		if("amputate")
+			for(target in GLOB.manifest.general)
+				target.wanted_status = WANTED_AMPUTATE
+				set_amputate(target, params)
+				. = TRUE
+		if("collaborator")
+			for(target in GLOB.manifest.general)
+				target.wanted_status = WANTED_COLLABORATOR
+				set_collaborator(target, params)
+				. = TRUE
+		if("reset")
+			for(target in GLOB.manifest.general)
+				target.wanted_status = WANTED_NONE
+				for(var/mob/living/carbon/human/human as anything in GLOB.human_list)
+					human.sec_hud_set_security_status()
+				. = TRUE
 /datum/computer_file/program/civilian_data/proc/set_anticitizen(mob/user, datum/record/crew/target, list/params)
 	for(target in GLOB.manifest.general)
 		var/datum/crime/new_crime = new(name = "anti-citizen", details = "Citizen has been set as a anti-citizen by [usr]", author = usr)
 		target.crimes += new_crime
+		for(var/mob/living/carbon/human/human as anything in GLOB.human_list)
+			human.sec_hud_set_security_status()
 		return TRUE
+
+/datum/computer_file/program/civilian_data/proc/set_amputate(mob/user, datum/record/crew/target, list/params)
+	for(target in GLOB.manifest.general)
+		var/datum/crime/new_crime = new(name = "amputate", details = "Citizen has been set to be amputated by [usr]", author = usr)
+		target.crimes += new_crime
+		for(var/mob/living/carbon/human/human as anything in GLOB.human_list)
+			human.sec_hud_set_security_status()
+		return TRUE
+
+/datum/computer_file/program/civilian_data/proc/set_collaborator(mob/user, datum/record/crew/target, list/params)
+	for(target in GLOB.manifest.general)
+		var/datum/crime/new_crime = new(name = "collaborator", details = "Citizen has been set to collaborator by [usr]", author = usr)
+		target.crimes += new_crime
+		for(var/mob/living/carbon/human/human as anything in GLOB.human_list)
+			human.sec_hud_set_security_status()
+		return TRUE
+
 
 /datum/computer_file/program/civilian_data/ui_data(mob/user)
 	var/list/data = list()
