@@ -79,9 +79,15 @@ export const CivilianData = (props, context) => {
             onClick={() => act('collaborator')}
           />
           <Button
+            content="Incarcerate"
+            tooltip="Sets the citizen to incarcerated"
+            onClick={() => act('incarcerate')}
+          />
+          <Button
             content="Reset"
             tooltip="Resets citizens status"
             onClick={() => act('reset')}
+            color="#FF0000"
           />
         </Section>
       ))}

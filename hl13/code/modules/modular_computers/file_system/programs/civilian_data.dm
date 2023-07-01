@@ -52,6 +52,12 @@
 				for(var/mob/living/carbon/human/human as anything in GLOB.human_list)
 					human.sec_hud_set_security_status()
 				. = TRUE
+		if("incarcerate")
+			for(target in GLOB.manifest.general)
+				target.wanted_status = WANTED_PRISONER
+				for(var/mob/living/carbon/human/human as anything in GLOB.human_list)
+					human.sec_hud_set_security_status()
+				. = TRUE
 /datum/computer_file/program/civilian_data/proc/set_anticitizen(mob/user, datum/record/crew/target, list/params)
 	for(target in GLOB.manifest.general)
 		var/datum/crime/new_crime = new(name = "anti-citizen", details = "Citizen has been set as a anti-citizen by [usr]", author = usr)
