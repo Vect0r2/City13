@@ -33,11 +33,10 @@ GLOBAL_LIST_EMPTY(TabletMessengers) // a list of all active messengers, similar 
 	var/list/datum/computer_file/stored_files = list()
 
 	///Non-static list of programs the computer should recieve on Initialize.
-	var/list/datum/computer_file/starting_programs = list()
-	///Static list of default programs that come with ALL computers, here so computers don't have to repeat this.
-	var/static/list/datum/computer_file/default_programs = list(
+	var/list/datum/computer_file/starting_programs = list(
 		/datum/computer_file/program/filemanager,
-	)
+		/datum/computer_file/program/ntnetdownload,
+		/datum/computer_file/program/themeify,)
 
 	///The program currently active on the tablet.
 	var/datum/computer_file/program/active_program
@@ -140,7 +139,7 @@ GLOBAL_LIST_EMPTY(TabletMessengers) // a list of all active messengers, similar 
 
 /obj/item/modular_computer/proc/install_default_programs()
 	SHOULD_CALL_PARENT(FALSE)
-	for(var/programs in default_programs + starting_programs)
+	for(var/programs in starting_programs)
 		var/datum/computer_file/program/program_type = new programs
 		store_file(program_type)
 
