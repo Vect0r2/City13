@@ -87,7 +87,7 @@
 		if(possible_pack_types.len)
 			pack_type = pick(possible_pack_types)
 		else
- f			pack_type = pick(stray_spawnable_supply_packs)
+			pack_type = pick(stray_spawnable_supply_packs)
 	var/datum/supply_pack/supply_pack
 	if(ispath(pack_type, /datum/supply_pack))
 		supply_pack = new pack_type
