@@ -17,3 +17,36 @@
 		store_file(program_type)
 
 
+/obj/item/modular_computer/combine_pda/open_program(mob/user, datum/computer_file/program/program)
+	if(program.computer != src)
+		CRASH("tried to open program that does not belong to this computer")
+
+	if(!program || !istype(program)) // Program not found or it's not executable program.
+		to_chat(user, span_danger("\The [src]'s screen shows \"I/O ERROR - Unable to run program\" warning."))
+		return FALSE
+
+	// The program is already running. Resume it.
+	if(program in idle_threads)
+		program.program_state = PROGRAM_STATE_ACTIVE
+		active_program = program
+		program.alert_pending = FALSE
+		idle_threads.Remove(program)
+		update_appearance()
+		return TRUE
+
+	if(!program.is_supported_by_hardware(hardware_flag, 1, user))
+		return FALSE
+
+	if(idle_threads.len > max_idle_programs)
+		to_chat(user, span_danger("\The [src] displays a \"Maximal CPU load reached. Unable to run another program.\" error."))
+		return FALSE
+
+	if(!program.on_start(user))
+		return FALSE
+
+	active_program = program
+	program.alert_pending = FALSE
+	update_appearance()
+	ui_interact(user)
+	playsound(user, 'hl13/sound/computer/button17.ogg', 50, TRUE)
+	return TRUE
