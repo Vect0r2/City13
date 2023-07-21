@@ -50,3 +50,11 @@
 	ui_interact(user)
 	playsound(user, 'hl13/sound/computer/button17.ogg', 50, TRUE)
 	return TRUE
+/obj/item/modular_computer/kill_program(forced = FALSE)
+	wipe_program(forced)
+	var/mob/user = usr
+	if(user && istype(user))
+		//Here to prevent programs sleeping in destroy
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/datum, ui_interact), user) // Re-open the UI on this computer. It should show the main screen now.
+	playsound(user, 'hl13/sound/computer/combine_button2.ogg', 50, TRUE)
+	update_appearance()

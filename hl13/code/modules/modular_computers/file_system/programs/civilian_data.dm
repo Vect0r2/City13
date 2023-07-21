@@ -26,7 +26,7 @@
 
 
 
-/datum/computer_file/program/civilian_data/ui_act(action, list/params)
+/datum/computer_file/program/civilian_data/ui_act(action, list/params, mob/user)
 	. = ..()
 	if(.)
 		return
