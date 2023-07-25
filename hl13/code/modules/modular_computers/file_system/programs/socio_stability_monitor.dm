@@ -1,6 +1,6 @@
 /datum/computer_file/program/socio_stability_monitor
 	filename = "stm"
-	filedesc = "socio-stability monitor"
+	filedesc = "Socio-Stability Monitor"
 	category = PROGRAM_CATEGORY_MISC
 	extended_desc = "A measure of how stable the city is."
 	size = 5
