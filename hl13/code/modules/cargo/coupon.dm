@@ -7,5 +7,9 @@
 
 /obj/item/hl13/coupon/relocation_coupon
 	name = "relocation coupon"
-	desc = "" //TODO need to choose the description -linkovervord
+	desc = "A coupon to relocate to city 13."
 	icon_state = "relocation_coupon"
+	//This holds the card assignment so when they come into town they can get a card
+	var/role_assignment = "without assignment"
+	var/recorded_name = "Without recorded name"
+

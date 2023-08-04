@@ -286,3 +286,9 @@ GLOBAL_LIST_INIT(book_types, typecacheof(list(
 #define is_multi_tile_object(atom) (atom.bound_width > world.icon_size || atom.bound_height > world.icon_size)
 //hl13 jobs
 #define is_citizen_job(job_type) (istype(job_type, /datum/job/citizen))
+#define is_city_admin_job(job_type) (istype(job_type, /datum/job/city_administrator))
+#define is_civil_protection_commander_job(job_type) (istype(job_type, /datum/job/civil_protection_commander))
+#define is_civil_protection_job(job_type) (istype(job_type, /datum/job/civil_protection))
+#define is_cwu_director_job(job_type) (istype(job_type, /datum/job/cwu_director))
+#define is_cwu_medic_job(job_type) (istype(job_type, /datum/job/cwu_medic))
+#define is_cwu_member_job(job_type) (istype(job_type, /datum/job/cwu_member))

@@ -38,6 +38,8 @@
 	jobtype = /datum/job/cwu_member
 	uniform = /obj/item/clothing/under/hl13/rank/cwu
 	shoes = /obj/item/clothing/shoes/hl13/brown_shoes
+
+	l_pocket = /obj/item/hl13/coupon/relocation_coupon
 	l_hand = /obj/item/storage/briefcase/hl13/citizen
 	accessory = /obj/item/clothing/accessory/hl13/cwu_armband
 

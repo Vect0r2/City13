@@ -39,6 +39,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/hl13/jacket/ca_director_jacket
 	uniform = /obj/item/clothing/under/hl13/rank/administrator
 	shoes = /obj/item/clothing/shoes/hl13/brown_shoes
+	l_pocket = /obj/item/hl13/coupon/relocation_coupon
 	l_hand = /obj/item/storage/briefcase/hl13/citizen
 
 
