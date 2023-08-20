@@ -215,6 +215,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/offensive_notes
 	/// Used in obj/item/examine to determines whether or not to detail an item's statistics even if it does not meet the force requirements
 	var/override_notes = FALSE
+	// used for the workforce intake terminal
+	var/is_coupon = FALSE
 
 /obj/item/Initialize(mapload)
 

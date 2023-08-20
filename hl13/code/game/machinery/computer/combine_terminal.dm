@@ -1,8 +1,6 @@
-/obj/machinery/computer/terminal/hl13/combine_terminal
+/obj/machinery/computer/hl13/combine_terminal
 	name = "Combine terminal"
-	desc = ""
-	upperinfo = ""
-	content = list("")
-	tguitheme = "combine"
+	desc = "A combine terminal without programing"
+	var/tguitheme = "combine"
 	icon = 'hl13/icons/obj/combine_terminal.dmi'
 	icon_state = "combineinterface2"

@@ -1,36 +1,42 @@
-/obj/machinery/computer/terminal/hl13/combine_terminal/workforce_terminal
+/obj/machinery/computer/hl13/combine_terminal/workforce_terminal
 	name = "Workforce intake terminal"
-	desc = ""
-	upperinfo = ""
-	content = list("")
+	desc = "A terminal ment for printing IDs"
 	tguitheme = "combine"
 	icon = 'hl13/icons/obj/worker_intake_terminal.dmi'
 	icon_state = "wf-terminal"
 	circuit = /obj/item/circuitboard/computer/hl13/workforce_terminal
 	var/coupon_inserted = FALSE
+	var/stored_coupon = null
 
 
-/obj/machinery/computer/terminal/hl13/combine_terminal/workforce_terminal/attackby(O as obj, user as mob)
-	if(istype(O, /obj/item/hl13/coupon/relocation_coupon))
-		var/obj/item/hl13/coupon/relocation_coupon/coupon = O
-		usr.drop_item()
-		coupon.loc = src
-		coupon_inserted = TRUE
-	else
+/obj/machinery/computer/hl13/combine_terminal/workforce_terminal/attackby(obj/item/attacking_item, mob/user)
+	if(attacking_item.is_coupon==FALSE)
 		return
+	if(coupon_inserted)
+		return
+	else
+		attacking_item.forceMove(src)
+		to_chat(user, span_notice("You insert the [attacking_item] into the coupon reader."))
+		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+		stored_coupon = attacking_item
+		coupon_inserted = TRUE
 
-/obj/machinery/computer/terminal/hl13/combine_terminal/workforce_terminal/ui_data(mob/user)
+/obj/machinery/computer/hl13/combine_terminal/workforce_terminal/ui_interact(mob/user, datum/tgui/ui)
+	. = ..()
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "WorkforceTerminal")
+		ui.open()
 
-
-/obj/machinery/computer/terminal/hl13/combine_terminal/workforce_terminal/ui_interact(mob/user, datum/tgui/ui)
-  ui = SStgui.try_update_ui(user, src, ui)
-  if(!ui)
-    ui.open()
-
-/obj/machinery/computer/terminal/hl13/combine_terminal/workforce_terminal/ui_act(action, list/params)
+/obj/machinery/computer/hl13/combine_terminal/workforce_terminal/ui_act(action, list/params)
 	. = ..()
 	if(.)
 		return
-	if(action=="Print ID")
-		if(coupon_inserted == TRUE)
-
+	switch(action)
+		if("printid")
+			if(coupon_inserted == FALSE)
+				return
+			else
+				new /obj/item/card/id/advanced/hl13(loc, src)
+				coupon_inserted = FALSE
+				stored_coupon = null

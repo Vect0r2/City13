@@ -336,10 +336,6 @@
 	var/obj/item/card/id/card = equipped.wear_id
 	var/obj/item/hl13/coupon/relocation_coupon/coupon = equipped.l_store
 
-	if(istype(coupon))//Handles coupon varables on spawn
-		coupon.role_assignment = equipped_job.title
-		coupon.recorded_name = equipped.real_name
-
 	if(istype(card))
 		ADD_TRAIT(card, TRAIT_JOB_FIRST_ID_CARD, ROUNDSTART_TRAIT)
 		shuffle_inplace(card.access) // Shuffle access list to make NTNet passkeys less predictable
@@ -359,6 +355,11 @@
 		equipped.sec_hud_set_ID()
 
 	var/obj/item/modular_computer/pda/pda = equipped.get_item_by_slot(pda_slot)
+
+	if(istype(coupon))//Handles coupon varables on spawn
+		coupon.role_assignment = equipped_job.title
+		coupon.recorded_name = equipped.real_name
+		coupon.trim_coupon = card.trim
 
 	if(istype(pda))
 		pda.saved_identification = equipped.real_name
