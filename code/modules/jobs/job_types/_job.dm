@@ -361,6 +361,9 @@
 		coupon.recorded_name = equipped.real_name
 		coupon.trim_coupon = card.trim
 
+		if(equipped.age)
+			coupon.recorded_age = equipped.age
+
 	if(istype(pda))
 		pda.saved_identification = equipped.real_name
 		pda.saved_job = equipped_job.title

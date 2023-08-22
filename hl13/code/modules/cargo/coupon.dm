@@ -15,4 +15,6 @@
 	var/role_assignment = "without assignment"
 	var/recorded_name = "Without recorded name"
 	var/trim_coupon
+	var/recorded_age = "unknown"
+
 
