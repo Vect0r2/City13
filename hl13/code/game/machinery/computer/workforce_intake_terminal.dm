@@ -13,7 +13,7 @@
 	var/coupon_recorded_name
 	var/id_trim
 	var/coupon_age
-	var/coupon_past_city
+
 
 	//stored coupon
 	var/obj/item/hl13/coupon/relocation_coupon/coupon
@@ -35,7 +35,6 @@
 		coupon_age = coupon.recorded_age
 		stored_coupon = attacking_item
 		coupon_inserted = TRUE
-
 /obj/machinery/computer/hl13/combine_terminal/workforce_terminal/ui_interact(mob/user, datum/tgui/ui)
 	. = ..()
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -69,19 +68,18 @@
 				coupon_inserted = FALSE
 				stored_coupon = null
 				coupon_age = null
-				coupon_past_city = null
 		if("printid")
 			if(coupon_inserted == FALSE)
 				return
 			else
 				makeID()
+				new /datum/record/crew(name = coupon_recorded_name, age = coupon_age, rank = coupon_role_assignment)
 				coupon_role_assignment = null
 				coupon_recorded_name = null
 				id_trim = null
 				coupon_inserted = FALSE
 				stored_coupon = null
 				coupon_age = null
-				coupon_past_city = null
 /obj/machinery/computer/hl13/combine_terminal/workforce_terminal/ui_data(mob/user)
 	. = ..()
 	var/list/data = list()
