@@ -14,7 +14,7 @@
 	//This holds the card assignment so when they come into town they can get a card
 	var/role_assignment = "without assignment"
 	var/recorded_name = "Without recorded name"
-	var/trim_coupon
+	var/trim_coupon = /datum/id_trim/job/citizen
 	var/recorded_age = "unknown"
 
 

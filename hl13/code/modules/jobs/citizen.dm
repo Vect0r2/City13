@@ -30,7 +30,9 @@
 
 /datum/outfit/job/citizen
 	name = JOB_CITIZEN
+	id_trim = /datum/id_trim/job/citizen
 	id = null
+
 	jobtype = /datum/job/citizen
 	uniform = /obj/item/clothing/under/hl13/rank/citizen
 	shoes = /obj/item/clothing/shoes/hl13/brown_shoes

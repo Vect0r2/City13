@@ -1638,7 +1638,6 @@
 	name = "Combine identification card"
 	desc = ""
 	icon_state = "card_hl13"
-
 //hl13 cards end
 #undef INTERN_THRESHOLD_FALLBACK_HOURS
 #undef ID_ICON_BORDERS

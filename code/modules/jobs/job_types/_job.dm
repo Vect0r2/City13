@@ -357,9 +357,10 @@
 	var/obj/item/modular_computer/pda/pda = equipped.get_item_by_slot(pda_slot)
 
 	if(istype(coupon))//Handles coupon varables on spawn
+		var/datum/id_trim/job/citizen/newTrim = new()
 		coupon.role_assignment = equipped_job.title
 		coupon.recorded_name = equipped.real_name
-		coupon.trim_coupon = card.trim
+		coupon.trim_coupon = newTrim
 
 		if(equipped.age)
 			coupon.recorded_age = equipped.age
