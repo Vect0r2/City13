@@ -6,7 +6,7 @@ export const WorkforceTerminal = (props, context) => {
   const { act, data } = useBackend(context);
   const { inserted_coupon, name, age, past_city } = data;
   return (
-    <Window resizable>
+    <Window theme="combine" width={480} height={520} resizable>
       <Window.Content>
         <Section title="Options">
           <LabeledList>
