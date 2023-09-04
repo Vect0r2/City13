@@ -1,0 +1,33 @@
+"a" = (/obj/structure/window/train/west,/turf/closed/wall/train_wall_front,/area/shuttle/arrival)
+"d" = (/obj/structure/window/train/east,/obj/structure/chair/sofa/hl13/trainseat/midwest,/turf/open/floor/city_floor/train_floor,/area/shuttle/arrival)
+"e" = (/obj/structure/window/train/west,/obj/structure/window/train/west,/obj/structure/chair/sofa/hl13/trainseat/righteast,/turf/open/floor/city_floor/train_floor,/area/shuttle/arrival)
+"h" = (/obj/structure/window/train/west,/obj/structure/chair/sofa/hl13/trainseat/mideast,/turf/open/floor/city_floor/train_floor,/area/shuttle/arrival)
+"n" = (/obj/structure/window/train/west,/obj/structure/chair/sofa/hl13/trainseat/righteast,/turf/open/floor/city_floor/train_floor,/area/shuttle/arrival)
+"s" = (/obj/machinery/door/window/hl13/train/east,/turf/open/floor/city_floor/train_floor,/area/shuttle/arrival)
+"x" = (/obj/structure/window/train/east,/obj/structure/chair/sofa/hl13/trainseat/rightwest,/turf/open/floor/city_floor/train_floor,/area/shuttle/arrival)
+"y" = (/obj/structure/window/train/east,/obj/structure/chair/sofa/hl13/trainseat/leftwest,/turf/open/floor/city_floor/train_floor,/area/shuttle/arrival)
+"B" = (/obj/structure/window/train/east,/turf/open/floor/city_floor/train_floor,/area/shuttle/arrival)
+"C" = (/obj/structure/window/train/west,/obj/structure/chair/sofa/hl13/trainseat/lefteast,/turf/open/floor/city_floor/train_floor,/area/shuttle/arrival)
+"I" = (/obj/machinery/door/window/hl13/train/west,/turf/open/floor/city_floor/train_floor,/area/shuttle/arrival)
+"M" = (/turf/closed/wall/train_wall_front,/area/shuttle/arrival)
+"P" = (/turf/open/floor/city_floor/train_carpet,/area/shuttle/arrival)
+"U" = (/obj/structure/window/train/west,/turf/open/floor/city_floor/train_floor,/area/shuttle/arrival)
+"Z" = (/obj/docking_port/mobile/arrivals{dir = 1; name = "city13 arrivals train"},/turf/closed/wall/train_wall_front,/area/shuttle/arrival)
+
+(1,1,1) = {"
+MMM
+MMM
+UPB
+CPy
+hPd
+nPx
+UPB
+IPs
+UPB
+CPy
+hPd
+ePx
+UPB
+aMM
+MZM
+"}
