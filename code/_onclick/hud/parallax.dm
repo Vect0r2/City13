@@ -13,12 +13,8 @@
 
 	if(!length(C.parallax_layers_cached))
 		C.parallax_layers_cached = list()
-		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/layer_1(null, screenmob)
-		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/layer_2(null, screenmob)
-		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/planet(null, screenmob)
-		if(SSparallax.random_layer)
-			C.parallax_layers_cached += new SSparallax.random_layer(null, screenmob)
-		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/layer_3(null, screenmob)
+		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/sand(null, screenmob)
+
 
 	C.parallax_layers = C.parallax_layers_cached.Copy()
 
@@ -371,3 +367,9 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/parallax_layer)
 
 /atom/movable/screen/parallax_layer/planet/update_o()
 	return //Shit won't move
+
+//hl13
+/atom/movable/screen/parallax_layer/sand
+	icon_state = "sand"
+	speed = 3
+	layer = 30

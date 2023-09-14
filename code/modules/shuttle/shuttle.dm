@@ -1161,6 +1161,49 @@
 /obj/docking_port/mobile/emergency/on_emergency_dock()
 	return
 
+/obj/docking_port/mobile/arrivals/hl13/train
+
+/obj/docking_port/mobile/arrivals/hl13/train/hyperspace_sound(phase, list/areas)
+	var/selected_sound
+	switch(phase)
+		if(HYPERSPACE_WARMUP)
+			selected_sound = "train_begin"
+		if(HYPERSPACE_LAUNCH)
+			selected_sound = "train_progress"
+		if(HYPERSPACE_END)
+			selected_sound = "train_end"
+		else
+			CRASH("Invalid hyperspace sound phase: [phase]")
+	var/range = (engine_coeff * max(width, height))
+	var/long_range = range * 2.5
+	var/atom/distant_source
+	if(engine_list.len)
+		distant_source = engine_list[1]
+	else
+		for(var/our_area in areas)
+			distant_source = locate(/obj/machinery/door) in our_area
+			if(distant_source)
+				break
+	if(!distant_source)
+		return
+	for(var/mob/zlevel_mobs as anything in SSmobs.clients_by_zlevel[z])
+		var/dist_far = get_dist(zlevel_mobs, distant_source)
+		if(dist_far <= long_range && dist_far > range)
+			zlevel_mobs.playsound_local(distant_source, "sound/runtime/hyperspace/[selected_sound]_distance.ogg", 100)
+		else if(dist_far <= range)
+			var/source
+			if(!engine_list.len)
+				source = distant_source
+			else
+				var/closest_dist = 10000
+				for(var/obj/machinery/power/shuttle_engine/engines as anything in engine_list)
+					var/dist_near = get_dist(zlevel_mobs, engines)
+					if(dist_near < closest_dist)
+						source = engines
+						closest_dist = dist_near
+			zlevel_mobs.playsound_local(source, "sound/runtime/hyperspace/[selected_sound].ogg", 100)
+
+
 #ifdef TESTING
 #undef DOCKING_PORT_HIGHLIGHT
 #endif
