@@ -372,4 +372,4 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/parallax_layer)
 /atom/movable/screen/parallax_layer/sand
 	icon_state = "sand"
 	speed = 3
-	layer = 30
+	layer = 1
