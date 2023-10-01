@@ -116,6 +116,9 @@
 	name = "Arrival Shuttle"
 	area_flags = UNIQUE_AREA// SSjob refers to this area for latejoiners
 
+/area/shuttle/arrival/hl13
+	name = "Hl13 Arrival Shuttle"
+	outdoors = TRUE
 
 /area/shuttle/arrival/on_joining_game(mob/living/boarder)
 	if(SSshuttle.arrivals?.mode == SHUTTLE_CALL)

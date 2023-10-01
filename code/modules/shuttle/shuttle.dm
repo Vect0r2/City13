@@ -1203,7 +1203,32 @@
 						closest_dist = dist_near
 			zlevel_mobs.playsound_local(source, "sound/runtime/hyperspace/[selected_sound].ogg", 100)
 
+/obj/docking_port/mobile/arrivals/hl13/train/create_ripples(obj/docking_port/stationary/S1, animate_time)
+	var/list/turfs = ripple_area(S1)
+	for(var/t in turfs)
+		ripples += new /obj/effect/abstract/ripple/hl13
 
+/obj/docking_port/mobile/arrivals/hl13/train/LateInitialize()
+	areas = list()
+
+	var/list/new_latejoin = list()
+	for(var/area/shuttle/arrival/A in GLOB.areas)
+		for(var/obj/structure/chair/C in A)
+			new_latejoin += C
+		if(!console)
+			console = locate(/obj/machinery/requests_console) in A
+		areas += A
+
+	if(SSjob.latejoin_trackers.len)
+		log_mapping("Map contains predefined latejoin spawn points and an arrivals shuttle. Using the arrivals shuttle.")
+
+	if(!new_latejoin.len)
+		log_mapping("Arrivals shuttle contains no chairs for spawn points. Reverting to latejoin landmarks.")
+		if(!SSjob.latejoin_trackers.len)
+			log_mapping("No latejoin landmarks exist. Players will spawn unbuckled on the shuttle.")
+		return
+
+	SSjob.latejoin_trackers = new_latejoin
 #ifdef TESTING
 #undef DOCKING_PORT_HIGHLIGHT
 #endif

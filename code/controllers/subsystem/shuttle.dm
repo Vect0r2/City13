@@ -590,16 +590,16 @@ SUBSYSTEM_DEF(shuttle)
 		[transit_height] in height. The travel dir is [travel_dir]."
 */
 
-	var/transit_path = /turf/open/space/transit/sand
+	var/transit_path = /turf/open/space/transit/grass
 	switch(travel_dir)
 		if(NORTH)
-			transit_path = /turf/open/space/transit/sand/north
+			transit_path = /turf/open/space/transit/grass/north
 		if(SOUTH)
-			transit_path = /turf/open/space/transit/sand/south
+			transit_path = /turf/open/space/transit/grass/south
 		if(EAST)
-			transit_path = /turf/open/space/transit/sand/east
+			transit_path = /turf/open/space/transit/grass/east
 		if(WEST)
-			transit_path = /turf/open/space/transit/sand/west
+			transit_path = /turf/open/space/transit/grass/west
 
 	var/datum/turf_reservation/proposal = SSmapping.RequestBlockReservation(transit_width, transit_height, null, /datum/turf_reservation/transit, transit_path)
 

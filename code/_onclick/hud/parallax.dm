@@ -13,7 +13,7 @@
 
 	if(!length(C.parallax_layers_cached))
 		C.parallax_layers_cached = list()
-		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/sand(null, screenmob)
+		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/grass(null, screenmob)
 
 
 	C.parallax_layers = C.parallax_layers_cached.Copy()
@@ -369,7 +369,36 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/parallax_layer)
 	return //Shit won't move
 
 //hl13
-/atom/movable/screen/parallax_layer/sand
-	icon_state = "sand"
+/atom/movable/screen/parallax_layer/grass
+	icon_state = "grass"
 	speed = 3
 	layer = 1
+
+/atom/movable/screen/parallax_layer/grass/update_o(view)
+	//Icon applyed first or it uses the base icon
+	if(SSday_night.current_hour == 8)
+		icon_state = "grass"
+	if(SSday_night.current_hour == 20)
+		icon_state = "grass_dayend"
+	if(SSday_night.current_hour == 21)
+		icon_state = "grass_night"
+	if(SSday_night.current_hour == 7)
+		icon_state = "grass_dayend"
+	if (!view)
+		view = world.view
+
+	var/static/parallax_scaler = world.icon_size / 480
+	var/list/viewscales = getviewsize(view)
+	var/countx = CEILING((viewscales[1] / 2) * parallax_scaler, 1) + 1
+	var/county = CEILING((viewscales[2] / 2) * parallax_scaler, 1) + 1
+	var/list/new_overlays = new
+	for(var/x in -countx to countx)
+		for(var/y in -county to county)
+			if(x == 0 && y == 0)
+				continue
+			var/mutable_appearance/texture_overlay = mutable_appearance(icon, icon_state)
+			texture_overlay.transform = matrix(1, 0, x*480, 0, 1, y*480)
+			new_overlays += texture_overlay
+	cut_overlays()
+	add_overlay(new_overlays)
+
