@@ -377,7 +377,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/parallax_layer)
 /atom/movable/screen/parallax_layer/grass/update_o(view)
 	//Icon applyed first or it uses the base icon
 	if(SSday_night.current_hour == 8)
-		icon_state = "grass"
+		icon_state = "grass_night"
 	if(SSday_night.current_hour == 20)
 		icon_state = "grass_dayend"
 	if(SSday_night.current_hour == 21)
