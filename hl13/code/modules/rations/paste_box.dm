@@ -76,10 +76,12 @@
 	foodtypes = GRAIN | SUGAR
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_SMALL
+	desc = "Have a cookie, the combine thanks you for your service"
 
 /obj/item/storage/hl13/pill_bottle
 	name = "AntiSleep Pill bottle"
 	icon = 'hl13/icons/obj/food/food.dmi'
+	desc = "Good for late nights"
 	icon_state = "pill_bottle"
 	w_class = WEIGHT_CLASS_SMALL
 	PopulateContents()
