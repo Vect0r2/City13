@@ -20,5 +20,9 @@
 	atom_storage.set_holdable(list()) //todo:Set a whitelist of items that can be holded and add relative sprites
 
 
-/obj/item/storage/belt/security/full/PopulateContents()
+/obj/item/storage/belt/hl13/cp_belt/full/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/modular_computer/combine_pda=1,
+		)
+	generate_items_inside(items_inside,src)
 	update_appearance()

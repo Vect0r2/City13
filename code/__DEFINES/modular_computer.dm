@@ -59,6 +59,9 @@
 #define PDA_THEME_LIGHT_MODE "ntos_lightmode"
 #define PDA_THEME_SPOOKY "ntos_spooky"
 
+//hl13 themes
+#define PDA_THEME_COMBINE_PDA "combine_pda"
+
 //Defines for the names of all the themes
 #define PDA_THEME_NTOS_NAME "NtOS"
 #define PDA_THEME_DARK_MODE_NAME "NtOS Dark Mode"
