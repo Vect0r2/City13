@@ -437,7 +437,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A Xeno Filtered brand cigarette."
 	lung_harm = 2
 	list_reagents = list (/datum/reagent/drug/nicotine = 20, /datum/reagent/medicine/regen_jelly = 15, /datum/reagent/drug/krokodil = 4)
-
+/obj/item/clothing/mask/cigarette/xen_dark
+	desc = "Xen Nihilanth Citadel Dark Matter pack cigarette."
+	chem_volume = 120
+	smoketime = 2 MINUTES
+	smoke_all = TRUE
+	lung_harm = 5
+	list_reagents = list(/datum/reagent/drug/nicotine = 60, /datum/chemical_reaction/space_drugs = 60)
 // Rollies.
 
 /obj/item/clothing/mask/cigarette/rollie
