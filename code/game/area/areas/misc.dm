@@ -17,6 +17,7 @@
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_SPACE
 	ambient_buzz = null //Space is deafeningly quiet
+	outdoors = TRUE
 
 /area/space/nearstation
 	icon_state = "space_near"
