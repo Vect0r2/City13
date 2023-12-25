@@ -57,7 +57,7 @@
 	mask = /obj/item/clothing/mask/gas/hl13/combine/commando
 	accessory = /obj/item/clothing/accessory/hl13/cp_armband
 
-	belt = /obj/item/storage/belt/hl13/cp_belt
+	belt = /obj/item/storage/belt/hl13/cp_belt/full
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
