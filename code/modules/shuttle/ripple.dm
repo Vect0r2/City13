@@ -19,3 +19,8 @@
 
 /obj/effect/abstract/ripple/proc/stop_animation()
 	icon_state = "medi_holo_no_anim"
+//hl13
+/obj/effect/abstract/ripple/hl13
+	name = null
+	desc = null
+	icon = null

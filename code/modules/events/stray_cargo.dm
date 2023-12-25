@@ -170,7 +170,7 @@
 	pack_type_override = syndicate_pack
 
 /datum/event_admin_setup/syndicate_cargo_pod/apply_to_event(datum/round_event/stray_cargo/syndicate/event)
-	event.admin_override_contents = pack_type_override	
+	event.admin_override_contents = pack_type_override
 	var/log_message = "[key_name_admin(usr)] has aimed a stray syndicate cargo pod at [event.admin_override_turf ? AREACOORD(event.admin_override_turf) : "a random location"]. The pod contents are [pack_type_override ? pack_type_override : "random"]."
 	message_admins(log_message)
 	log_admin(log_message)
