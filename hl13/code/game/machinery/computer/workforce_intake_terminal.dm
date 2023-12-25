@@ -1,6 +1,6 @@
 /obj/machinery/computer/hl13/combine_terminal/workforce_terminal
 	name = "Workforce intake terminal"
-	desc = "A terminal ment for printing IDs"
+	desc = "A terminal meant for printing IDs"
 	icon = 'hl13/icons/obj/worker_intake_terminal.dmi'
 	icon_state = "wf-terminal"
 	circuit = /obj/item/circuitboard/computer/hl13/workforce_terminal
