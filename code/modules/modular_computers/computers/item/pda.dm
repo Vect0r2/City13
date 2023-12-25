@@ -59,7 +59,7 @@
 /obj/item/modular_computer/pda/install_default_programs()
 	var/list/apps_to_download = list()
 	if(has_pda_programs)
-		apps_to_download += default_programs + pda_programs
+		apps_to_download += pda_programs
 	apps_to_download += starting_programs
 
 	for(var/programs as anything in apps_to_download)
