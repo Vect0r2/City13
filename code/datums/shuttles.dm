@@ -811,4 +811,9 @@
 	suffix = "bounty"
 	name = "Bounty Hunter ERT Shuttle"
 
+// hl13
+/datum/map_template/shuttle/arrival/hl13/city13takyon
+	suffix = "city13takyon"
+	name = "arrival train (city13takyon)"
+
 #undef EMAG_LOCKED_SHUTTLE_COST

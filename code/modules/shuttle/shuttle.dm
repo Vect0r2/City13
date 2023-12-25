@@ -1161,6 +1161,74 @@
 /obj/docking_port/mobile/emergency/on_emergency_dock()
 	return
 
+/obj/docking_port/mobile/arrivals/hl13/train
+
+/obj/docking_port/mobile/arrivals/hl13/train/hyperspace_sound(phase, list/areas)
+	var/selected_sound
+	switch(phase)
+		if(HYPERSPACE_WARMUP)
+			selected_sound = "train_begin"
+		if(HYPERSPACE_LAUNCH)
+			selected_sound = "train_progress"
+		if(HYPERSPACE_END)
+			selected_sound = "train_end"
+		else
+			CRASH("Invalid hyperspace sound phase: [phase]")
+	var/range = (engine_coeff * max(width, height))
+	var/long_range = range * 2.5
+	var/atom/distant_source
+	if(engine_list.len)
+		distant_source = engine_list[1]
+	else
+		for(var/our_area in areas)
+			distant_source = locate(/obj/machinery/door) in our_area
+			if(distant_source)
+				break
+	if(!distant_source)
+		return
+	for(var/mob/zlevel_mobs as anything in SSmobs.clients_by_zlevel[z])
+		var/dist_far = get_dist(zlevel_mobs, distant_source)
+		if(dist_far <= long_range && dist_far > range)
+			zlevel_mobs.playsound_local(distant_source, "sound/runtime/hyperspace/[selected_sound]_distance.ogg", 100)
+		else if(dist_far <= range)
+			var/source
+			if(!engine_list.len)
+				source = distant_source
+			else
+				var/closest_dist = 10000
+				for(var/obj/machinery/power/shuttle_engine/engines as anything in engine_list)
+					var/dist_near = get_dist(zlevel_mobs, engines)
+					if(dist_near < closest_dist)
+						source = engines
+						closest_dist = dist_near
+			zlevel_mobs.playsound_local(source, "sound/runtime/hyperspace/[selected_sound].ogg", 100)
+
+/obj/docking_port/mobile/arrivals/hl13/train/create_ripples(obj/docking_port/stationary/S1, animate_time)
+	var/list/turfs = ripple_area(S1)
+	for(var/t in turfs)
+		ripples += new /obj/effect/abstract/ripple/hl13
+
+/obj/docking_port/mobile/arrivals/hl13/train/LateInitialize()
+	areas = list()
+
+	var/list/new_latejoin = list()
+	for(var/area/shuttle/arrival/A in GLOB.areas)
+		for(var/obj/structure/chair/C in A)
+			new_latejoin += C
+		if(!console)
+			console = locate(/obj/machinery/requests_console) in A
+		areas += A
+
+	if(SSjob.latejoin_trackers.len)
+		log_mapping("Map contains predefined latejoin spawn points and an arrivals shuttle. Using the arrivals shuttle.")
+
+	if(!new_latejoin.len)
+		log_mapping("Arrivals shuttle contains no chairs for spawn points. Reverting to latejoin landmarks.")
+		if(!SSjob.latejoin_trackers.len)
+			log_mapping("No latejoin landmarks exist. Players will spawn unbuckled on the shuttle.")
+		return
+
+	SSjob.latejoin_trackers = new_latejoin
 #ifdef TESTING
 #undef DOCKING_PORT_HIGHLIGHT
 #endif

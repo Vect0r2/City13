@@ -35,6 +35,8 @@
 	return TRUE
 
 
+
+
    /*
 		TO DO:
 
@@ -46,3 +48,18 @@
 
 		-linkovervord
    */
+
+/obj/structure/chair/hl13/wood
+	icon_state = "wooden_chair"
+	name = "wooden chair"
+	desc = "Old is never too old to not be in fashion."
+	resistance_flags = FLAMMABLE
+	icon = 'hl13/icons/obj/chairs.dmi'
+	max_integrity = 70
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	buildstackamount = 3
+	item_chair = /obj/item/chair/wood
+
+/obj/structure/chair/hl13/wood/variant2
+	name = "hooped wooden chair"
+	icon_state = "wooden_chair_2"
