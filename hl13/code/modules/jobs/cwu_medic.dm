@@ -38,6 +38,7 @@
 	jobtype = /datum/job/cwu_medic
 	uniform = /obj/item/clothing/under/hl13/rank/cwu/medic
 	shoes = /obj/item/clothing/shoes/hl13/brown_shoes
+
 	l_hand = /obj/item/storage/briefcase/hl13/citizen
 	accessory = /obj/item/clothing/accessory/hl13/cwu_armband
 

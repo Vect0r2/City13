@@ -53,7 +53,6 @@
 	ears = /obj/item/radio/headset/heads/hos/alt
 	gloves = /obj/item/clothing/gloves/hl13/cp_gloves
 	shoes = /obj/item/clothing/shoes/hl13/cp_boots
-	l_pocket = /obj/item/restraints/handcuffs
 	mask = /obj/item/clothing/mask/gas/hl13/combine/commando
 	accessory = /obj/item/clothing/accessory/hl13/cp_armband
 

@@ -9,5 +9,3 @@
 	icon_state = "suitcase"
 	inhand_icon_state = "suitcase"
 
-/obj/item/storage/briefcase/hl13/PopulateContents()
-	new /obj/item/hl13/coupon/relocation_coupon(src)

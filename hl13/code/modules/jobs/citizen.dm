@@ -24,19 +24,17 @@
 		/obj/item/crowbar/large = 1
 	)
 
-	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
+	job_flags = JOB_ANNOUNCE_ARRIVAL  | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
 	rpg_title = "Lout"
 	config_tag = "CITIZEN"
 
 /datum/outfit/job/citizen
 	name = JOB_CITIZEN
-	id = /obj/item/card/id/advanced/hl13
 	id_trim = /datum/id_trim/job/citizen
+	id = null
+
 	jobtype = /datum/job/citizen
 	uniform = /obj/item/clothing/under/hl13/rank/citizen
 	shoes = /obj/item/clothing/shoes/hl13/brown_shoes
+	l_pocket = /obj/item/hl13/coupon/relocation_coupon
 	l_hand = /obj/item/storage/briefcase/hl13/citizen
-
-
-
-
