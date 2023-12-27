@@ -4,11 +4,8 @@
 	desc = "you forgot to download CS:sorce. Make sure to tell a dev that your seeing this"
 	icon_state = "debug_ration"
 	var/open = FALSE
-	PopulateContents()
-		var/static/items_inside = list(
-			/obj/item/reagent_containers/cup/soda_cans/hl13/breen_blue=1,
-			)
-		generate_items_inside(items_inside,src)
+/obj/item/storage/hl13/ration_pack/PopulateContents()
+	new /obj/item/reagent_containers/cup/soda_cans/hl13/breen_blue(src)
 
 /obj/item/storage/hl13/ration_pack/Exited(atom/movable/gone, direction)
 	. = ..()
@@ -22,47 +19,38 @@
 	name = "Biotic ration"
 	desc = null
 	icon_state = "biotic_ration"
-	PopulateContents()
-		var/static/items_inside = list(
-			/obj/item/reagent_containers/cup/soda_cans/hl13/breen_blue=1,
-			/obj/item/reagent_containers/cup/hl13/sustenance_dust=1,
-			)
-		generate_items_inside(items_inside,src)
+
+/obj/item/storage/hl13/ration_pack/biotic/PopulateContents()
+	new /obj/item/reagent_containers/cup/soda_cans/hl13/breen_blue(src)
+	new /obj/item/reagent_containers/cup/hl13/sustenance_dust(src)
 
 /obj/item/storage/hl13/ration_pack/standard_ration
 	name = "standard ration"
 	desc = null
 	icon_state = "standard_ration"
-	PopulateContents()
-		var/static/items_inside = list(
-			/obj/item/reagent_containers/cup/soda_cans/hl13/breen_blue=1,
-			/obj/item/hl13/nutrient_bar_wrapping/water=1,
-			/obj/item/storage/hl13/hand_box/egg=1,
-			)
-		generate_items_inside(items_inside,src)
+
+/obj/item/storage/hl13/ration_pack/standard_ration/PopulateContents()
+	new /obj/item/reagent_containers/cup/soda_cans/hl13/breen_blue(src)
+	new /obj/item/hl13/nutrient_bar_wrapping/water(src)
+	new /obj/item/storage/hl13/hand_box/egg(src)
 
 /obj/item/storage/hl13/ration_pack/priority_ration
 	name = "Priority Ration"
 	desc = null
 	icon_state = "priority_ration"
-	PopulateContents()
-		var/static/items_inside = list(
-			/obj/item/reagent_containers/cup/soda_cans/hl13/breen_red=1,
-			/obj/item/hl13/nutrient_bar_wrapping/pork=1,
-			/obj/item/storage/hl13/hand_box/chicken=1,
-			)
-		generate_items_inside(items_inside,src)
 
+/obj/item/storage/hl13/ration_pack/priority_ration/PopulateContents()
+	new /obj/item/reagent_containers/cup/soda_cans/hl13/breen_red(src)
+	new /obj/item/hl13/nutrient_bar_wrapping/pork(src)
+	new /obj/item/storage/hl13/hand_box/chicken(src)
 /obj/item/storage/hl13/ration_pack/service_ration
 	name = "Service Ration"
 	desc = null
 	icon_state = "service_ration"
-	PopulateContents()
-		var/static/items_inside = list(
-			/obj/item/reagent_containers/cup/soda_cans/hl13/breen_yellow=1,
-			/obj/item/hl13/nutrient_bar_wrapping/beef=1,
-			/obj/item/storage/hl13/hand_box/cookie=1,
-			/obj/item/reagent_containers/cup/soda_cans/hl13/coffee=1,
-			/obj/item/storage/hl13/pill_bottle=1,
-			)
-		generate_items_inside(items_inside,src)
+
+/obj/item/storage/hl13/ration_pack/service_ration/PopulateContents()
+	new /obj/item/reagent_containers/cup/soda_cans/hl13/breen_yellow(src)
+	new /obj/item/hl13/nutrient_bar_wrapping/beef(src)
+	new /obj/item/storage/hl13/hand_box/cookie(src)
+	new /obj/item/reagent_containers/cup/soda_cans/hl13/coffee(src)
+	new /obj/item/storage/hl13/pill_bottle(src)

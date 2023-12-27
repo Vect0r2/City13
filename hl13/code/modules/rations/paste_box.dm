@@ -84,9 +84,7 @@
 	desc = "Good for late nights"
 	icon_state = "pill_bottle"
 	w_class = WEIGHT_CLASS_SMALL
-	PopulateContents()
-		var/static/items_inside = list(
-			/obj/item/reagent_containers/pill/antisleep=10,
-			)
-		generate_items_inside(items_inside,src)
 
+/obj/item/storage/hl13/pill_bottle/PopulateContents()
+	for(var/i=0,i<10, i++)
+		new /obj/item/reagent_containers/pill/antisleep(src)
