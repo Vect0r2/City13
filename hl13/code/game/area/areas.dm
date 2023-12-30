@@ -15,6 +15,8 @@
 	min_ambience_cooldown = 70 SECONDS
 	max_ambience_cooldown = 220 SECONDS
 	outdoors = TRUE
+	ambient_buzz = 'hl13/sound/ambience/station_ambience_stereo_loop1.ogg'
+	ambient_buzz_vol = 5
 
 /area/city13/inside
 	name = "City Street"
@@ -30,5 +32,7 @@
 	min_ambience_cooldown = 70 SECONDS
 	max_ambience_cooldown = 220 SECONDS
 	outdoors = FALSE
+	ambient_buzz = 'hl13/sound/ambience/town_ambience.ogg'
+	ambient_buzz_vol = 10
 	//underground = TRUE must check if it works on areas that do not have a top floor above them
 
