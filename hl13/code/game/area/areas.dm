@@ -17,7 +17,7 @@
 	outdoors = TRUE
 	ambient_buzz = 'hl13/sound/ambience/station_ambience_stereo_loop1.ogg'
 	ambient_buzz_vol = 5
-	ambientsounds = list('sound/ambience/ambihl13_1.ogg','sound/ambience/ambihl13_2.ogg','sound/ambience/ambihl13_3.ogg','sound/ambience/ambihl13_4.ogg','sound/ambience/ambihl13_5.ogg','sound/ambience/ambihl13_6.ogg','sound/ambience/ambihl13_7.ogg')
+	ambientsounds = list('hl13/sound/ambience/scanner_alert_pass1.ogg','hl13/sound/ambience/wind_moan2.ogg','hl13/sound/ambience/wind_snippet1.ogg','hl13/sound/ambience/wind_snippet2.ogg')
 
 /area/city13/inside
 	name = "City Street"
@@ -35,6 +35,6 @@
 	outdoors = FALSE
 	ambient_buzz = 'hl13/sound/ambience/town_ambience.ogg'
 	ambient_buzz_vol = 10
-	ambientsounds = list('sound/ambience/ambihl13_1.ogg','sound/ambience/ambihl13_2.ogg','sound/ambience/ambihl13_3.ogg','sound/ambience/ambihl13_4.ogg','sound/ambience/ambihl13_5.ogg','sound/ambience/ambihl13_6.ogg','sound/ambience/ambihl13_7.ogg')
+	ambientsounds = list('hl13/sound/ambience/apc_alarm_pass1.ogg','hl13/sound/ambience/city_skypass1.ogg')
 	//underground = TRUE must check if it works on areas that do not have a top floor above them
 
