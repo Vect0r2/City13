@@ -15,7 +15,8 @@
 	icon_state = "sheet-combine_metal_3"
 	desc = "Sheets made out of combine metal."
 
-/obj/item/stack/sheet/concrete
+//No Recipes
+/obj/item/stack/sheet/hl13/concrete
 	icon = 'hl13/icons/obj/stack_objects.dmi'
 	name = "concrete bricks"
 	icon_state = "stack_concrete_3"
