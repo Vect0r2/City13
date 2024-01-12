@@ -17,7 +17,11 @@
 		/obj/item/stack/sheet/plasteel = 2,
 		/obj/item/stack/sheet/bronze = 2,
 		/obj/item/stack/sheet/runed_metal = 1,
-		exotic_material = 2 // this needs to be refactored properly
+		exotic_material = 2, // this needs to be refactored properly
+		//HL13 CODE//
+		/obj/item/stack/sheet/hl13/concrete = 3,
+		/obj/item/stack/sheet/iron/hl13/combine = 2
+		//HL13 CODE//
 	)
 
 /obj/structure/girder/examine(mob/user)
