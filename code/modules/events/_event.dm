@@ -41,6 +41,8 @@
 	var/list/datum/event_admin_setup/admin_setup = list()
 	/// Flags dictating whether this event should be run on certain kinds of map
 	var/map_flags = NONE
+	/// this makes it so normal ss13 isn't ran
+	var/hl13 = FALSE
 
 /datum/round_event_control/New()
 	if(config && !wizardevent) // Magic is unaffected by configs
@@ -141,6 +143,8 @@ Runs the event
 	* and not multiple events called by others admins
 	* * In the worst case scenario we can still recall a event which we cancelled by accident, which is much better then to have a unwanted event
 	*/
+	if(hl13==FALSE) //stops event unless it's a hl13 event
+		return
 	UnregisterSignal(SSdcs, COMSIG_GLOB_RANDOM_EVENT)
 	var/datum/round_event/round_event = new typepath(TRUE, src)
 	if(admin_forced && length(admin_setup))
