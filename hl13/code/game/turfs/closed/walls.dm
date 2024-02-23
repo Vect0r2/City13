@@ -3,7 +3,7 @@
 
 /turf/closed/wall/hl13/devastate_wall()
 	new sheet_type(src, sheet_amount)
-	if(girder_type)
+	if(istype(girder_type, /obj/structure/girder/hl13))
 		new /obj/item/stack/sheet/iron/hl13/metal(src)
 
 /turf/closed/wall/hl13/concrete_wall
