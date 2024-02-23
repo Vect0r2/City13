@@ -340,7 +340,7 @@
 			qdel(src)
 		return TRUE
 
-/obj/structure/girder/wrench_act(mob/user, obj/item/tool)
+/*/obj/structure/girder/wrench_act(mob/user, obj/item/tool)
 	. = ..()
 	if(state == GIRDER_DISPLACED)
 		if(!isfloorturf(loc))
@@ -358,7 +358,7 @@
 			var/obj/structure/girder/displaced/D = new (loc)
 			transfer_fingerprints_to(D)
 			qdel(src)
-		return TRUE
+		return TRUE */
 
 /obj/structure/girder/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()

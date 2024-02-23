@@ -1,3 +1,8 @@
+GLOBAL_LIST_INIT(hl13_metal_recipes, list(
+	new/datum/stack_recipe("wall girders (anchored)", /obj/structure/girder/hl13, 2, time = 4 SECONDS, one_per_turf = TRUE, on_solid_ground = TRUE, trait_booster = TRAIT_QUICK_BUILD, trait_modifier = 0.75, category = CAT_STRUCTURE), \
+	null,
+))
+
 /obj/item/stack/sheet/plastic/hl13
 	icon = 'hl13/icons/obj/stack_objects.dmi'
 	icon_state = "sheet-plastic_3"
@@ -8,6 +13,11 @@
 	name = "metal"
 	icon_state = "sheet-metal_3"
 	desc = "Sheets made out of metal."
+
+/obj/item/stack/sheet/iron/hl13/metal/get_main_recipes()
+	. = ..()
+	. += GLOB.hl13_metal_recipes
+
 
 /obj/item/stack/sheet/iron/hl13/combine
 	icon = 'hl13/icons/obj/stack_objects.dmi'

@@ -1,15 +1,33 @@
 GLOBAL_LIST_INIT(walls_type_icons, list(
-	/turf/closed/wall/hl13/concrete_wall = icon('hl13/icons/turf/walls/concrete_wall.dmi', "concrete1-0"),
-	/turf/closed/wall/hl13/urban_concrete_wall = icon('hl13/icons/turf/walls/concrete2_wall.dmi', "concrete2-0"),
-	/turf/closed/wall/hl13/cp_concrete_wall = icon('hl13/icons/turf/walls/cp_wall.dmi', "cp-0"),
-	/turf/closed/wall/hl13/lobby_concrete_wall = icon('hl13/icons/turf/walls/lobby_wall.dmi', "lobby-0"),
-	/turf/closed/wall/hl13/store_concrete_wall = icon('hl13/icons/turf/walls/store_wall.dmi', "concrete1-0"),
-	/turf/closed/wall/hl13/brick_wall = icon('hl13/icons/turf/walls/brick_wall.dmi', "brick1-0"),
+	/turf/closed/wall/hl13/concrete_wall = icon('hl13/icons/turf/walls/concrete_wall.dmi', "concrete1_icon"),
+	/turf/closed/wall/hl13/urban_concrete_wall = icon('hl13/icons/turf/walls/concrete2_wall.dmi', "concrete2_icon"),
+	/turf/closed/wall/hl13/cp_concrete_wall = icon('hl13/icons/turf/walls/cp_wall.dmi', "cp_icon"),
+	/turf/closed/wall/hl13/lobby_concrete_wall = icon('hl13/icons/turf/walls/lobby_wall.dmi', "lobby_icon"),
+	/turf/closed/wall/hl13/store_concrete_wall = icon('hl13/icons/turf/walls/store_wall.dmi', "concrete1_icon"),
+	/turf/closed/wall/hl13/brick_wall = icon('hl13/icons/turf/walls/brick_wall.dmi', "brick1_icon"),
+))
+
+GLOBAL_LIST_INIT(fwalls_type_icons, list(
+	/obj/structure/falsewall/hl13/concrete_wall = icon('hl13/icons/turf/walls/concrete_wall.dmi', "concrete1_icon"),
+	/obj/structure/falsewall/hl13/urban_concrete_wall = icon('hl13/icons/turf/walls/concrete2_wall.dmi', "concrete2_icon"),
+	/obj/structure/falsewall/hl13/cp_concrete_wall = icon('hl13/icons/turf/walls/cp_wall.dmi', "cp_icon"),
+	/obj/structure/falsewall/hl13/lobby_concrete_wall = icon('hl13/icons/turf/walls/lobby_wall.dmi', "lobby_icon"),
+	/obj/structure/falsewall/hl13/store_concrete_wall = icon('hl13/icons/turf/walls/store_wall.dmi', "concrete1_icon"),
+	/obj/structure/falsewall/hl13/brick_wall = icon('hl13/icons/turf/walls/brick_wall.dmi', "brick1_icon"),
 ))
 
 /obj/structure/girder/hl13
 	icon = 'hl13/icons/turf/walls/wall_frame.dmi'
 	icon_state = "wall_frame"
+
+/obj/structure/girder/hl13/displaced
+	name = "displaced girder"
+	icon = 'hl13/icons/turf/walls/wall_frame.dmi'
+	icon_state = "wall_frame_unsecured"
+	anchored = FALSE
+	state = GIRDER_DISPLACED
+	girderpasschance = 25
+	max_integrity = 120
 
 /obj/structure/girder/hl13/attackby(obj/item/W, mob/user, params)
 	var/platingmodifier = 1
@@ -55,14 +73,21 @@ GLOBAL_LIST_INIT(walls_type_icons, list(
 					if(sheets.get_amount() < amount)
 						balloon_alert(user, "need [amount] sheets!")
 						return
-					balloon_alert(user, "concealing entrance...")
-					if(do_after(user, 20*platingmodifier, target = src))
-						if(sheets.get_amount() < amount)
-							return
-						sheets.use(amount)
-						var/obj/structure/falsewall/F = new (loc)
-						transfer_fingerprints_to(F)
-						qdel(src)
+					var/obj/structure/falsewall/hl13/wall_to_build = show_radial_menu(
+						user,
+						src,
+						GLOB.fwalls_type_icons,
+						require_near = !issilicon(user),
+					)
+					if(wall_to_build != null)
+						balloon_alert(user, "concealing entrance...")
+						if(do_after(user, 20*platingmodifier, target = src))
+							if(sheets.get_amount() < amount)
+								return
+							sheets.use(amount)
+							var/obj/structure/falsewall/F = new wall_to_build(loc)
+							transfer_fingerprints_to(F)
+							qdel(src)
 						return
 				if(GIRDER_REINF)
 					balloon_alert(user, "need combine sheet!")
@@ -190,3 +215,24 @@ GLOBAL_LIST_INIT(walls_type_icons, list(
 		return
 	else
 		return ..()
+
+
+/obj/structure/girder/hl13/wrench_act(mob/user, obj/item/tool)
+	. = ..()
+	if(state == GIRDER_DISPLACED)
+		if(!isfloorturf(loc))
+			balloon_alert(user, "needs floor!")
+
+		balloon_alert(user, "securing frame...")
+		if(tool.use_tool(src, user, 40, volume=100))
+			var/obj/structure/girder/hl13/G = new (loc)
+			transfer_fingerprints_to(G)
+			qdel(src)
+		return TRUE
+	else if(state == GIRDER_NORMAL && can_displace)
+		balloon_alert(user, "unsecuring frame...")
+		if(tool.use_tool(src, user, 40, volume=100))
+			var/obj/structure/girder/hl13/displaced/D = new (loc)
+			transfer_fingerprints_to(D)
+			qdel(src)
+		return TRUE
