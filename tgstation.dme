@@ -5216,6 +5216,7 @@
 #include "hl13\code\game\objects\items\storage\belt.dm"
 #include "hl13\code\game\objects\items\storage\briefcase.dm"
 #include "hl13\code\game\objects\structures\decorative.dm"
+#include "hl13\code\game\objects\structures\false_walls.dm"
 #include "hl13\code\game\objects\structures\fence.dm"
 #include "hl13\code\game\objects\structures\filing_cab.dm"
 #include "hl13\code\game\objects\structures\girders.dm"
