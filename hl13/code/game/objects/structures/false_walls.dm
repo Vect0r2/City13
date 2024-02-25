@@ -11,7 +11,6 @@
 	icon = 'hl13/icons/turf/walls/concrete2_wall.dmi'
 	base_icon_state = "concrete2"
 	icon_state = "concrete2-0"
-	icon = 'hl13/icons/turf/walls/cp_wall.dmi'
 
 /obj/structure/falsewall/hl13/cp_concrete_wall
 	name = "security concrete wall"
