@@ -22,12 +22,22 @@ GLOBAL_LIST_INIT(fwalls_type_icons, list(
 
 /obj/structure/girder/hl13/displaced
 	name = "displaced girder"
-	icon = 'hl13/icons/turf/walls/wall_frame.dmi'
 	icon_state = "wall_frame_unsecured"
 	anchored = FALSE
 	state = GIRDER_DISPLACED
 	girderpasschance = 25
 	max_integrity = 120
+
+/obj/structure/girder/hl13/displaced/reinforced
+	name = "displaced girder"
+	icon_state = "wall_frame_reinf"
+
+/obj/structure/girder/hl13/reinforced
+	name = "reinforced girder"
+	icon_state = "wall_frame_reinf"
+	state = GIRDER_REINF
+	girderpasschance = 0
+	max_integrity = 350
 
 /obj/structure/girder/hl13/attackby(obj/item/W, mob/user, params)
 	var/platingmodifier = 1
@@ -59,9 +69,6 @@ GLOBAL_LIST_INIT(fwalls_type_icons, list(
 				balloon_alert(user, "need tram floors!")
 				return
 
-		if(istype(W, /obj/item/stack/rods))
-			return
-
 		if(!istype(W, /obj/item/stack/sheet))
 			return
 
@@ -82,8 +89,6 @@ GLOBAL_LIST_INIT(fwalls_type_icons, list(
 					if(wall_to_build != null)
 						balloon_alert(user, "concealing entrance...")
 						if(do_after(user, 20*platingmodifier, target = src))
-							if(sheets.get_amount() < amount)
-								return
 							sheets.use(amount)
 							var/obj/structure/falsewall/F = new wall_to_build(loc)
 							transfer_fingerprints_to(F)
@@ -98,8 +103,6 @@ GLOBAL_LIST_INIT(fwalls_type_icons, list(
 						return
 					balloon_alert(user, "laying bricks...")
 					if (do_after(user, 4 SECONDS, target = src))
-						if(sheets.get_amount() < amount)
-							return
 						sheets.use(2)
 						var/obj/structure/tramwall/tram_wall = new(loc)
 						transfer_fingerprints_to(tram_wall)
@@ -118,8 +121,6 @@ GLOBAL_LIST_INIT(fwalls_type_icons, list(
 					if(wall_to_build != null)
 						balloon_alert(user, "laying bricks...")
 						if (do_after(user, 40*platingmodifier, target = src))
-							if(sheets.get_amount() < amount)
-								return
 							sheets.use(amount)
 							var/turf/T = get_turf(src)
 							T.PlaceOnTop(wall_to_build)
@@ -127,87 +128,49 @@ GLOBAL_LIST_INIT(fwalls_type_icons, list(
 							qdel(src)
 						return
 
-		if(istype(sheets, /obj/item/stack/sheet/iron))
-			return
-
-		if(istype(sheets, /obj/item/stack/sheet/plasteel))
-			return
-
-		if(!sheets.has_unique_girder && sheets.material_type)
-			if(istype(src, /obj/structure/girder/reinforced))
-				balloon_alert(user, "need plasteel!")
-				return
-
-			var/M = sheets.sheettype
-			var/amount = construction_cost["exotic_material"]
-			if(state == GIRDER_TRAM)
-				if(sheets.get_amount() < amount)
-					balloon_alert(user, "need [amount] sheets!")
+		if(istype(sheets, /obj/item/stack/sheet/iron/hl13/combine))
+			var/amount = construction_cost[/obj/item/stack/sheet/iron/hl13/combine]
+			switch(state)
+				if(GIRDER_NORMAL)
+					balloon_alert(user, "Reinforcing the structure...")
+					if(do_after(user, 60*platingmodifier,target = src))
+						sheets.use(1)
+						var/obj/structure/girder/hl13/reinforced/reinf = new (loc)
+						transfer_fingerprints_to(reinf)
+						qdel(src)
 					return
-				balloon_alert(user, "adding plating...")
-				if (do_after(user, 4 SECONDS, target = src))
+				if(GIRDER_REINF)
 					if(sheets.get_amount() < amount)
+						balloon_alert(user, "need [amount] sheets..")
 						return
-					sheets.use(amount)
-					var/obj/structure/tramwall/tram_wall
-					var/tram_wall_type = text2path("/obj/structure/tramwall/[M]")
-					if(tram_wall_type)
-						tram_wall = new tram_wall_type(loc)
-					else
-						var/obj/structure/tramwall/material/mat_tram_wall = new(loc)
-						var/list/material_list = list()
-						material_list[GET_MATERIAL_REF(sheets.material_type)] = MINERAL_MATERIAL_AMOUNT * 2
-						if(material_list)
-							mat_tram_wall.set_custom_materials(material_list)
-						tram_wall = mat_tram_wall
-					transfer_fingerprints_to(tram_wall)
-					qdel(src)
-				return
-			if(state == GIRDER_DISPLACED)
-				var/falsewall_type = text2path("/obj/structure/falsewall/[M]")
-				if(sheets.get_amount() < amount)
-					balloon_alert(user, "need [amount] sheets!")
+					balloon_alert(user, "adding plating...")
+					if(do_after(user, 50*platingmodifier, target = src))
+						sheets.use(amount)
+						var/turf/T = get_turf(src)
+						T.PlaceOnTop(/turf/closed/wall/hl13/combine_wall)
+						transfer_fingerprints_to(T)
+						qdel(src)
 					return
-				balloon_alert(user, "concealing entrance...")
-				if(do_after(user, 20, target = src))
-					if(sheets.get_amount() < amount)
+				if(GIRDER_DISPLACED)
+					if(istype(src, /obj/structure/girder/hl13/displaced/reinforced/))
+						if(sheets.get_amount() < amount)
+							balloon_alert("need [amount] sheets...")
+							return
+						balloon_alert(user, "concealing entrance...")
+						if(do_after(user, 50*platingmodifier, target = src))
+							sheets.use(amount)
+							var/obj/structure/falsewall/hl13/combine_wall/C = new (loc)
+							transfer_fingerprints_to(C)
+							qdel(src)
 						return
-					sheets.use(amount)
-					var/obj/structure/falsewall/falsewall
-					if(falsewall_type)
-						falsewall = new falsewall_type (loc)
-					else
-						var/obj/structure/falsewall/material/mat_falsewall = new(loc)
-						var/list/material_list = list()
-						material_list[GET_MATERIAL_REF(sheets.material_type)] = MINERAL_MATERIAL_AMOUNT * 2
-						if(material_list)
-							mat_falsewall.set_custom_materials(material_list)
-						falsewall = mat_falsewall
-					transfer_fingerprints_to(falsewall)
-					qdel(src)
-					return
-			else
-				if(sheets.get_amount() < amount)
-					balloon_alert(user, "need [amount] sheets!")
-					return
-				balloon_alert(user, "adding plating...")
-				if (do_after(user, 40, target = src))
-					if(sheets.get_amount() < amount)
+					if(istype(src, /obj/structure/girder/hl13/displaced))
+						balloon_alert(user, "Reinforcing the structure before concealing...")
+						if(do_after(user, 60*platingmodifier,target = src))
+							sheets.use(1)
+							var/obj/structure/girder/hl13/displaced/reinforced/reinf = new (loc)
+							transfer_fingerprints_to(reinf)
+							qdel(src)
 						return
-					sheets.use(amount)
-					var/turf/T = get_turf(src)
-					if(sheets.walltype)
-						T.PlaceOnTop(sheets.walltype)
-					else
-						var/turf/newturf = T.PlaceOnTop(/turf/closed/wall/material)
-						var/list/material_list = list()
-						material_list[GET_MATERIAL_REF(sheets.material_type)] = MINERAL_MATERIAL_AMOUNT * 2
-						if(material_list)
-							newturf.set_custom_materials(material_list)
-
-					transfer_fingerprints_to(T)
-					qdel(src)
-				return
 
 		add_hiddenprint(user)
 
