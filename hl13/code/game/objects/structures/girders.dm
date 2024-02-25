@@ -173,9 +173,6 @@ GLOBAL_LIST_INIT(fwalls_type_icons, list(
 						return
 
 		add_hiddenprint(user)
-
-	else if(istype(W, /obj/item/pipe))
-		return
 	else
 		return ..()
 
