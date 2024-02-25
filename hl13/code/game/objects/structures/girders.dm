@@ -147,7 +147,7 @@ GLOBAL_LIST_INIT(fwalls_type_icons, list(
 					if(do_after(user, 50*platingmodifier, target = src))
 						sheets.use(amount)
 						var/turf/T = get_turf(src)
-						T.PlaceOnTop(/turf/closed/wall/hl13/combine_wall)
+						T.PlaceOnTop(/turf/closed/wall/r_wall/hl13/combine_wall)
 						transfer_fingerprints_to(T)
 						qdel(src)
 					return

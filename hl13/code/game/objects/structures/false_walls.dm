@@ -1,3 +1,7 @@
+/obj/structure/falsewall/hl13/
+	girder_type = /obj/structure/girder/hl13/displaced
+	mineral = /obj/item/stack/sheet/iron/hl13/metal
+
 /obj/structure/falsewall/hl13/concrete_wall //TODO Tatune: Fix opening and closing animations and time
 	name = "concrete wall"
 	desc = "A boring old yellow concrete wall. Remnants of a dead civilization, but protection against the weather."

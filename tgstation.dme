@@ -5230,6 +5230,7 @@
 #include "hl13\code\game\objects\structures\beds_chairs\chairs.dm"
 #include "hl13\code\game\objects\structures\beds_chairs\sofa.dm"
 #include "hl13\code\game\objects\structures\crates_lockers\closets.dm"
+#include "hl13\code\game\turfs\closed\reinf_walls.dm"
 #include "hl13\code\game\turfs\closed\walls.dm"
 #include "hl13\code\game\turfs\open\_earth_floor.dm"
 #include "hl13\code\game\turfs\open\floor\cobblestone.dm"

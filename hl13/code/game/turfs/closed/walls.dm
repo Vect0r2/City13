@@ -48,14 +48,6 @@
 	base_icon_state = "brick1"
 	icon_state = "brick1-0"
 
-/turf/closed/wall/hl13/combine_wall
-	name = "combine wall"
-	desc = "A strange, blue-tinted otherworldy metal wall. Cold to the touch."
-	icon = 'hl13/icons/turf/walls/combine_wall.dmi'
-	base_icon_state = "combine"
-	icon_state = "combine-0"
-
-
 /turf/closed/wall/hl13/home_wall
 	name = "interior wall"
 	desc = "A nicely paneled plaster wall used for interior rooms."
