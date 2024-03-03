@@ -1,10 +1,36 @@
 /turf/closed/wall/hl13
 	girder_type = /obj/structure/girder/hl13
 
-/turf/closed/wall/hl13/devastate_wall()
+/turf/closed/wall/hl13/break_wall()
 	new sheet_type(src, sheet_amount)
-	if(istype(girder_type, /obj/structure/girder/hl13))
-		new /obj/item/stack/sheet/iron/hl13/metal(src)
+	if(girder_type)
+		return new girder_type(src)
+
+/turf/closed/wall/hl13/devastate_wall()
+	new /obj/item/stack/rubble(src,3)
+
+/turf/closed/wall/hl13/deconstruction_hints(mob/user)
+	return span_notice("The bricks are cemented together.")
+
+
+/turf/closed/wall/hl13/dismantle_wall(devastated = FALSE, explode = FALSE) //TODO MAKE THE WALL DISMANTABLE ONLY BY BIG HAMMER THINGY
+	if(devastated)
+		devastate_wall()
+	else
+		playsound(src, 'sound/items/welder.ogg', 100, TRUE)
+		var/newgirder = break_wall()
+		if(newgirder) //maybe we don't /want/ a girder!
+			transfer_fingerprints_to(newgirder)
+
+	for(var/obj/O in src.contents) //Eject contents!
+		if(istype(O, /obj/structure/sign/poster))
+			var/obj/structure/sign/poster/P = O
+			P.roll_and_drop(src)
+	if(decon_type)
+		ChangeTurf(decon_type, flags = CHANGETURF_INHERIT_AIR)
+	else
+		ScrapeAway()
+	QUEUE_SMOOTH_NEIGHBORS(src)
 
 /turf/closed/wall/hl13/concrete_wall
 	name = "concrete wall"
