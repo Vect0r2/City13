@@ -19,6 +19,7 @@ GLOBAL_LIST_INIT(fwalls_type_icons, list(
 /obj/structure/girder/hl13
 	icon = 'hl13/icons/turf/walls/wall_frame.dmi'
 	icon_state = "wall_frame"
+	var/obj/item/stack/sheet/iron/hl13/sheet_type = /obj/item/stack/sheet/iron/hl13/metal
 
 /obj/structure/girder/hl13/displaced
 	name = "displaced girder"
@@ -31,6 +32,7 @@ GLOBAL_LIST_INIT(fwalls_type_icons, list(
 /obj/structure/girder/hl13/displaced/reinforced
 	name = "displaced girder"
 	icon_state = "wall_frame_reinf"
+	sheet_type = /obj/item/stack/sheet/iron/hl13/combine
 
 /obj/structure/girder/hl13/reinforced
 	name = "reinforced girder"
@@ -38,6 +40,7 @@ GLOBAL_LIST_INIT(fwalls_type_icons, list(
 	state = GIRDER_REINF
 	girderpasschance = 0
 	max_integrity = 350
+	sheet_type = /obj/item/stack/sheet/iron/hl13/combine
 
 /obj/structure/girder/hl13/attackby(obj/item/W, mob/user, params)
 	var/platingmodifier = 1
@@ -196,3 +199,67 @@ GLOBAL_LIST_INIT(fwalls_type_icons, list(
 			transfer_fingerprints_to(D)
 			qdel(src)
 		return TRUE
+
+
+/obj/structure/girder/wirecutter_act(mob/user, obj/item/tool)
+	. = ..()
+	if(state == GIRDER_REINF_STRUTS)
+		balloon_alert(user, "removing inner grille...")
+		if(tool.use_tool(src, user, 40, volume=100))
+			new /obj/item/stack/sheet/iron/hl13/combine(get_turf(src))
+			var/obj/structure/girder/hl13/G = new (loc)
+			transfer_fingerprints_to(G)
+			qdel(src)
+		return TRUE
+
+// Screwdriver behavior for girders
+/obj/structure/girder/screwdriver_act(mob/user, obj/item/tool)
+	if(..())
+		return TRUE
+
+	. = FALSE
+	if(state == GIRDER_TRAM)
+		balloon_alert(user, "disassembling frame...")
+		if(tool.use_tool(src, user, 4 SECONDS, volume=100))
+			if(state != GIRDER_TRAM)
+				return
+			state = GIRDER_DISASSEMBLED
+			var/obj/item/stack/sheet/iron/hl13/metal/M = new(loc, 2)
+			if (!QDELETED(M))
+				M.add_fingerprint(user)
+			qdel(src)
+		return TRUE
+
+	if(state == GIRDER_DISPLACED)
+		balloon_alert(user, "disassembling frame...")
+		if(tool.use_tool(src, user, 40, volume=100))
+			if(state != GIRDER_DISPLACED)
+				return
+			state = GIRDER_DISASSEMBLED
+			var/obj/item/stack/sheet/iron/hl13/metal/M = new(loc, 2)
+			if (!QDELETED(M))
+				M.add_fingerprint(user)
+			qdel(src)
+		return TRUE
+
+	else if(state == GIRDER_REINF)
+		balloon_alert(user, "unsecuring support struts...")
+		if(tool.use_tool(src, user, 40, volume=100))
+			if(state != GIRDER_REINF)
+				return
+			state = GIRDER_REINF_STRUTS
+		return TRUE
+
+	else if(state == GIRDER_REINF_STRUTS)
+		balloon_alert(user, "securing support struts...")
+		if(tool.use_tool(src, user, 40, volume=100))
+			if(state != GIRDER_REINF_STRUTS)
+				return
+			state = GIRDER_REINF
+		return TRUE
+
+/obj/structure/girder/hl13/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		var/remains = sheet_type
+		new remains(loc)
+	qdel(src)

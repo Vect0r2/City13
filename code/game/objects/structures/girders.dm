@@ -283,7 +283,7 @@
 		return ..()
 
 // Screwdriver behavior for girders
-/obj/structure/girder/screwdriver_act(mob/user, obj/item/tool)
+/*/obj/structure/girder/screwdriver_act(mob/user, obj/item/tool)
 	if(..())
 		return TRUE
 
@@ -326,10 +326,10 @@
 			if(state != GIRDER_REINF_STRUTS)
 				return
 			state = GIRDER_REINF
-		return TRUE
+		return TRUE */
 
 // Wirecutter behavior for girders
-/obj/structure/girder/wirecutter_act(mob/user, obj/item/tool)
+/*/obj/structure/girder/wirecutter_act(mob/user, obj/item/tool)
 	. = ..()
 	if(state == GIRDER_REINF_STRUTS)
 		balloon_alert(user, "removing inner grille...")
@@ -338,7 +338,7 @@
 			var/obj/structure/girder/G = new (loc)
 			transfer_fingerprints_to(G)
 			qdel(src)
-		return TRUE
+		return TRUE */
 
 /*/obj/structure/girder/wrench_act(mob/user, obj/item/tool)
 	. = ..()
