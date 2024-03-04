@@ -1,4 +1,5 @@
 /turf/closed/wall/hl13
+	sheet_type = /obj/item/stack/rubble
 	girder_type = /obj/structure/girder/hl13
 
 /turf/closed/wall/hl13/break_wall()

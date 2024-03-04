@@ -4,13 +4,13 @@ GLOBAL_LIST_INIT(hl13_metal_recipes, list(
 
 /obj/item/stack/sheet/plastic/hl13
 	icon = 'hl13/icons/obj/stack_objects.dmi'
-	icon_state = "sheet-plastic_3"
+	icon_state = "sheet-plastic"
 	desc = "Compress dinosaur over millions of years, then refine, split and mold, and voila! You have plastic."
 
 /obj/item/stack/sheet/iron/hl13/metal
 	icon = 'hl13/icons/obj/stack_objects.dmi'
 	name = "metal"
-	icon_state = "sheet-metal_3"
+	icon_state = "sheet-metal"
 	desc = "Sheets made out of metal."
 
 /obj/item/stack/sheet/iron/hl13/metal/get_main_recipes()
@@ -24,7 +24,7 @@ GLOBAL_LIST_INIT(hl13_combine_recipes, list(
 /obj/item/stack/sheet/iron/hl13/combine
 	icon = 'hl13/icons/obj/stack_objects.dmi'
 	name = "combine metal"
-	icon_state = "sheet-combine_metal_3"
+	icon_state = "sheet-combine_metal"
 	desc = "Sheets made out of combine metal."
 
 /obj/item/stack/sheet/iron/hl13/combine/get_main_recipes()
@@ -47,7 +47,7 @@ GLOBAL_LIST_INIT(hl13_concrete_recipes, list(
 /obj/item/stack/sheet/hl13/concrete
 	icon = 'hl13/icons/obj/stack_objects.dmi'
 	name = "concrete bricks"
-	icon_state = "stack_concrete_3"
+	icon_state = "stack_concrete"
 	desc = "Bricks made out of concrete."
 
 /obj/item/stack/sheet/hl13/concrete/get_main_recipes()
