@@ -35,7 +35,7 @@
 
 /obj/item/clothing/mask/gas/hl13/combine/proc/remove_hud(mob/living/carbon/human/M)
 	handle_nv(M.wear_mask, FALSE, M)
-	if(istype(M.glasses, /obj/item/clothing/glasses/hud/hl13/combine/))
+	if(istype(M.glasses, /obj/item/clothing/glasses/hud/hl13/combine) | istype(M.glasses,/obj/item/clothing/glasses/hl13/combine_worker))
 		QDEL_NULL(M.glasses)
 
 /obj/item/clothing/mask/gas/hl13/combine/proc/handle_nv(mask, night_vision, mob/living/carbon/human/user)
