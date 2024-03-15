@@ -1,7 +1,6 @@
 #define MODE_NONE ""
 #define MODE_MESON "meson"
 #define MODE_TRAY "t-ray"
-#define COMSIG_HANDLE_WORKER_VISION "handle_worker_vision"
 
 /obj/item/clothing/glasses/hl13/combine_worker
 	name = "Combine worker eye piece"
@@ -32,20 +31,20 @@
 	switch(mode)
 		if(MODE_MESON)
 			worker_vision = TRUE
-			to_chat(user, mode)
+			to_chat(user, "displaying meson")
 			vision_flags = SEE_TURFS
 			color_cutoffs = list(15, 12, 0)
 			icon_state = "cw_visor_wv"
 			change_glass_color(user, /datum/client_colour/glass_colour/yellow)
 			mask_state(user)
 		if(MODE_TRAY)
-			to_chat(user, mode)
+			to_chat(user, "displaying t-ray")
 			vision_flags = NONE
 			color_cutoffs = list()
 			change_glass_color(user, /datum/client_colour/glass_colour/lightblue)
 		if(MODE_NONE)
 			worker_vision = FALSE
-			to_chat(user, "MODE_NONE")
+			to_chat(user, "displaying nothing")
 			icon_state = "cw_visor"
 			vision_flags = NONE
 			mask_state(user)

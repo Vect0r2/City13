@@ -24,6 +24,6 @@
 	name = "Combine Worker Mask"
 	icon_state = "ec_mask_cw"
 	worn_icon_state = "ec_mask_cw"
-	inhand_icon_state = "cw_mask"
+	inhand_icon_state = "ec_mask_cw"
 	hud_type = /obj/item/clothing/glasses/hl13/combine_worker
 	has_fov = FALSE
