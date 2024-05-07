@@ -5263,6 +5263,7 @@
 #include "hl13\code\modules\clothing\under\jobs\civilian.dm"
 #include "hl13\code\modules\clothing\under\jobs\combine.dm"
 #include "hl13\code\modules\clothing\under\jobs\cwu.dm"
+#include "hl13\code\modules\clothing\under\jobs\engineer_core.dm"
 #include "hl13\code\modules\jobs\citizen.dm"
 #include "hl13\code\modules\jobs\city_administrator.dm"
 #include "hl13\code\modules\jobs\civil_protection.dm"

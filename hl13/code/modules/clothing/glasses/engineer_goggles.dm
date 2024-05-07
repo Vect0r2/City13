@@ -8,6 +8,7 @@
 	icon_state = "cw_visor"
 	hl13_flag = TRUE
 	actions_types = list(/datum/action/item_action/toggle_mode)
+	flash_protect = FLASH_PROTECTION_WELDER
 	var/worker_vision = FALSE
 
 	var/list/modes = list(MODE_NONE = MODE_MESON, MODE_MESON = MODE_TRAY, MODE_TRAY = MODE_NONE)
@@ -15,6 +16,7 @@
 	var/range = 1
 	var/list/connection_images = list()
 	var/combine_mask
+
 /obj/item/clothing/glasses/hl13/combine_worker/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob, ITEM_SLOT_EYES)
