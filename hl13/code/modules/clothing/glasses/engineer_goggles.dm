@@ -42,7 +42,7 @@
 		if(MODE_TRAY)
 			to_chat(user, "displaying t-ray")
 			vision_flags = NONE
-			color_cutoffs = list()
+			color_cutoffs = list(0,0,0)
 			change_glass_color(user, /datum/client_colour/glass_colour/lightblue)
 		if(MODE_NONE)
 			worker_vision = FALSE
