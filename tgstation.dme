@@ -5217,6 +5217,7 @@
 #include "hl13\code\game\objects\items\stacks\tiles\tile_types.dm"
 #include "hl13\code\game\objects\items\storage\belt.dm"
 #include "hl13\code\game\objects\items\storage\briefcase.dm"
+#include "hl13\code\game\objects\items\tools\sledgehammer.dm"
 #include "hl13\code\game\objects\structures\decorative.dm"
 #include "hl13\code\game\objects\structures\false_walls.dm"
 #include "hl13\code\game\objects\structures\fence.dm"

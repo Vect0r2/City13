@@ -18,7 +18,7 @@
 	if(devastated)
 		devastate_wall()
 	else
-		playsound(src, 'sound/items/welder.ogg', 100, TRUE)
+		playsound(src, 'sound/items/hammering_wood.ogg', 100, TRUE)
 		var/newgirder = break_wall()
 		if(newgirder) //maybe we don't /want/ a girder!
 			transfer_fingerprints_to(newgirder)
@@ -32,6 +32,17 @@
 	else
 		ScrapeAway()
 	QUEUE_SMOOTH_NEIGHBORS(src)
+
+/turf/closed/wall/hl13/try_decon(obj/item/I, mob/user, turf/T)
+	if(I.tool_behaviour == TOOL_SLEDGEHAMMER)
+		to_chat(user, span_notice("You begin hammering through the outer concrete..."))
+		playsound(src, 'sound/items/hammering_wood.ogg', 100, TRUE)
+		if(I.use_tool(src, user, slicing_duration))
+			if(iswallturf(src))
+				to_chat(user, span_notice("You remove the outer concrete."))
+				dismantle_wall()
+		return TRUE
+	return FALSE
 
 /turf/closed/wall/hl13/concrete_wall
 	name = "concrete wall"
