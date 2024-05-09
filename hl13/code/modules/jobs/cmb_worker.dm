@@ -40,3 +40,4 @@
 	l_hand = /obj/item/storage/briefcase/hl13/citizen
 	gloves = /obj/item/clothing/gloves/color/yellow
 	accessory = /obj/item/clothing/accessory/hl13/cwu_armband
+	back = /obj/item/hl13/sledgehammer
