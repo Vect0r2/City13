@@ -1,6 +1,6 @@
 /obj/item/hl13/sledgehammer
 	name = "Sledge Hammer"
-	desc = "" //TODO, add a desc
+	desc = "A large hammer, It can break open most things walls or skulls"
 	icon = 'hl13/icons/obj/weapons/melee/sledgehammer.dmi'
 	icon_state = "Sledgehammer"
 	worn_icon = 'hl13/icons/mob/clothing/back/sledgehammer.dmi'

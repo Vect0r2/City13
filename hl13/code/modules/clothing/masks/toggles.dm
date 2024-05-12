@@ -90,3 +90,8 @@
 		actiontype.button_icon_state = icon_state
 		actiontype.build_all_button_icons()
 		SEND_SIGNAL(user.wear_mask, COMSIG_HANDLE_NIGHT_VISION, night_vision, user)
+
+/obj/item/clothing/mask/gas/hl13/combine/combine_worker/remove_hud(mob/living/carbon/human/M)
+	handle_nv(M.wear_mask, FALSE, M)
+	if(istype(M.glasses,/obj/item/clothing/glasses/hl13/combine_worker))
+		QDEL_NULL(M.glasses)
