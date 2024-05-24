@@ -1,29 +1,7 @@
 /datum/job/prisoner
 	title = JOB_PRISONER
-	description = "Keep yourself occupied in permabrig."
-	department_head = list("The Security Team")
-	faction = FACTION_STATION
-	total_positions = 0
-	spawn_positions = 2
-	supervisors = "the security team"
-	exp_granted_type = EXP_TYPE_CREW
-	paycheck = PAYCHECK_LOWER
 	config_tag = "PRISONER"
 
-	outfit = /datum/outfit/job/prisoner
-	plasmaman_outfit = /datum/outfit/plasmaman/prisoner
-
-	display_order = JOB_DISPLAY_ORDER_PRISONER
-	department_for_prefs = /datum/job_department/security
-
-	exclusive_mail_goodies = TRUE
-	mail_goodies = list (
-		/obj/effect/spawner/random/contraband/prison = 1
-	)
-
-	family_heirlooms = list(/obj/item/pen/blue)
-	rpg_title = "Defeated Miniboss"
-	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 
 /datum/job/prisoner/New()
 	. = ..()

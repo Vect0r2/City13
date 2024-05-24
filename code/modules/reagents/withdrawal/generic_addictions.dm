@@ -286,3 +286,24 @@
 	affected_carbon.set_jitter_if_lower(30 SECONDS * delta_time)
 	if(DT_PROB(15, delta_time))
 		affected_carbon.emote("cough")
+//hl13
+
+///Dr>Breens Private Reserve
+/datum/addiction/lithisyn //greek for forget about, science name for dr breens
+	name = "lithisyn"
+	withdrawal_stage_messages = list("I could use a drink...", "I'm so thirsty..", "God I need a drink!")
+	medium_withdrawal_moodlet = /datum/mood_event/hl13/memory_loss
+
+/datum/addiction/lithisyn/withdrawal_stage_1_process(mob/living/carbon/affected_carbon, delta_time)
+	. = ..()
+	affected_carbon.set_jitter_if_lower(1 MINUTES * delta_time)
+	if(DT_PROB(60, delta_time))
+		to_chat(affected_carbon, span_warning("You feel a dull pain in your head."))
+
+/datum/addiction/lithisyn/withdrawal_stage_2_process(mob/living/carbon/affected_carbon, delta_time)
+	. = ..()
+	affected_carbon.set_confusion_if_lower(2 MINUTES * delta_time)
+	if(DT_PROB(2 MINUTES, delta_time))
+		to_chat(affected_carbon, span_warning("You feel a sharp pain in your head."))
+
+

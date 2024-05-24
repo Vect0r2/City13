@@ -1,41 +1,6 @@
 /datum/job/clown
 	title = JOB_CLOWN
-	description = "Entertain the crew, make bad jokes, go on a holy quest to find bananium, HONK!"
-	department_head = list(JOB_HEAD_OF_PERSONNEL)
-	faction = FACTION_STATION
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = SUPERVISOR_HOP
-	exp_granted_type = EXP_TYPE_CREW
 	config_tag = "CLOWN"
-
-	outfit = /datum/outfit/job/clown
-	plasmaman_outfit = /datum/outfit/plasmaman/clown
-
-	paycheck = PAYCHECK_CREW
-	paycheck_department = ACCOUNT_SRV
-
-	mind_traits = list(TRAIT_NAIVE)
-	liver_traits = list(TRAIT_COMEDY_METABOLISM)
-
-	display_order = JOB_DISPLAY_ORDER_CLOWN
-	departments_list = list(
-		/datum/job_department/service,
-		)
-
-	mail_goodies = list(
-		/obj/item/food/grown/banana = 100,
-		/obj/item/food/pie/cream = 50,
-		/obj/item/clothing/shoes/clown_shoes/combat = 10,
-		/obj/item/reagent_containers/spray/waterflower/lube = 20, // lube
-		/obj/item/reagent_containers/spray/waterflower/superlube = 1 // Superlube, good lord.
-	)
-
-	family_heirlooms = list(/obj/item/bikehorn/golden)
-	rpg_title = "Jester"
-	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
-
-	job_tone = "honk"
 
 
 /datum/job/clown/after_spawn(mob/living/spawned, client/player_client)

@@ -380,6 +380,12 @@
 	base_icon_state = "shadyjim"
 	spawn_type = /obj/item/clothing/mask/cigarette/rollie/mindbreaker
 
+/obj/item/storage/fancy/cigarettes/xen
+	name = "\improper Xen Nihilanth Citadel Dark Matter pack"
+	desc = "I'm smoking on xen nihilanth citadel dark matter pack. They watered this with the blood of 36 striders. shits so orange it should be asking me: where's freeman? ni##a this shit will turn your hev off, warning critical levels of sour detected. lung slaughtering Vortigaunt kush. this shits got diamonds on it so you know the THC to CBD is fucking swag ni##a. a whiff of this shit? yeah this nefarious evil alien vorty sorcerer grass, this shit is straight out of city 17. this shit is what killed eli, rest in peice my ni##a fr"
+	icon_state = "Xen Nihilanth Citadel Dark Matter pack"
+	base_icon_state = "Xen Nihilanth Citadel Dark Matter pack"
+	spawn_type = /obj/item/clothing/mask/cigarette/xen_dark
 /obj/item/storage/fancy/rollingpapers
 	name = "rolling paper pack"
 	desc = "A pack of Nanotrasen brand rolling papers."

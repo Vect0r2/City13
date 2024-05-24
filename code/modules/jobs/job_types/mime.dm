@@ -1,40 +1,7 @@
 /datum/job/mime
 	title = JOB_MIME
-	description = "..."
-	department_head = list(JOB_HEAD_OF_PERSONNEL)
-	faction = FACTION_STATION
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = SUPERVISOR_HOP
-	exp_granted_type = EXP_TYPE_CREW
 	config_tag = "MIME"
 
-	outfit = /datum/outfit/job/mime
-	plasmaman_outfit = /datum/outfit/plasmaman/mime
-
-	paycheck = PAYCHECK_CREW
-	paycheck_department = ACCOUNT_SRV
-
-	display_order = JOB_DISPLAY_ORDER_MIME
-	departments_list = list(
-		/datum/job_department/service,
-		)
-
-	family_heirlooms = list(/obj/item/food/baguette)
-
-	mail_goodies = list(
-		/obj/item/food/baguette = 15,
-		/obj/item/food/cheese/wheel = 10,
-		/obj/item/reagent_containers/cup/glass/bottle/bottleofnothing = 10,
-		/obj/item/book/mimery = 1,
-	)
-	rpg_title = "Fool"
-	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
-
-	voice_of_god_power = 0.5 //Why are you speaking
-	voice_of_god_silence_power = 3
-
-	job_tone = "silence"
 
 
 /datum/job/mime/after_spawn(mob/living/spawned, client/player_client)

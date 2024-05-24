@@ -50,6 +50,8 @@
 #define AMBIENCE_AWAY "away"
 #define AMBIENCE_REEBE "reebe" //unused
 #define AMBIENCE_CREEPY "creepy" //not to be confused with spooky
+//hl13
+#define AMBIENCE_HL13 "hl13"
 
 //default byond sound environments
 #define SOUND_ENVIRONMENT_NONE -1

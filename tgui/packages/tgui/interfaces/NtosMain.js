@@ -22,7 +22,7 @@ export const NtosMain = (props, context) => {
   return (
     <NtosWindow
       title={
-        (PC_device_theme === 'syndicate' && 'Syndix Main Menu') ||
+        (PC_device_theme === 'combine_pda' && 'Combine Central Menu') ||
         'NtOS Main Menu'
       }
       width={400}

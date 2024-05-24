@@ -18,7 +18,7 @@ export const CrewManifest = (props, context) => {
   } = useBackend(context);
 
   return (
-    <Window title="Crew Manifest" width={350} height={500}>
+    <Window title="Registered Citizens" width={350} height={500}>
       <Window.Content scrollable>
         {Object.entries(manifest).map(([dept, crew]) => (
           <Section

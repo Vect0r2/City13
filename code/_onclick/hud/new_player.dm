@@ -28,12 +28,6 @@
 /atom/movable/screen/lobby/proc/SlowInit()
 	return
 
-/atom/movable/screen/lobby/background
-	layer = LOBBY_BACKGROUND_LAYER
-	icon = 'icons/hud/lobby/background.dmi'
-	icon_state = "background"
-	screen_loc = "TOP,CENTER:-61"
-
 /atom/movable/screen/lobby/button
 	///Is the button currently enabled?
 	var/enabled = TRUE
@@ -54,6 +48,7 @@
 	if(!enabled)
 		return
 	flick("[base_icon_state]_pressed", src)
+	SEND_SOUND(usr, 'sound/misc/buttonclick.ogg')
 	update_appearance(UPDATE_ICON)
 	return TRUE
 
@@ -66,6 +61,10 @@
 
 	. = ..()
 	highlighted = TRUE
+	if(enabled){
+		SEND_SOUND(usr,  'sound/misc/buttonrollover.ogg')
+	}
+
 	update_appearance(UPDATE_ICON)
 
 /atom/movable/screen/lobby/button/MouseExited()
@@ -98,7 +97,7 @@
 
 ///Prefs menu
 /atom/movable/screen/lobby/button/character_setup
-	screen_loc = "TOP:-70,CENTER:-54"
+	screen_loc = "BOTTOM:125,CENTER:-275"
 	icon = 'icons/hud/lobby/character_setup.dmi'
 	icon_state = "character_setup"
 	base_icon_state = "character_setup"
@@ -115,7 +114,7 @@
 
 ///Button that appears before the game has started
 /atom/movable/screen/lobby/button/ready
-	screen_loc = "TOP:-8,CENTER:-65"
+	screen_loc = "BOTTOM:175,CENTER:-275"
 	icon = 'icons/hud/lobby/ready.dmi'
 	icon_state = "not_ready"
 	base_icon_state = "not_ready"
@@ -160,7 +159,7 @@
 
 ///Shown when the game has started
 /atom/movable/screen/lobby/button/join
-	screen_loc = "TOP:-13,CENTER:-58"
+	screen_loc = "BOTTOM:175,CENTER:-275"
 	icon = 'icons/hud/lobby/join.dmi'
 	icon_state = "" //Default to not visible
 	base_icon_state = "join_game"
@@ -230,7 +229,7 @@
 	RegisterSignal(SSticker, COMSIG_TICKER_ENTER_SETTING_UP, PROC_REF(show_join_button))
 
 /atom/movable/screen/lobby/button/observe
-	screen_loc = "TOP:-40,CENTER:-54"
+	screen_loc = "BOTTOM:150,CENTER:-275"
 	icon = 'icons/hud/lobby/observe.dmi'
 	icon_state = "observe_disabled"
 	base_icon_state = "observe"
@@ -257,10 +256,10 @@
 	UnregisterSignal(SSticker, COMSIG_TICKER_ENTER_PREGAME)
 
 /atom/movable/screen/lobby/button/settings
-	icon = 'icons/hud/lobby/bottom_buttons.dmi'
+	icon = 'icons/hud/lobby/menus.dmi'
 	icon_state = "settings"
 	base_icon_state = "settings"
-	screen_loc = "TOP:-122,CENTER:+30"
+	screen_loc = "BOTTOM:75,CENTER:-275"
 
 /atom/movable/screen/lobby/button/settings/Click(location, control, params)
 	. = ..()
@@ -273,17 +272,18 @@
 	preferences.ui_interact(usr)
 
 /atom/movable/screen/lobby/button/changelog_button
-	icon = 'icons/hud/lobby/bottom_buttons.dmi'
+	icon = 'icons/hud/lobby/menus.dmi'
 	icon_state = "changelog"
 	base_icon_state = "changelog"
-	screen_loc ="TOP:-122,CENTER:+58"
+	screen_loc = "BOTTOM:50,CENTER:-275"
 
 
 /atom/movable/screen/lobby/button/crew_manifest
-	icon = 'icons/hud/lobby/bottom_buttons.dmi'
-	icon_state = "crew_manifest"
-	base_icon_state = "crew_manifest"
-	screen_loc = "TOP:-122,CENTER:+2"
+	icon = 'icons/hud/lobby/menus.dmi'
+	icon_state = "citizens"
+	base_icon_state = "citizens"
+	screen_loc = "BOTTOM:100,CENTER:-275"
+
 
 /atom/movable/screen/lobby/button/crew_manifest/Click(location, control, params)
 	. = ..()

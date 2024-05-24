@@ -130,5 +130,10 @@
 #define SECHUD_HL13_CITIZEN "hudhl13citizen"
 #define SECHUD_HL13_CIVIL_PROTECTION "hudhl13civilprotection"
 #define SECHUD_HL13_CIVIL_PROTECTION_COMMANDER "hudhl13civilprotectioncommander"
+#define SECHUD_HL13_CWU_MEMBER "hudhl13cwumember"
+#define SECHUD_HL13_CWU_MEDIC "hudhl13medic"
+#define SECHUD_HL13_CWU_DIRECTOR "hudhl13cwudirector"
+#define SECHUD_HL13_CITY_ADMINISTRATOR "hudhl13administrator"
+#define SECHUD_HL13_CMB_WORKER "hudhl13cmbworker"
 
 //hl13 hud defines end

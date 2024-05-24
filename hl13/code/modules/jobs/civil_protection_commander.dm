@@ -7,7 +7,7 @@
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "City Administrator"
+	supervisors = JOB_ADMINISTRATOR
 	req_admin_notify = 1
 	minimal_player_age = 14
 	exp_requirements = 300
@@ -53,10 +53,10 @@
 	ears = /obj/item/radio/headset/heads/hos/alt
 	gloves = /obj/item/clothing/gloves/hl13/cp_gloves
 	shoes = /obj/item/clothing/shoes/hl13/cp_boots
-	l_pocket = /obj/item/restraints/handcuffs
 	mask = /obj/item/clothing/mask/gas/hl13/combine/commando
+	accessory = /obj/item/clothing/accessory/hl13/cp_armband
 
-	belt = /obj/item/storage/belt/hl13/cp_belt
+	belt = /obj/item/storage/belt/hl13/cp_belt/full
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec

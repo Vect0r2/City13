@@ -296,3 +296,11 @@
 	icon_state = "pill8"
 	list_reagents = list(/datum/reagent/iron = 30)
 	rename_with_volume = TRUE
+
+//hl13
+/obj/item/reagent_containers/pill/antisleep
+	name = "antisleep pill"
+	desc = "Used to reduce the need for sleep."
+	icon_state = "pill8"
+	list_reagents = list(/datum/reagent/iron = 30) //place holder, to be added when sleep system is added
+	rename_with_volume = TRUE

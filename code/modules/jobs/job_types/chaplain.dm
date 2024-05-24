@@ -1,41 +1,6 @@
 /datum/job/chaplain
 	title = JOB_CHAPLAIN
-	description = "Hold services and funerals, cremate people, preach your \
-		religion, protect the crew against cults."
-	department_head = list(JOB_HEAD_OF_PERSONNEL)
-	faction = FACTION_STATION
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = SUPERVISOR_HOP
-	exp_granted_type = EXP_TYPE_CREW
 	config_tag = "CHAPLAIN"
-
-	outfit = /datum/outfit/job/chaplain
-	plasmaman_outfit = /datum/outfit/plasmaman/chaplain
-
-	paycheck = PAYCHECK_CREW
-	paycheck_department = ACCOUNT_SRV
-
-	display_order = JOB_DISPLAY_ORDER_CHAPLAIN
-	departments_list = list(
-		/datum/job_department/service,
-		)
-
-	family_heirlooms = list(/obj/item/toy/windup_toolbox, /obj/item/reagent_containers/cup/glass/bottle/holywater)
-
-	mail_goodies = list(
-		/obj/item/reagent_containers/cup/glass/bottle/holywater = 30,
-		/obj/item/toy/plush/awakenedplushie = 10,
-		/obj/item/grenade/chem_grenade/holy = 5,
-		/obj/item/toy/plush/narplush = 2,
-		/obj/item/toy/plush/ratplush = 1
-	)
-	rpg_title = "Paladin"
-	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
-
-	voice_of_god_power = 2 //Chaplains are very good at speaking with the voice of god
-
-	job_tone = "holy"
 
 
 /datum/job/chaplain/after_spawn(mob/living/spawned, client/player_client)
