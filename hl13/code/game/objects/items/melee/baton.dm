@@ -5,6 +5,7 @@
 	icon_state = "stun_baton"
 	inhand_icon_state = "baton"
 	worn_icon_state = "baton"
+	cell = /obj/item/stock_parts/cell/hl13
 	hl13_flag = TRUE
 
 
