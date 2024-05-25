@@ -5,6 +5,8 @@
 	icon_state = "stun_baton"
 	inhand_icon_state = "baton"
 	worn_icon_state = "baton"
+	hl13_flag = TRUE
+
 
 /obj/item/melee/baton/security/hl13/proc/update_inhand_icon_state()
 	if(active)
@@ -34,7 +36,7 @@
 
 	cooldown_check = world.time + cooldown
 	if(on_stun_sound)
-		playsound(get_turf(src), randomize_sound("attack"), on_stun_volume, FALSE, -1)
+		playsound(get_turf(src), randomize_sound("flesh"), on_stun_volume, FALSE, -1)
 	if(user)
 		target.lastattacker = user.real_name
 		target.lastattackerckey = user.ckey
@@ -69,7 +71,7 @@
 	if(!ishuman(human_target))
 		return
 	if (human_target.check_shields(src, 0, "[user]'s [name]", MELEE_ATTACK))
-		playsound(human_target, randomize_sound("attack"), 50, FALSE)
+		playsound(human_target, randomize_sound("shield"), 50, FALSE)
 		return TRUE
 	if(check_martial_counter(human_target, user))
 		return TRUE

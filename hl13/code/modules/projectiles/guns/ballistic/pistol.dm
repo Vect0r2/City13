@@ -2,7 +2,10 @@
 	name = "HK USP Match"
 	desc = ""
 	icon = 'hl13/icons/obj/weapons/guns/ballistic.dmi'
+	righthand_file = 'hl13/icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = 'hl13/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	icon_state = "usp"
+	inhand_icon_state = "usp"
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/hl13/hl9mm/
 	vary_fire_sound = FALSE
