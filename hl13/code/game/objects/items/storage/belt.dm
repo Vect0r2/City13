@@ -23,6 +23,9 @@
 /obj/item/storage/belt/hl13/cp_belt/full/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/modular_computer/combine_pda=1,
+		/obj/item/melee/baton/security/hl13=1,
+		/obj/item/gun/ballistic/automatic/hl13/usp=1,
+		/obj/item/ammo_box/magazine/hl13/hl9mm=2,
 		)
 	generate_items_inside(items_inside,src)
 	update_appearance()

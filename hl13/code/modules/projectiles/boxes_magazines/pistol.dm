@@ -8,7 +8,7 @@
 	base_icon_state = "9mm"
 	ammo_type = /obj/item/ammo_casing/hl13/hl9mm
 	caliber = CALIBER_9MM
-	max_ammo = 18
+	max_ammo = 15
 
 /obj/item/ammo_box/magazine/hl13/hl9mm/update_icon_state()
 	. = ..()
