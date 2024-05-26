@@ -15,7 +15,7 @@
 	throw_range = 7
 	demolition_mod = 1.25
 	w_class = WEIGHT_CLASS_NORMAL
-	custom_materials = list(/datum/material/iron=50)
+	custom_materials = list(/obj/item/stack/sheet/hl13/concrete=50,/obj/item/stack/sheet/iron/hl13/metal=70)
 
 	attack_verb_continuous = list("attacks", "bashes", "batters", "bludgeons", "whacks","slægans")
 	attack_verb_simple = list("attack", "bash", "batter", "bludgeon", "whack","slægan")

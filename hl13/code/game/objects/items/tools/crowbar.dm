@@ -1,0 +1,15 @@
+/obj/item/crowbar/hl13
+	name = "crowbar"
+	desc = "A crowbar. This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors."
+	icon = 'hl13/icons/obj/tools.dmi'
+	icon_state = "crowbar"
+	inhand_icon_state = "crowbar"
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	usesound = 'sound/items/crowbar.ogg'
+	w_class = WEIGHT_CLASS_NORMAL
+	custom_materials = list(/obj/item/stack/sheet/iron/hl13/metal=50)
+	drop_sound = 'sound/items/handling/crowbar_drop.ogg'
+	pickup_sound = 'sound/items/handling/crowbar_pickup.ogg'
+	hitsound = 'hl13/sound/weapons/melee/flesh_impact/flesh_impact_bullet1.ogg'
+	force = 10
