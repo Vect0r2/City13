@@ -13,3 +13,14 @@
 	pickup_sound = 'sound/items/handling/crowbar_pickup.ogg'
 	hitsound = 'hl13/sound/weapons/melee/flesh_impact/flesh_impact_bullet1.ogg'
 	force = 10
+
+/obj/item/crowbar/power/hl13
+	name = "Combine jaws"
+	desc = "A machine made to double as a crowbar and wirecutters"
+	icon = 'hl13/icons/obj/tools.dmi'
+	icon_state = "jaws"
+	w_class = WEIGHT_CLASS_NORMAL
+	toolspeed = 0.7
+	force_opens = TRUE
+	usesound = 'sound/items/jaws_pry.ogg'
+	custom_materials = list(/obj/item/stack/sheet/iron/hl13/combine=50)

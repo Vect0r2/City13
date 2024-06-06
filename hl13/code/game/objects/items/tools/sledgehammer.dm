@@ -7,15 +7,16 @@
 	lefthand_file = 'hl13/icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'hl13/icons/mob/inhands/equipment/tools_righthand.dmi'
 
-	usesound = 'sound/items/hammering_wood.ogg'
+	usesound = 'hl13/sound/items/hammer_deconstruct.ogg'
+	var/datum/looping_sound/sledgehammer/hammer_loop
 	slot_flags = list(ITEM_SLOT_SUITSTORE, ITEM_SLOT_BACK)
 	force = 15
 	throwforce = 12
 	throw_speed = 2
 	throw_range = 7
 	demolition_mod = 1.25
-	w_class = WEIGHT_CLASS_NORMAL
-	custom_materials = list(/obj/item/stack/sheet/hl13/concrete=50,/obj/item/stack/sheet/iron/hl13/metal=70)
+	w_class = WEIGHT_CLASS_HUGE
+	custom_materials = list(/obj/item/stack/sheet/hl13/concrete=50,/obj/item/stack/sheet/iron/hl13/metal=20)
 
 	attack_verb_continuous = list("attacks", "bashes", "batters", "bludgeons", "whacks","slægans")
 	attack_verb_simple = list("attack", "bash", "batter", "bludgeon", "whack","slægan")
@@ -23,3 +24,11 @@
 	toolspeed = 1
 	armor_type = /datum/armor/item_crowbar
 	hl13_flag = TRUE
+
+/obj/item/hl13/sledgehammer/Initialize(mapload)
+	. = ..()
+	hammer_loop = new(src)
+/obj/item/hl13/sledgehammer/use_tool()
+	hammer_loop.start()
+	. = ..()
+	hammer_loop.stop()
