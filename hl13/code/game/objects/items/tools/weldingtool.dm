@@ -18,6 +18,9 @@
 	name = "combine welder hammer"
 	desc = "A tool that alternates between a welding tool and a powerful piston meant for breaking walls."
 	icon_state = "jackhammer"
+	inhand_icon_state = "jackhammer"
+	lefthand_file = 'hl13/icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'hl13/icons/mob/inhands/equipment/tools_righthand.dmi'
 	custom_materials = list(/obj/item/stack/sheet/iron/hl13/combine=70)
 	w_class = WEIGHT_CLASS_NORMAL
 	toolspeed = 0.7
@@ -27,6 +30,22 @@
 /obj/item/weldingtool/hl13/power/Initialize(mapload)
 	. = ..()
 	hammer_loop = new(src)
+
+/obj/item/weldingtool/hl13/power/attack(mob/living/carbon/human/attacked_humanoid, mob/living/user)
+	if(tool_behaviour == TOOL_SLEDGEHAMMER)
+		icon_state = "jackhammer_on"
+		if(!do_after(user, 1 SECONDS, attacked_humanoid))
+			return
+		wound_bonus = 20
+		force = 20
+		icon_state = "jackhammer_smash_stop"
+		playsound(loc, 'hl13/sound/items/welder_hammer_deconstruct.ogg', 65)
+		return ..()
+	else
+		wound_bonus = 10
+		force = 3
+		. = ..()
+
 
 /obj/item/weldingtool/hl13/power/attack_self_secondary(mob/living/user)
 	if(tool_behaviour != TOOL_WELDER)
