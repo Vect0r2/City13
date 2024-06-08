@@ -29,10 +29,10 @@
 
 /obj/item/storage/belt/hl13/tools
 	name = "combine worker toolbelt"
-	icon_state = "cp_belt"
+	icon_state = "cmb_worker_belt"
 	inhand_icon_state = "cp_belt"
 	worn_icon_state = "cp_belt"
-	content_overlays = TRUE
+	content_overlays = FALSE
 
 /obj/item/storage/belt/hl13/cp_belt/Initialize(mapload)
 	. = ..()

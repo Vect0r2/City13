@@ -1,12 +1,12 @@
 /obj/item/weldingtool/hl13
 	name = "welding tool"
-	desc = ""
+	desc = "Standard tool for welding"
 	icon = 'hl13/icons/obj/tools.dmi'
 	icon_state = "welder"
 	inhand_icon_state = "welder"
 	worn_icon_state = "welder"
-	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	lefthand_file = 'hl13/icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'hl13/icons/mob/inhands/equipment/tools_righthand.dmi'
 	usesound = list('sound/items/welder.ogg', 'sound/items/welder2.ogg')
 	drop_sound = 'sound/items/handling/weldingtool_drop.ogg'
 	pickup_sound = 'sound/items/handling/weldingtool_pickup.ogg'

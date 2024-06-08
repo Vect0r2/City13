@@ -19,6 +19,9 @@
 	desc = "A machine made to double as a crowbar and wirecutters"
 	icon = 'hl13/icons/obj/tools.dmi'
 	icon_state = "jaws"
+	inhand_icon_state = "jaws"
+	lefthand_file = 'hl13/icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'hl13/icons/mob/inhands/equipment/tools_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	toolspeed = 0.7
 	force_opens = TRUE
