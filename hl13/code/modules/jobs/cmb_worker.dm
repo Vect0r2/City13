@@ -35,7 +35,7 @@
 	uniform = /obj/item/clothing/under/hl13/rank/cwu
 	shoes = /obj/item/clothing/shoes/hl13/brown_shoes
 	mask = /obj/item/clothing/mask/gas/hl13/combine/combine_worker
-	belt = /obj/item/storage/belt/utility/full/engi
+	belt = /obj/item/storage/belt/hl13/tools/full
 
 	l_hand = /obj/item/storage/briefcase/hl13/citizen
 	gloves = /obj/item/clothing/gloves/color/yellow

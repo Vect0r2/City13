@@ -14,11 +14,11 @@
 	return span_notice("The bricks are cemented together.")
 
 
-/turf/closed/wall/hl13/dismantle_wall(devastated = FALSE, explode = FALSE) //TODO MAKE THE WALL DISMANTABLE ONLY BY BIG HAMMER THINGY
+/turf/closed/wall/hl13/dismantle_wall(devastated = FALSE, explode = FALSE)
 	if(devastated)
 		devastate_wall()
 	else
-		playsound(src, 'sound/items/hammering_wood.ogg', 100, TRUE)
+		playsound(src, 'hl13/sound/physics/concrete/boulder_impact_hard4.ogg', 100, TRUE)
 		var/newgirder = break_wall()
 		if(newgirder) //maybe we don't /want/ a girder!
 			transfer_fingerprints_to(newgirder)
@@ -36,7 +36,6 @@
 /turf/closed/wall/hl13/try_decon(obj/item/I, mob/user, turf/T)
 	if(I.tool_behaviour == TOOL_SLEDGEHAMMER)
 		to_chat(user, span_notice("You begin hammering through the outer concrete..."))
-		playsound(src, 'sound/items/hammering_wood.ogg', 100, TRUE)
 		if(I.use_tool(src, user, slicing_duration))
 			if(iswallturf(src))
 				to_chat(user, span_notice("You remove the outer concrete."))
