@@ -456,7 +456,7 @@
 	name = "shield wall"
 	desc = "An energy shield."
 	icon = 'icons/effects/effects.dmi'
-	icon_state = "shieldwall"
+	icon_state = "holofield"
 	density = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	light_range = 3
